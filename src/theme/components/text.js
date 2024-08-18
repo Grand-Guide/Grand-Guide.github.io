@@ -1,5 +1,5 @@
 const baseStyle = {
-color: "white. a700",
+color: "white.a700",
 fontFamily: "Inter",
 };
 const sizes = {
