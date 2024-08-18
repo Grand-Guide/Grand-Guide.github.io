@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'IcelandRegular';
-    src: url('../assets/fonts/icelandregular.ttf') format('truetype');
+    src: url('./icelandregular.ttf') format('truetype'); /* Atualize o caminho conforme necessário */
     font-weight: normal;
     font-style: normal;
 }
