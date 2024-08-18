@@ -1,10 +1,11 @@
+// src/pages/GrandGuide/index.jsx
+import React, { Suspense } from "react";
 import { Helmet } from "react-helmet";
 import Header from "../../components/Header";
 import UserProfile from "../../components/UserProfile";
 import FooterSection from "./FooterSection";
 import GrandGuideSection from "./GrandGuideSection";
 import { Box, SimpleGrid, Heading, Container, Image, Flex, Text } from "@chakra-ui/react";
-import React, { Suspense } from "react";
 
 const grandGuideGrid = [
     { userProfileImage: "images/img_g_pic.png", userContentImage: "images/img_g_cont.png" },
@@ -93,7 +94,6 @@ export default function GrandGuidePage() {
                         <Flex mt="202px" flexDirection="column" alignItems="center">
                             <Box alignSelf="stretch">
                                 <Box bg="gray.900_02" py="56px">
-                                    {/* grand guide section */}
                                     <GrandGuideSection />
                                 </Box>
                                 <Image
@@ -131,7 +131,6 @@ export default function GrandGuidePage() {
                                 ))}
                             </Suspense>
                         </SimpleGrid>
-                        {/* footer section */}
                         <FooterSection />
                     </Box>
                 </Box>

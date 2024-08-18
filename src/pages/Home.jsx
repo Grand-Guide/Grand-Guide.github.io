@@ -18,6 +18,15 @@ const Home = () => {
                   </Link>
                </li>
              </ul>
+
+             <ul style={{ listStyle: "none", padding:"0" }}>
+                    <li style={{ marginBottom: "10px" }}>
+                    <Link to="/home" style={{ color: "#87CEFA", textDecoration: "none" }}>
+                    GrandGuide
+                  </Link>
+               </li>
+             </ul>
+
           </div>
          );
        };
