@@ -10,7 +10,7 @@ const container = document.getElementById("root");
 const root = createRoot(container);
 
 root.render(
-  <ChakraProvider theme={theme}> {/* Envolve a aplicação com o ChakraProvider */}
+  <ChakraProvider theme={theme}> {/* Envolve a aplicação com o ChaProvider */}
     <App />
   </ChakraProvider>
 );
