@@ -3,9 +3,14 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles/index.css";
 import "./styles/font.css";
-import theme from "./theme";  // Importa o tema daqui
+import { ChakraProvider } from "@chakra-ui/react";
+import theme from "./themes"; // Importa o tema
 
 const container = document.getElementById("root");
 const root = createRoot(container);
 
-root.render(<App />);
+root.render(
+  <ChakraProvider theme={theme}> {/* Envolve a aplicação com o ChakraProvider */}
+    <App />
+  </ChakraProvider>
+);
