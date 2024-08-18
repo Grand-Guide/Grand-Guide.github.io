@@ -1,16 +1,25 @@
+/* src/styles/index.css */
+
+@font-face {
+    font-family: 'IcelandRegular';
+    src: url('../assets/fonts/icelandregular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-margin: 0;
-padding: 0;
-font-family: Inter;
+    margin: 0;
+    padding: 0;
+    font-family: 'IcelandRegular', sans-serif; /* Use a fonte importada */
 }
 
 * {
-box-sizing: border-box;
-line-height: normal;
-font-family: inherit;
-margin: unset;
+    box-sizing: border-box;
+    line-height: normal;
+    font-family: inherit;
+    margin: unset;
 }
 
 ul {
-margin-inline: unset !important;
+    margin-inline: unset !important;
 }
