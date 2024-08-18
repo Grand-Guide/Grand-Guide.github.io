@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import App from "./App";
 import "./styles/index.css";
 import "./styles/font.css";
-import theme from "./theme";  // Importa o tema daqui
+import theme from "./themes";  // Importa o tema consolidado
 
 const container = document.getElementById("root");
 const root = createRoot(container);
