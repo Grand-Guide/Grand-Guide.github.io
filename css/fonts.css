@@ -1,0 +1,55 @@
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/IcelandRegular.ttf");
+    font-family: "Iceland";
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/InterSemiBold.ttf");
+    font-family: "Inter";
+    font-weight: 600;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/ChakraPetchBold.ttf");
+    font-family: "Chakra Petch";
+    font-weight: 700;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/InterRegular.ttf");
+    font-family: "Inter";
+    font-weight: 400;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/ChakraPetchSemiBold.ttf");
+    font-family: "Chakra Petch";
+    font-weight: 600;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/OpenSansBold.ttf");
+    font-family: "Open Sans";
+    font-weight: 700;
+}
+
+@font-face {
+    font-display: swap;
+    font-style: normal;
+    src: url("../public/fonts/InterBlack.ttf");
+    font-family: "Inter";
+    font-weight: 900;
+}
