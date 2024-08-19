@@ -1,0 +1,161 @@
+/*============= TABLE OF CONTENTS =============
+1 - Text CSS
+2 - Heading CSS
+3 - container CSS
+=============================================*/
+
+/*--------------------------------------------
+1. Text CSS
+--------------------------------------------*/
+
+.ui.text.size-textxs {
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.ui.text.size-texts {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.text.size-texts {
+        font-size: 13px;
+    }
+}
+
+.ui.text.size-textnd {
+    font-size: 64px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.text.size-textnd {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .ui.text.size-textnd {
+        font-size: 48px;
+    }
+}
+
+.ui.text {
+    color: var(--white_a700);
+    font-family: Inter;
+}
+
+/*--------------------------------------------
+2. Heading CSS
+--------------------------------------------*/
+
+.ui.heading.size-headingxs {
+    font-size: 13px;
+    font-weight: 600;
+    font-style: bold;
+}
+
+.ui.heading.size-headings {
+    font-size: 14px; /* Corrigido de 1apx para 16px */
+    font-weight: 700;
+    font-style: bold;
+}
+
+.ui.heading.size-headingnd {
+    font-size: 18px;
+    font-weight: 900;
+    font-style: bold;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.heading.size-headingnd {
+        font-size: 15px;
+    }
+}
+
+.ui.heading.size-headinglg {
+    font-size: 41px; /* Corrigido de 4lpx para 41px */
+    font-weight: 700;
+    font-style: bold;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.heading.size-headinglg {
+        font-size: 34px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .ui.heading.size-headinglg {
+        font-size: 37px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .ui.heading.size-headinglg {
+        font-size: 31px;
+    }
+}
+
+.ui.heading.size-headingxl {
+    font-size: 43px;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.heading.size-headingxl {
+        font-size: 36px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .ui.heading.size-headingxl {
+        font-size: 39px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .ui.heading.size-headingxl {
+        font-size: 33px;
+    }
+}
+
+.ui.heading.size-heading2xl {
+    font-size: 64px;
+    font-weight: 700;
+    font-style: bold;
+}
+
+@media only screen and (max-width: 1440px) {
+    .ui.heading.size-heading2xl {
+        font-size: 64px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .ui.heading.size-heading2xl {
+        font-size: 48px;
+    }
+}
+
+.ui.heading {
+    color: var(--white_a700);
+    font-family: Inter;
+}
+
+/*--------------------------------------------
+1. Text CSS
+--------------------------------------------*/
+
+.container-xs {
+    max-width: 1200p;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
