@@ -618,12 +618,10 @@ section {
         width: 12%;
         object-fit: contain;
         }
-
         .guide-section_list-iten-description {
         margin-bottom: 62px;
         display: flex;
         }
-        
         .guide-section_list-iten-description-text {
         margin-bottom: 12px;
         }
