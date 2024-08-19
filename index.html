@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Redirecting...</title>
+    <title>Redirecionando...</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34;
+            color: #61dafb;
+            text-align: center;
+        }
+
+        .redirect-message {
+            font-size: 24px;
+            animation: fade-in 1.5s ease-in-out infinite alternate;
+        }
+
+        .redirect-message span {
+            font-weight: bold;
+            color: #f39c12;
+        }
+
+        @keyframes fade-in {
+            from {
+                opacity: 0.3;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
     <script>
         setTimeout(function() {
             window.location.href = "gg.html";
-        }, 3000); // 3000 milissegundos = 3 segundos
+        }, 4000);
     </script>
 </head>
 <body>
-    <p>You will be redirected in 3 seconds. If not, follow the <a href="gg.html">link to the new page</a>.</p>
+    <div class="redirect-message">
+        <p>Redirecionando para a nova página<span>...</span></p>
+        <p>Por favor, aguarde<span>.</span><span>.</span><span>.</span></p>
+    </div>
 </body>
 </html>
