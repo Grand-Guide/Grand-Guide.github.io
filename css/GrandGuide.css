@@ -1,0 +1,462 @@
+/*=========== tabelas de conteúdo ===========
+1 - Common CSS
+2 - Page CSS
+==========================================*/
+
+/*---------------------------------------
+1. Common CSS
+----------------------------------------*/
+
+.header__menu-item {
+    text-transform: uppercase;
+}
+
+.content-section_title-span-3 {
+    color: var(--yellow_a700);
+}
+
+.content-section_title-span-1 {
+    color: var(--green_2700);
+}
+
+.description {
+    color: var(--cyan_50) !important;
+    text-align: center;
+    align-self: stretch;
+    line-height: 24px;
+}
+
+.user-profile {
+    width: 100%;
+    display: flex;
+}
+
+.user-profile-row {
+    width: 100%;
+    display: flex;
+}
+
+@media only screen and (max-width: 550px) {
+    .user-profile-row {
+        flex-direction: column;
+    }
+}
+
+.user-profile_image {
+    height: 280px;
+    width: 36%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 550px) {
+    .user-profile_image {
+        width: 100%;
+    }
+}
+
+.user-profile__image--modifier {
+    height: 280px;
+    margin-left: -32px;
+    position: relative;
+    width: 60%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 556px) {
+    .user-profile__image--modifier {
+        width: 100%;
+        margin-left: 0px;
+    }
+}
+
+.header_brand {
+    font-family: Iceland !important;
+}
+
+@media only screen and (max-width: 1446px) {
+    .header_brand {
+        font-size: 48px;
+    }
+}
+
+.content-section_title-span {
+    color: var(--white_a700);
+}
+
+.header__brand-span-1 {
+    color: transparent;
+    background: radial-gradient(180deg, #00b74900, #00b749);
+    background-clip: text;
+}
+
+.guide-section_heading {
+    display: flex;
+}
+
+/*---------------------------------------
+2. Page CSS
+----------------------------------------*/
+
+/* Estilos gerais para a seção do Grand Guide */
+.grand-guide {
+    overflow-x: scroll;
+    background-color: var(--black_500_01);
+    width: 100%;
+}
+
+/* Estilos para a coluna principal */
+.colum_two {
+    width: 1920px;
+}
+
+/* Estilos para a segunda coluna */
+.columeg {
+    gap: 46px;
+    z-index: 1;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+/* Estilos gerais para o header */
+header {
+    display: flex;
+    background-color: var(--gray_569_02);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos para a linha superior do header */
+.header_top-row {
+    align-self: end;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .header_top-row {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .header_top-row {
+        flex-direction: column;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.header__brand-row {
+    align-self: center;
+    width: 44%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .header__brand-row {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header__brand-row {
+        flex-direction: column;
+    }
+}
+
+.header_menu {
+    gap: 32px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header_search {
+    color: var(--white_5700);
+    margin-top: 12px;
+    padding-left: var(--space-nd);
+    font-family: Geos, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    gap: var(--space-nd);
+    display: flex;
+    width: 24%;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    border: 1px solid var(--yellow_5700);
+}
+
+@media only screen and (max-width: 1050px) {
+    .header_search {
+        width: 100%;
+    }
+}
+
+.rewind {
+    height: 20px;
+    width: 28px;
+    object-fit: cover;
+}
+
+.content-section {
+    margin-left: 30px;
+    margin-right: 28px;
+    gap: 24px;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1050px) {
+    .content-section {
+        flex-direction: column;
+        margin-left: 6px;
+        margin-right: 0px;
+    }
+}
+
+.content-section_column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1050px) {
+    .content-section_column {
+        align-self: stretch;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.content-section_title {
+    font-family: Chakra Petch, sans-serif !important;
+    line-height: 64px;
+}
+
+@media only screen and (max-width: 1440px) {
+    .content-section_title {
+        font-size: 48px;
+    }
+}
+
+.content-section_subtitle {
+    color: var(--teal_100) !important;
+    margin-top: 10px;
+    font-weight: 600 !important;
+    width: 44%;
+    line-height: 24px;
+    font-family: Chakra Petch, sans-serif !important;
+}
+
+@media only screen and (max-width: 1440px) {
+    .content-section_subtitle {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1050px) {
+    .content-section_subtitle {
+        width: 100%;
+    }
+}
+
+.content-section__subtitle-span-3 {
+    color: var(--yellow_2400);
+}
+
+.content-section_image {
+    height: 410px;
+    margin-top: 38px;
+    object-fit: cover;
+}
+
+.content-section_side-image {
+    height: 64px;
+    margin-top: 6px;
+    width: 32%;
+    object-fit: contain;
+}
+
+@media only screen and (max-width: 1050px) {
+    .content-section_side-image {
+        width: 100%;
+    }
+}
+
+section {
+    margin-top: -72px;
+    position: relative;
+}
+
+.column_one {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.column {
+    align-self: stretch;
+}
+
+.sectionbar {
+    padding-top: 56px;
+    padding-bottom: 8px;
+    background-color: var(--gray_900_02);
+}
+
+@media only screen and (max-width: 1050px) {
+    .sectionbar {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 558px) {
+    .data-section {
+        padding-top: var(--space-nd);
+        padding-bottom: var(--space-nd);
+    }
+}
+
+.row2024guias {
+    margin-top: 12px;
+    padding-left: 26px;
+    padding-right: 26px;
+    display: flex;
+    align-items: start;
+}
+
+@media only screen and (max-width: 1050px) {
+    .row2024guias {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .row2024guias {
+        padding-left: var(--space-nd);
+        padding-right: var(--space-nd);
+    }
+}
+
+.data-section {
+    padding-left: 30px;
+    padding-right: 30px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1050px) {
+    .data-section {
+        align-self: stretch;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .data-section {
+        padding-left: var(--space-nd);
+        padding-right: var(--space-nd);
+    }
+}
+
+.data-section_column {
+    gap: var(--space-sm);
+    display: flex;
+    width: 46%;
+    flex-direction: column;
+}
+
+@media only screen and (max-width: 1050px) {
+    .data-section_column {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 558px) {
+    .data-section {
+        padding-top: var(--space-nd);
+        padding-bottom: var(--space-nd);
+    }
+}
+
+.data-section_title {
+    color: var(--light_blue_a200) !important;
+    margin-left: 52px;
+    font-family: Chakra Petch !important;
+    text-align: center;
+    line-height: 50px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .data-section_title {
+        font-size: 32px;
+        margin-left: 0px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .data-section_title {
+        font-size: 22px;
+    }
+}
+
+.box {
+    border-radius: 2px;
+    border: 1px solid var(--light_blue_a200);
+    background: var(--black_500);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.box__title {
+    color: var(--white_a700);
+    font-family: Chakra Petch;
+    font-weight: 700;
+    font-size: 32px;
+    text-align: center;
+    padding: 24px;
+}
+
+@media only screen and (max-width: 1050px) {
+    .box__title {
+        font-size: 26px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .box__title {
+        font-size: 20px;
+    }
+}
+
+.description-title {
+    font-family: Chakra Petch;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1050px) {
+    .description-title {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .description-title {
+        font-size: 18px;
+    }
+}
