@@ -21,7 +21,7 @@ Links úteis: [Site Oficial](https://www.w3.org/html/), [Foundation Framework](<
 
 **JavaScript Moduler** \
 **JavaScript** \
-`• Utiliza a interação com react e a atualização dinâmica de dados, como a filtragem de informações` \
+`• Utiliza a interação com react e a atualização dinâmica de dados` \
 Links úteis: [Site Oficial](https://www.javascript.com/)
 <br/>
 
