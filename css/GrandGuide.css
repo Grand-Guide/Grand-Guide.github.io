@@ -438,30 +438,22 @@ section {
     display: flex;
     flex-direction: column;
     align-items: start;
-}
-
-@media only screen and (max-width: 1440px) {
-    .guide_column {
+    @media only screen and (max-width: 1440px) {
         padding-left: 20px;
-        flex-grow: 1;
+        padding-right: 20;
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .guide_column {
         padding-left: 20px;
         padding-right: 20px;
     }
 }
 
 .guide_headline {
-    font-family: 'Chakra Petch', sans-serif !important;
+    font-family: 'Chakra Petch', !important;
     text-align: center;
     line-height: 49px;
-}
-
-@media only screen and (max-width: 1050px) {
-    .guide_headline {
+    @media only screen and (max-width: 1050px) {
         font-size: 25px;
     }
 }
@@ -469,30 +461,158 @@ section {
 .grandguide {
     margin-top: 78px;
     margin-left: 114px;
-    margin-right: 95px;
+    margin-right: 98px;
     display: grid;
-    gap: 5px;
+    gap: 94px;
     row-gap: 38px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: center;
-}
-
-@media only screen and (max-width: 1440px) {
-    .grandguide {
+    @media only screen and (max-width: 1440px) {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .grandguide {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         margin-left: 0px;
         margin-right: 0px;
     }
+
+@media only screen and (max-width: 550px) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
 }
 
+.row {
+    margin-top: 228px;
+}
 
+.footer {
+    background-color: var(--gray_900_01);
+    display: flex;
+    justify-content: center;
+}
 
+.guide-section {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    @media only screen and (max-width: 1440px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+@media only screen and (max-width: 1050px) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+.guide-section_content {
+    width: 100%;
+}
+
+.guide-section_content--left-inner {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+@media only screen and (max-width: 1050px) {
+            flex-direction: column;
+        }
+    }
+
+    .guide-section_highlight {
+        gap: var(--space-xs);
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: start;
+    @media only screen and (max-width: 1050px) {
+        align-self: stretch;
+        }
+
+    }
+    
+    .guide-section_descriptions {
+        margin-bottom: 12px;
+        align-self: stretch;
+    }
+    
+    .guide-section_description-1 {
+        margin-bottom: 12px;
+        display: flex;
+    }
+    
+    .guide-section_social-media {
+        width: 12%;
+        display: flex;
+        justify-content: center;
+        @media only screen and (max-width: 1050px) {
+            width: 100%;
+        }
+    
+    }
+    
+    .guide-section_social-media-container {
+        margin-bottom: 22px;
+        gap: 10px;
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        align-items: end;
+    }
+    
+    .guide-section_social-media-title {
+        font-family: 'Open Sans' !important;
+    }
+
+    .guide-section__social-media-icons {
+        height: 36px;
+        width: 100%;
+        @media only screen and (max-width: 1440px) {
+            height: auto;
+        }
+    
+    @media only screen and (max-width: 1050px) {
+            height: auto;
+        }
+    }
+    
+    .guide-section_content--right-inner-1 {
+        gap: var(--space-sm);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .guide-section_item {
+        margin-bottom: 82px;
+        display: flex;
+    }
+    
+    .guide-section_item-text {
+        margin-bottom: 14px;
+    }
+    
+    .guide-section_content--right-inner {
+        gap: var(--space-md);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .guide-section_list {
+        margin-bottom: 26px;
+    }
+    
+    .guide-section_list-item-container {
+        margin-bottom: 12px;
+        padding-top: var(--space-xs);
+        padding-bottom: var(--space-xs);
+        gap: var(--space-sm);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+    
 
 
 
