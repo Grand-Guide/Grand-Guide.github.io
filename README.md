@@ -13,7 +13,7 @@ Este projeto atualmente utiliza as seguintes tecnologias:</p>
 
 **HTML Foundation** \
 **Estrutura e marcação do conteúdo da web.** \
-`• Define a estrutura do site, organizando e apresentando elementos como títulos, parágrafos e imagens.` \
+`• Define a estrutura do site, organizando e apresentando elementos como títulos, e imagens.` \
 Links úteis: [Site Oficial](https://www.w3.org/html/), [Foundation Framework](<https://get.foundation/>)
 <br/>
 
@@ -21,7 +21,7 @@ Links úteis: [Site Oficial](https://www.w3.org/html/), [Foundation Framework](<
 
 **JavaScript Moduler** \
 **JavaScript** \
-`• Reutiliza a interação com react e a atualização dinâmica de dados, como a filtragem de informações sobre o jogo` \
+`• Utiliza a interação com react e a atualização dinâmica de dados, como a filtragem de informações` \
 Links úteis: [Site Oficial](https://www.javascript.com/)
 <br/>
 
@@ -29,7 +29,7 @@ Links úteis: [Site Oficial](https://www.javascript.com/)
 
 **React & Tailwind CSS** \
 **React** \
-`• Gerencia a interface de aplicações através de componentes reutilizáveis e eficientes, facilitando a manutenção` \
+`• Gerencia a interface de aplicações através de componentes reutilizáveis e eficientes` \
 Links úteis: [Site Oficial](https://react.dev/), [Tailwind Doc](https://tailwindcss.com/docs/installation)
 <br/>
 
@@ -37,7 +37,7 @@ Links úteis: [Site Oficial](https://react.dev/), [Tailwind Doc](https://tailwin
 
 **Gemini By Google** \
 **Gemini** \
-`• Automatiza tarefas como a atualização de dados e a criação de novos artigos com base em templates pré-definidos.` \
+`• Automatiza tarefas como a atualização de dados e a criação de artigos com base em templates` \
 Links úteis: [Site Oficial](https://gemini.google.com/), [Gemini API](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br)
 <br/>
 <br/>
