@@ -1,7 +1,5 @@
 :root {
-
 /*------- variáveis ​​de cor -------*/
-
 --black_900: #020717;
 --black_900_01: #4080a0f;
 --black_900_62: #40000000;
@@ -19,9 +17,7 @@
 --yellow_a700: #ffd700;
 
 /*------- variáveis ​​de espaçamento -------*/
-
 --space-xs: 12px;
 --space-sm: 14px;
 --space-md: 16px;
-
 }
