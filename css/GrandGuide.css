@@ -7,7 +7,7 @@
 1. Common CSS
 ----------------------------------------*/
 
-.header__menu-item {
+.header_menu-item {
     text-transform: uppercase;
 }
 
@@ -31,7 +31,7 @@
     display: flex;
 }
 
-.user-profile-row {
+.user-profile_row {
     width: 100%;
     display: flex;
     @media only screen and (max-width: 550px) {
@@ -48,13 +48,13 @@
     }
 }
 
-.user-profile__image--modifier {
+.user-profile_image--modifier {
     height: 280px;
     margin-left: -32px;
     position: relative;
     width: 60%;
     object-fit: contain;
-    @media only screen and (max-width: 556px) {
+    @media only screen and (max-width: 550px) {
         width: 100%;
         margin-left: 0px;
     }
@@ -63,7 +63,7 @@
 
 .header_brand {
     font-family: Iceland !important;
-    @media only screen and (max-width: 1446px) {
+    @media only screen and (max-width: 1440px) {
             font-size: 48px;
         }
 }
@@ -99,7 +99,7 @@
 }
 
 /* Estilos para a segunda coluna */
-.columeg {
+.columngg {
     gap: 46px;
     z-index: 1;
     display: flex;
@@ -123,6 +123,8 @@ header {
     align-items: start;
     gap: 20px;
 @media only screen and (max-width: 1440px) {
+    padding-left: 20px;
+    padding-right: 20px;
     }
 }
 
@@ -169,7 +171,7 @@ header {
     align-items: center;
     justify-content: center;
     height: 40px;
-    border: 1px solid var(--yellow_5700);
+    border: 1px solid var(--yellow_a700);
     @media only screen and (max-width: 1050px) {
         width: 100%;
     }
@@ -440,7 +442,7 @@ section {
     align-items: start;
     @media only screen and (max-width: 1440px) {
         padding-left: 20px;
-        padding-right: 20;
+        padding-right: 20px;
     }
 
 @media only screen and (max-width: 1050px) {
@@ -610,12 +612,20 @@ section {
         display: flex;
         flex-direction: column;
     }
-    
-    
-    
 
+    .guide-section_list-iten-image {
+        height: 66px;
+        width: 12%;
+        object-fit: contain;
+        }
 
-
-
-}
+        .guide-section_list-iten-description {
+        margin-bottom: 62px;
+        display: flex;
+        }
+        
+        .guide-section_list-iten-description-text {
+        margin-bottom: 12px;
+        }
+    }
 }
