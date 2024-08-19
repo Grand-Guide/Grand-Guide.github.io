@@ -7,7 +7,6 @@
 /*--------------------------------------------
 1. Text CSS
 --------------------------------------------*/
-
 .ui.text.size-textxs {
     font-size: 12px;
     font-weight: 400;
@@ -18,28 +17,20 @@
     font-size: 16px;
     font-weight: 400;
     font-style: normal;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.text.size-texts {
+    @media only screen and (max-width: 1440px) {
         font-size: 13px;
     }
 }
 
-.ui.text.size-textnd {
+.ui.text.size-textmd {
     font-size: 64px;
     font-weight: 400;
     font-style: normal;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.text.size-textnd {
-        font-size: 60px;
+    @media only screen and (max-width: 1440px) {
+        font-size: 64px;
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .ui.text.size-textnd {
         font-size: 48px;
     }
 }
@@ -52,7 +43,6 @@
 /*--------------------------------------------
 2. Heading CSS
 --------------------------------------------*/
-
 .ui.heading.size-headingxs {
     font-size: 13px;
     font-weight: 600;
@@ -60,43 +50,33 @@
 }
 
 .ui.heading.size-headings {
-    font-size: 14px; /* Corrigido de 1apx para 16px */
+    font-size: 14px;
     font-weight: 700;
     font-style: bold;
 }
 
-.ui.heading.size-headingnd {
+.ui.heading.size-headingmd {
     font-size: 18px;
     font-weight: 900;
     font-style: bold;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.heading.size-headingnd {
+    @media only screen and (max-width: 1440px) {
         font-size: 15px;
     }
 }
 
 .ui.heading.size-headinglg {
-    font-size: 41px; /* Corrigido de 4lpx para 41px */
+    font-size: 41px;
     font-weight: 700;
     font-style: bold;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.heading.size-headinglg {
+    @media only screen and (max-width: 1440px) {
         font-size: 34px;
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .ui.heading.size-headinglg {
         font-size: 37px;
     }
-}
 
 @media only screen and (max-width: 550px) {
-    .ui.heading.size-headinglg {
         font-size: 31px;
     }
 }
@@ -105,22 +85,15 @@
     font-size: 43px;
     font-weight: 700;
     font-style: normal;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.heading.size-headingxl {
+    @media only screen and (max-width: 1440px) {
         font-size: 36px;
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .ui.heading.size-headingxl {
         font-size: 39px;
     }
-}
 
 @media only screen and (max-width: 550px) {
-    .ui.heading.size-headingxl {
         font-size: 33px;
     }
 }
@@ -129,16 +102,11 @@
     font-size: 64px;
     font-weight: 700;
     font-style: bold;
-}
-
-@media only screen and (max-width: 1440px) {
-    .ui.heading.size-heading2xl {
+    @media only screen and (max-width: 1440px) {
         font-size: 64px;
     }
-}
 
 @media only screen and (max-width: 1050px) {
-    .ui.heading.size-heading2xl {
         font-size: 48px;
     }
 }
@@ -151,11 +119,9 @@
 /*--------------------------------------------
 1. Text CSS
 --------------------------------------------*/
-
 .container-xs {
     max-width: 1200p;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    
 }
