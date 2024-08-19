@@ -6,6 +6,7 @@
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
@@ -19,11 +20,19 @@
         .redirect-message {
             font-size: 24px;
             animation: fade-in 1.5s ease-in-out infinite alternate;
+            margin-bottom: 20px;
         }
 
         .redirect-message span {
             font-weight: bold;
             color: #f39c12;
+        }
+
+        .construction-message {
+            font-size: 18px;
+            color: #f39c12;
+            margin-top: 20px;
+            opacity: 0.8;
         }
 
         @keyframes fade-in {
@@ -38,13 +47,16 @@
     <script>
         setTimeout(function() {
             window.location.href = "gg.html";
-        }, 4000);
+        }, 3000);
     </script>
 </head>
 <body>
     <div class="redirect-message">
         <p>Redirecionando para a nova página<span>...</span></p>
         <p>Por favor, aguarde<span>.</span><span>.</span><span>.</span></p>
+    </div>
+    <div class="construction-message">
+        <p>Lembre-se: o site ainda está em construção. Novidades em breve!</p>
     </div>
 </body>
 </html>
