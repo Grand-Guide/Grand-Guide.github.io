@@ -1,24 +1,72 @@
-## Linwaru/\_\Grand Guide, Inc. Application
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" alt="Grand Guide Thumbnail"/>
+</p>
 
-Generated with ❤️ from [Grand Guide, Inc](https://github.com/Grand-Guide)
+<p align="center">
+  Gerado com ❤️ por <a href="https://github.com/Grand-Guide">Grand Guide, Inc</a>
+</p>
 
-## Descrição
+#
+Este projeto atualmente utiliza as seguintes tecnologias:</p>
 
-- Ele usa  [HTML](https://www.w3.org/html/)
-- Ele usa  [React](https://react.dev/)
-- Ele usa  [JavaScript](https://www.javascript.com/)
-- Ele usa  [Gemini](https://gemini.google.com/app)
+[<img align="left" height="94px" width="94px" alt="Warpnet" src="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/html.png"/>](https://www.spacex.com/)
 
-## Estrutura Da Rede
+**HTML Foundation** \
+**Estrutura e marcação do conteúdo da web.** \
+`• Define a estrutura do site, organizando e apresentando elementos como títulos, parágrafos e imagens.` \
+Links úteis: [Site Oficial](https://www.w3.org/html/), [Foundation Framework](<https://get.foundation/>)
+<br/>
 
-└── public -------- Detentor De Static-Data
-    ├── images -------- Paginador de Imagens
-    └── fonts -------- Recursos De Fontes
-└── css -------- Configuração De Estilo Principal
-    ├── components.css -------- Estilizador De Componente
-    ├── fonts.css -------- Designador De Estilo De fonte
-    ├── styles.css -------- Estilo Designador Da Página
-    └── index.css --------  Estilizador De Elementos HTML
-└── README.md - Preciso Explicar Pra Que Serve?
-└── index.html - Paginador/Redirecionador
-└── <html files> ----- Raiz Da Estrutura
+[<img align="left" height="94px" width="94px" alt="Nubank" src="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/javascript.png"/>](https://nubank.com.br/)
+
+**JavaScript Moduler** \
+**JavaScript** \
+`• Reutiliza a interação com react e a atualização dinâmica de dados, como a filtragem de informações sobre o jogo` \
+Links úteis: [Site Oficial](https://www.javascript.com/)
+<br/>
+
+[<img align="left" height="94px" width="94px" alt="Rocketseat" src="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/reactnative.png"/>](https://rocketseat.com.br/)
+
+**React & Tailwind CSS** \
+**React** \
+`• Gerencia a interface de aplicações através de componentes reutilizáveis e eficientes, facilitando a manutenção` \
+Links úteis: [Site Oficial](https://react.dev/), [Tailwind Doc](https://tailwindcss.com/docs/installation)
+<br/>
+
+[<img align="left" height="94px" width="94px" alt="Nubank" src="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/gemini.png"/>](https://nubank.com.br/)
+
+**Gemini By Google** \
+**Gemini** \
+`• Automatiza tarefas como a atualização de dados e a criação de novos artigos com base em templates pré-definidos.` \
+Links úteis: [Site Oficial](https://gemini.google.com/), [Gemini API](https://ai.google.dev/gemini-api/docs/api-key?hl=pt-br)
+<br/>
+<br/>
+
+## Estrutura do Projeto 🪜
+
+```plaintext
+└── public
+    ├── images
+    │   └── (Imagens usadas no site)
+    └── fonts
+        └── (Recursos de fontes)
+
+└── css
+    ├── components.css        # Estilos para componentes específicos
+    ├── fonts.css             # Estilos para fontes
+    ├── styles.css            # Estilos gerais
+    └── index.css             # Estilos para elementos HTML
+
+└── index.html                # Paginador/Redirecionador
+└── README.md                 # Documentação do projeto
+└── <root files>              # Arquivos da raiz principal
+```
+
+## Contribuir ❤️
+
+Contribuições são sempre bem-vindas!
+Por favor leia o [Guia de Contribuição](contributing.md) primeiro.
+
+## Licença ⚖️
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1)
