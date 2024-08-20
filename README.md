@@ -42,26 +42,6 @@ Links úteis: [Site Oficial](https://gemini.google.com/), [Gemini API](https://a
 <br/>
 <br/>
 
-## Estrutura do Projeto 🪜
-
-```plaintext
-└── public
-    ├── images
-    │   └── (Imagens usadas no site)
-    └── fonts
-        └── (Recursos de fontes)
-
-└── css
-    ├── components.css        # Estilos para componentes específicos
-    ├── fonts.css             # Estilos para fontes
-    ├── styles.css            # Estilos gerais
-    └── index.css             # Estilos para elementos HTML
-
-└── index.html                # Paginador/Redirecionador
-└── README.md                 # Documentação do projeto
-└── <root files>              # Arquivos da raiz principal
-```
-
 ## Contribuir ❤️
 
 Contribuições são sempre bem vindas!
