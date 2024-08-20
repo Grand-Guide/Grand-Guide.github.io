@@ -23,10 +23,14 @@ jobs:
         echo ']}' >> images.json
         rm temp.json
 
+    - name: Debugging
+      run: echo "Pushing changes to repository"
+
     - name: Commit and push changes
       run: |
         git config --global user.name 'GitHub Actions'
         git config --global user.email 'actions@github.com'
         git add public/app/random/images.json
         git commit -m "Atualizar lista de imagens"
+        echo "Pushing to: https://github.com/Grand-Guide/Grand-Guide.github.io.git"
         git push https://${{ secrets.ORG_GH_PAT }}@github.com/Grand-Guide/Grand-Guide.github.io.git HEAD:main
