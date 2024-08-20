@@ -2,7 +2,7 @@
     "name": "px-html",
     "version": "1.0.0",
     "description": "",
-    "homepage": "https://github.com/Grand-Guide/Grand-Guide.github.io"
+    "homepage": "https://github.com/Grand-Guide/Grand-Guide.github"
     "scripts": {
       "start": "gulp dev",
       "build": "gulp build",
