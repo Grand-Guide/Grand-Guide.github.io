@@ -67,25 +67,28 @@
         }
     </style>
     <script>
-        const images = [
-            'public/app/random/image1.png',
-            'public/app/random/image2.png',
-            'public/app/random/image3.png',
-        ];
-        function getRandomImage() {
-            const randomIndex = Math.floor(Math.random() * images.length);
-            return images[randomIndex];
+        async function loadRandomImage() {
+            try {
+                const response = await fetch('/app/random/images.json');
+                const data = await response.json();
+                const images = data.images;
+                const randomIndex = Math.floor(Math.random() * images.length);
+                const randomImage = `/app/random/${images[randomIndex]}`;
+                const imgElement = document.getElementById('random-image');
+                imgElement.src = randomImage;
+            } catch (error) {
+                console.error('Erro ao carregar a lista de imagens:', error);
+            }
         }
 
         window.onload = function() {
-            const imgElement = document.getElementById('random-image');
-            imgElement.src = getRandomImage();
-        };
+            loadRandomImage();
 
-        // Redireciona após 3 segundos
-        setTimeout(function() {
-            window.location.href = "gg.html";
-        }, 3000);
+            // Redireciona após 3 segundos
+            setTimeout(function() {
+                window.location.href = "gg.html";
+            }, 3000);
+        };
     </script>
 </head>
 <body>
