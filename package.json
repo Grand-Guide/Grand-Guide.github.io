@@ -15,7 +15,7 @@
       "browser-sync": "^2.27.10",
       "yargs": "^17.5.1",
       "gulp": "^4.0.2",
-      "gulp-autoprefixer": "^7.0.1",
+      "gulp-autoprefixer": "^9.0.0",
       "gulp-file-include": "./src/dev/gulp-file-include",
       "gulp-filter-each": "^1.0.1",
       "gulp-pretty-html": "^2.0.10",
