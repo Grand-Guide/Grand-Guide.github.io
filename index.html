@@ -3,6 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Redirecionando...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta 
+        name="description" 
+        content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Grand Guide - Wiki" />
+    <meta property="og:description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" />
+    <meta property="og:url" content="https://grand-guide.github.io/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
+
     <style>
         body {
             display: flex;
@@ -35,6 +50,13 @@
             opacity: 0.8;
         }
 
+        .random-image {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            object-fit: contain;
+        }
+
         @keyframes fade-in {
             from {
                 opacity: 0.3;
@@ -45,16 +67,35 @@
         }
     </style>
     <script>
+        const images = [
+            'public/app/random/image1.png',
+            'public/app/random/image2.png',
+            'public/app/random/image3.png',
+        ];
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
+        }
+
+        window.onload = function() {
+            const imgElement = document.getElementById('random-image');
+            imgElement.src = getRandomImage();
+        };
+
+        // Redireciona após 3 segundos
         setTimeout(function() {
             window.location.href = "gg.html";
-        }, 5000);
+        }, 3000);
     </script>
 </head>
 <body>
+    <img id="random-image" class="random-image" src="" alt="Imagem Aleatória">
+
     <div class="redirect-message">
         <p>Redirecionando para a nova página</p>
         <p>Por favor, aguarde<span>.</span><span>.</span><span>.</span></p>
     </div>
+
     <div class="construction-message">
         <p>Lembre-se: o site ainda está em construção. Novidades em breve!</p>
     </div>
