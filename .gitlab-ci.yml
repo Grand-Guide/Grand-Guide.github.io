@@ -1,0 +1,21 @@
+image: node
+
+before_script:
+  - npm install
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  stage: deploy
+  script:
+    - unset CI
+    - npm run build
+    - mv web public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+  

@@ -1,0 +1,560 @@
+.grand-guide.mainSection {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(8, 10, 15);
+}
+.grand-guide .searchSection {
+  position: relative;
+  min-height: 912px;
+}
+.grand-guide .formGroup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 84px;
+  min-height: 84px;
+}
+.grand-guide .formWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 84px;
+  background-color: rgb(30, 37, 46);
+}
+.grand-guide .heroTitleSearch_box {
+  position: absolute;
+  top: 12px;
+  left: 360px;
+  display: flex;
+  align-items: center;
+  width: 91px;
+  height: 62px;
+}
+.grand-guide .heroTitleSearch {
+  font: 400 64px/0.96 Iceland, Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+}
+.grand-guide .heroTitleSearch_span0 {
+  font: 1em/0.96 Iceland, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .heroTitleSearch_span1 {
+  font: 1em/0.96 Iceland, Helvetica, Arial, serif;
+  color: rgb(255, 215, 0);
+}
+.grand-guide .textServers {
+  position: absolute;
+  top: 35px;
+  left: 826px;
+  display: flex;
+  align-items: center;
+  width: 49px;
+  height: 16px;
+  font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .textGitBase {
+  position: absolute;
+  top: 35px;
+  left: 734px;
+  display: flex;
+  align-items: center;
+  width: 96px;
+  height: 16px;
+  font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: -0.31px;
+}
+.grand-guide .groupSection {
+  position: absolute;
+  top: 21px;
+  left: 1277px;
+  width: 309px;
+  height: 41px;
+}
+.grand-guide .rectangleIndicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 309px;
+  height: 41px;
+  outline: 1px solid rgb(255, 215, 0);
+  outline-offset: -1px;
+}
+.grand-guide .searchPrompt {
+  position: absolute;
+  top: 14px;
+  left: 17px;
+  display: flex;
+  align-items: center;
+  width: 161px;
+  height: 17px;
+  font: 500 15px/1.13 Geo, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .searchImage {
+  position: absolute;
+  top: 13px;
+  right: 17px;
+  width: 38px;
+  height: 15px;
+}
+.grand-guide .textContactUs {
+  position: absolute;
+  top: 35px;
+  left: 609px;
+  display: flex;
+  align-items: center;
+  width: 96px;
+  height: 16px;
+  font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: -0.31px;
+}
+.grand-guide .heroTitleContribution_box {
+  position: absolute;
+  top: 131px;
+  left: 360px;
+  display: flex;
+  align-items: center;
+  width: 571px;
+  height: 128px;
+}
+.grand-guide .heroTitleContribution {
+  font: 700 64px/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+}
+.grand-guide .heroTitleContribution_span0 {
+  font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .heroTitleContribution_span1 {
+  font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 183, 73);
+}
+.grand-guide .heroTitleContribution_span2 {
+  font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .heroTitleContribution_span3 {
+  font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 215, 0);
+}
+.grand-guide .contributeText {
+  position: absolute;
+  top: 35px;
+  left: 496px;
+  display: flex;
+  align-items: center;
+  width: 81px;
+  height: 16px;
+  font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .contributionWrapper {
+  position: absolute;
+  top: 273px;
+  left: 364px;
+  display: flex;
+  flex-direction: column;
+  width: 373px;
+  height: 48px;
+}
+.grand-guide .contributionDescription_box {
+  display: flex;
+  align-items: center;
+  width: 373px;
+  height: 48px;
+}
+.grand-guide .contributionDescription {
+  font: 600 16px/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+}
+.grand-guide .contributionDescription_span0 {
+  font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .contributionDescription_span1 {
+  font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 183, 73);
+}
+.grand-guide .contributionDescription_span2 {
+  font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .contributionDescription_span3 {
+  font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 233, 0);
+}
+.grand-guide .fanBaseImage1 {
+  position: absolute;
+  top: 137px;
+  left: 1218px;
+  width: 417px;
+  height: 644px;
+}
+.grand-guide .fanBaseImage2 {
+  position: absolute;
+  top: 360px;
+  left: 364px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage3 {
+  position: absolute;
+  top: 360px;
+  left: 572px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage4 {
+  position: absolute;
+  top: 360px;
+  left: 780px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage5 {
+  position: absolute;
+  top: 360px;
+  left: 988px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage6 {
+  position: absolute;
+  top: 570px;
+  left: 364px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage7 {
+  position: absolute;
+  top: 570px;
+  left: 572px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage8 {
+  position: absolute;
+  top: 570px;
+  left: 780px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .fanBaseImage9 {
+  position: absolute;
+  top: 570px;
+  left: 988px;
+  width: 206px;
+  height: 203px;
+}
+.grand-guide .imageCollectionSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.grand-guide .imageCollectionImage1 {
+  position: absolute;
+  top: 479px;
+  left: 115px;
+  width: 1706px;
+  height: 611px;
+  aspect-ratio: 2.79;
+}
+.grand-guide .imageCollectionBox {
+  position: absolute;
+  top: 0;
+  left: -2px;
+  width: 1924px;
+  height: 267px;
+  background-color: rgb(30, 37, 46);
+}
+.grand-guide .contentBox {
+  position: relative;
+  margin: 59px auto 1098.5px;
+  width: 95.57%;
+  min-height: 147.5px;
+}
+.grand-guide .heroTitleDataRegistered_box {
+  position: absolute;
+  inset: 0 1393px 46.5px 53px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 389px;
+  height: 101px;
+}
+.grand-guide .heroTitleDataRegistered {
+  font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.grand-guide .heroTitleDataRegistered_span0 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 215, 0);
+}
+.grand-guide .heroTitleDataRegistered_span1 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 183, 73);
+}
+.grand-guide .highlightDescription1 {
+  position: absolute;
+  inset: 99.5px 680px 0 649px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 506px;
+  height: 48px;
+  font: 16px/1.5 Inter, Helvetica, Arial, serif;
+  color: rgb(215, 249, 255);
+  text-align: center;
+}
+.grand-guide .highlightDescription2 {
+  position: absolute;
+  inset: 99.5px 0 0 1329px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 506px;
+  height: 48px;
+  font: 16px/1.5 Inter, Helvetica, Arial, serif;
+  color: rgb(215, 249, 255);
+  text-align: center;
+}
+.grand-guide .highlightDescription3 {
+  position: absolute;
+  inset: 99px 1341px 0.5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 494px;
+  height: 48px;
+  font: 16px/1.5 Inter, Helvetica, Arial, serif;
+  color: rgb(215, 249, 255);
+  text-align: center;
+}
+.grand-guide .heroTitleDataConfirmed_box {
+  position: absolute;
+  top: 0;
+  left: 702px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 101px;
+}
+.grand-guide .heroTitleDataConfirmed {
+  font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.grand-guide .heroTitleDataConfirmed_span0 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 215, 0);
+}
+.grand-guide .heroTitleDataConfirmed_span1 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 183, 73);
+}
+.grand-guide .heroTitleVeteranGuides_box {
+  position: absolute;
+  top: 0;
+  right: 61px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 101px;
+}
+.grand-guide .heroTitleVeteranGuides {
+  font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+.grand-guide .heroTitleVeteranGuides_span0 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 215, 0);
+}
+.grand-guide .heroTitleVeteranGuides_span1 {
+  font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(0, 183, 73);
+}
+.grand-guide .imageCollectionImage3 {
+  position: absolute;
+  top: 219px;
+  left: 0;
+  width: 1918px;
+  height: 96px;
+}
+.grand-guide .heroTitleTips {
+  position: absolute;
+  top: 301px;
+  left: 609px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 604px;
+  height: 99px;
+  font: 700 41px/1.2 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.grand-guide .socialMediaSection {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.grand-guide .socialMediaWrapper1 {
+  position: relative;
+  min-height: 699px;
+  background-color: rgb(30, 37, 46);
+}
+.grand-guide .socialMediaWrapper2 {
+  position: absolute;
+  top: 102px;
+  left: 360px;
+  width: 90px;
+  height: 41px;
+  background: var(--src) center center/100% 100% no-repeat;
+  overflow: hidden;
+}
+.grand-guide .socialMediaWrapper3 {
+  position: absolute;
+  top: 156px;
+  left: 360px;
+  display: flex;
+  flex-direction: column;
+  width: 1059px;
+  height: 18px;
+}
+.grand-guide .socialMediaMiniDescription1 {
+  display: flex;
+  align-items: center;
+  margin: 0 965px 1px 0;
+  width: 94px;
+  height: 17px;
+  font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .socialMediaWrapper4 {
+  position: absolute;
+  top: 173px;
+  left: 360px;
+  display: flex;
+  flex-direction: column;
+  width: 1059px;
+  height: 18px;
+}
+.grand-guide .socialMediaMiniDescription2 {
+  display: flex;
+  align-items: center;
+  margin: 0 965px 1px 0;
+  width: 94px;
+  height: 17px;
+  font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .socialMediaText {
+  position: absolute;
+  top: 112px;
+  right: 360px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 89px;
+  height: 19px;
+  font: 700 14px/1.35 "Open Sans", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  text-align: right;
+}
+.grand-guide .socialMediaImage1 {
+  position: absolute;
+  top: 148px;
+  left: 1419px;
+  width: 32px;
+  height: 32px;
+}
+.grand-guide .socialMediaImage2 {
+  position: absolute;
+  top: 148px;
+  right: 433px;
+  width: 32px;
+  height: 32px;
+}
+.grand-guide .socialMediaImage3 {
+  position: absolute;
+  top: 148px;
+  right: 396px;
+  width: 32px;
+  height: 32px;
+}
+.grand-guide .socialMediaImage4 {
+  position: absolute;
+  top: 148px;
+  right: 360px;
+  width: 32px;
+  height: 32px;
+}
+.grand-guide .socialMediaHighlight1 {
+  position: absolute;
+  top: 255px;
+  left: 360px;
+  display: flex;
+  align-items: center;
+  width: 76px;
+  height: 28px;
+  font: 900 18px/1.51 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: -0.9px;
+}
+.grand-guide .socialMediaMiniDescription4 {
+  position: absolute;
+  top: 301px;
+  left: 360px;
+  display: flex;
+  align-items: center;
+  width: 94px;
+  height: 17px;
+  font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .socialMediaHighlightContainer {
+  position: absolute;
+  top: 417px;
+  left: 360px;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 28px;
+}
+.grand-guide .socialMediaHighlight2 {
+  display: flex;
+  align-items: center;
+  margin: 0 1116px 0 0;
+  width: 84px;
+  height: 28px;
+  font: 900 18px/1.51 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
+.grand-guide .socialMediaImage5 {
+  position: absolute;
+  top: 473px;
+  left: 360px;
+  width: 160px;
+  height: 67px;
+}
+.grand-guide .socialMediaMiniDescription6 {
+  position: absolute;
+  bottom: 126px;
+  left: 360px;
+  display: flex;
+  align-items: center;
+  width: 93px;
+  height: 17px;
+  font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+  letter-spacing: -0.1px;
+}
