@@ -1,0 +1,32 @@
+name: Generate Image List
+
+on:
+  push:
+    paths:
+      - 'public/app/random/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Generate images.json
+      run: |
+        cd public/app/random
+        ls *.gif > images.json
+        echo '{"images":[' > temp.json
+        sed -e 's/^/"/' -e 's/$/"/' -e 's/$/,/' images.json >> temp.json
+        sed '$ s/.$//' temp.json > images.json
+        echo ']}' >> images.json
+        rm temp.json
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'GitHub Actions'
+        git config --global user.email 'actions@github.com'
+        git add public/app/random/images.json
+        git commit -m "Atualizar lista de imagens"
+        git push
