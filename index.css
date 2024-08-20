@@ -624,6 +624,11 @@ button {
   text-align: left;
   z-index: 122;
 }
+
+body {
+  background-color: #080A0F;
+}
+
 .background-f {
   display: flex;
   flex-direction: column;
