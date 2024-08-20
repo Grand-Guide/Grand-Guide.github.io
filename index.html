@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Redirecionando...</title>
+    <meta charset="UTF-8" />
+    <title>Redirecionando - Grand Guide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta 
         name="description" 
         content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!"
     />
-
-    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Grand Guide - Wiki" />
     <meta property="og:description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
     <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" />
     <meta property="og:url" content="https://grand-guide.github.io/" />
     <meta property="og:type" content="website" />
     <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
-
+    
+    <!-- Inclusão de fontes -->
+    <link rel="stylesheet" href="public/fonts/font.css" />
+    
     <style>
         body {
             display: flex;
@@ -26,16 +27,118 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: #282c34;
-            color: #61dafb;
+            font-family: 'CustomFont', sans-serif; /* Substitua 'CustomFont' pelo nome real da sua fonte */
+            background-color: #f7f7f7;
+            color: #333;
             text-align: center;
         }
 
-        .redirect-message {
-            font-size: 24px;
-            animation: fade-in 1.5s ease-in-out infinite alternate;
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+        .header {
             margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            color: #666;
+            position: relative;
+            display: inline-block;
+            padding-right: 60px; /* Espaço para os pontos de carregamento */
+        }
+
+        .dots {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            width: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            color: #666;
+            white-space: nowrap;
+        }
+
+        .dot {
+            opacity: 0;
+            animation: dot-blinking 3s steps(3, end) forwards;
+        }
+
+        .dot:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 2s;
+        }
+
+        @keyframes dot-blinking {
+            0% {
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            40% {
+                opacity: 1;
+            }
+            60% {
+                opacity: 1;
+            }
+            80% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .random-image {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin: 20px auto;
+            display: none; /* Oculta a imagem inicialmente */
+        }
+
+        .random-image.visible {
+            display: block; /* Mostra a imagem quando estiver carregada */
+        }
+
+        .placeholder {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            background-color: #ccc;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .redirect-message {
+            font-size: 1.5em;
+            color: #333;
         }
 
         .redirect-message span {
@@ -44,63 +147,60 @@
         }
 
         .construction-message {
-            font-size: 18px;
+            font-size: 1.2em;
             color: #f39c12;
             margin-top: 20px;
             opacity: 0.8;
         }
-
-        .random-image {
-            width: 200px;
-            height: 200px;
-            margin-bottom: 20px;
-            object-fit: contain;
-        }
-
-        @keyframes fade-in {
-            from {
-                opacity: 0.3;
-            }
-            to {
-                opacity: 1;
-            }
-        }
     </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Bem-vindo ao Grand Guide</h1>
+            <p>Estamos redirecionando você para a nova página<span class="dots">
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+                <span class="dot">.</span>
+            </span></p>
+        </header>
+        <div id="placeholder" class="placeholder">Carregando imagem...</div>
+        <img id="random-image" class="random-image" src="" alt="Imagem Aleatória">
+
+        <div class="construction-message">
+            <p>Lembre-se: o site ainda está em construção. Novidades em breve!</p>
+        </div>
+    </div>
     <script>
-        async function loadRandomImage() {
-            try {
-                const response = await fetch('/app/random/images.json');
-                const data = await response.json();
-                const images = data.images;
-                const randomIndex = Math.floor(Math.random() * images.length);
-                const randomImage = `/app/random/${images[randomIndex]}`;
-                const imgElement = document.getElementById('random-image');
-                imgElement.src = randomImage;
-            } catch (error) {
-                console.error('Erro ao carregar a lista de imagens:', error);
-            }
+        // Lista das imagens GIF
+        const images = [
+            'public/app/random/img-1.gif',
+            'public/app/random/img-2.gif',
+            'public/app/random/img-3.gif',
+            'public/app/random/img-4.gif',
+            'public/app/random/img-5.gif',
+        ];
+
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * images.length);
+            return images[randomIndex];
         }
 
         window.onload = function() {
-            loadRandomImage();
+            const imgElement = document.getElementById('random-image');
+            const placeholder = document.getElementById('placeholder');
 
-            // Redireciona após 3 segundos
-            setTimeout(function() {
-                window.location.href = "gg.html";
-            }, 3000);
+            imgElement.src = getRandomImage();
+            imgElement.onload = function() {
+                imgElement.classList.add('visible');
+                placeholder.style.display = 'none';
+            };
         };
+
+        // Redireciona após 4 segundos
+        setTimeout(function() {
+            window.location.href = "gg.html";
+        }, 4000);
     </script>
-</head>
-<body>
-    <img id="random-image" class="random-image" src="" alt="Imagem Aleatória">
-
-    <div class="redirect-message">
-        <p>Redirecionando para a nova página</p>
-        <p>Por favor, aguarde<span>.</span><span>.</span><span>.</span></p>
-    </div>
-
-    <div class="construction-message">
-        <p>Lembre-se: o site ainda está em construção. Novidades em breve!</p>
-    </div>
 </body>
 </html>
