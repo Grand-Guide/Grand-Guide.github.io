@@ -1,7 +1,7 @@
 .grand-guide.mainSection {
   display: flex;
   flex-direction: column;
-  background-color: #080a0f;
+  background-color: rgb(8, 10, 15);
 }
 .grand-guide .searchSection {
   position: relative;
@@ -21,7 +21,7 @@
   left: 0;
   width: 1920px;
   height: 84px;
-  background-color: #1e252e;
+  background-color: rgb(30, 37, 46);
 }
 .grand-guide .heroTitleSearch_box {
   position: absolute;
@@ -34,15 +34,15 @@
 }
 .grand-guide .heroTitleSearch {
   font: 400 64px/0.96 Iceland, Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .grand-guide .heroTitleSearch_span0 {
   font: 1em/0.96 Iceland, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .heroTitleSearch_span1 {
   font: 1em/0.96 Iceland, Helvetica, Arial, serif;
-  color: gold;
+  color: rgb(255, 215, 0);
 }
 .grand-guide .textServers {
   position: absolute;
@@ -53,7 +53,7 @@
   width: 49px;
   height: 16px;
   font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .textGitBase {
   position: absolute;
@@ -64,7 +64,7 @@
   width: 96px;
   height: 16px;
   font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   letter-spacing: -0.31px;
 }
 .grand-guide .groupSection {
@@ -80,7 +80,7 @@
   left: 0;
   width: 309px;
   height: 41px;
-  outline: 1px solid gold;
+  outline: 1px solid rgb(255, 215, 0);
   outline-offset: -1px;
 }
 .grand-guide .searchPrompt {
@@ -92,7 +92,7 @@
   width: 161px;
   height: 17px;
   font: 500 15px/1.13 Geo, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .searchImage {
   position: absolute;
@@ -110,7 +110,7 @@
   width: 96px;
   height: 16px;
   font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   letter-spacing: -0.31px;
 }
 .grand-guide .heroTitleContribution_box {
@@ -124,23 +124,23 @@
 }
 .grand-guide .heroTitleContribution {
   font: 700 64px/1 "Chakra Petch", Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .grand-guide .heroTitleContribution_span0 {
   font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .heroTitleContribution_span1 {
   font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
-  color: #00b749;
+  color: rgb(0, 183, 73);
 }
 .grand-guide .heroTitleContribution_span2 {
   font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .heroTitleContribution_span3 {
   font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
-  color: gold;
+  color: rgb(255, 215, 0);
 }
 .grand-guide .contributeText {
   position: absolute;
@@ -151,7 +151,7 @@
   width: 81px;
   height: 16px;
   font: 600 13px/1.23 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .contributionWrapper {
   position: absolute;
@@ -170,23 +170,23 @@
 }
 .grand-guide .contributionDescription {
   font: 600 16px/1.5 "Chakra Petch", Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
 }
 .grand-guide .contributionDescription_span0 {
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .contributionDescription_span1 {
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
-  color: #00b749;
+  color: rgb(0, 183, 73);
 }
 .grand-guide .contributionDescription_span2 {
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .contributionDescription_span3 {
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
-  color: #ffe900;
+  color: rgb(255, 233, 0);
 }
 .grand-guide .fanBaseImage1 {
   position: absolute;
@@ -270,7 +270,7 @@
   left: -2px;
   width: 1924px;
   height: 267px;
-  background-color: #1e252e;
+  background-color: rgb(30, 37, 46);
 }
 .grand-guide .contentBox {
   position: relative;
@@ -289,16 +289,16 @@
 }
 .grand-guide .heroTitleDataRegistered {
   font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 .grand-guide .heroTitleDataRegistered_span0 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: gold;
+  color: rgb(255, 215, 0);
 }
 .grand-guide .heroTitleDataRegistered_span1 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: #00b749;
+  color: rgb(0, 183, 73);
 }
 .grand-guide .highlightDescription1 {
   position: absolute;
@@ -309,7 +309,7 @@
   width: 506px;
   height: 48px;
   font: 16px/1.5 Inter, Helvetica, Arial, serif;
-  color: #d7f9ff;
+  color: rgb(215, 249, 255);
   text-align: center;
 }
 .grand-guide .highlightDescription2 {
@@ -321,7 +321,7 @@
   width: 506px;
   height: 48px;
   font: 16px/1.5 Inter, Helvetica, Arial, serif;
-  color: #d7f9ff;
+  color: rgb(215, 249, 255);
   text-align: center;
 }
 .grand-guide .highlightDescription3 {
@@ -333,7 +333,7 @@
   width: 494px;
   height: 48px;
   font: 16px/1.5 Inter, Helvetica, Arial, serif;
-  color: #d7f9ff;
+  color: rgb(215, 249, 255);
   text-align: center;
 }
 .grand-guide .heroTitleDataConfirmed_box {
@@ -348,16 +348,16 @@
 }
 .grand-guide .heroTitleDataConfirmed {
   font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 .grand-guide .heroTitleDataConfirmed_span0 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: gold;
+  color: rgb(255, 215, 0);
 }
 .grand-guide .heroTitleDataConfirmed_span1 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: #00b749;
+  color: rgb(0, 183, 73);
 }
 .grand-guide .heroTitleVeteranGuides_box {
   position: absolute;
@@ -371,16 +371,16 @@
 }
 .grand-guide .heroTitleVeteranGuides {
   font: 700 43px/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: black;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 .grand-guide .heroTitleVeteranGuides_span0 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: gold;
+  color: rgb(255, 215, 0);
 }
 .grand-guide .heroTitleVeteranGuides_span1 {
   font: 700 1em/1.17 "Chakra Petch", Helvetica, Arial, serif;
-  color: #00b749;
+  color: rgb(0, 183, 73);
 }
 .grand-guide .imageCollectionImage3 {
   position: absolute;
@@ -399,7 +399,7 @@
   width: 604px;
   height: 99px;
   font: 700 41px/1.2 "Chakra Petch", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
 }
 .grand-guide .socialMediaSection {
@@ -410,7 +410,7 @@
 .grand-guide .socialMediaWrapper1 {
   position: relative;
   min-height: 699px;
-  background-color: #1e252e;
+  background-color: rgb(30, 37, 46);
 }
 .grand-guide .socialMediaWrapper2 {
   position: absolute;
@@ -437,7 +437,7 @@
   width: 94px;
   height: 17px;
   font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .socialMediaWrapper4 {
   position: absolute;
@@ -455,7 +455,7 @@
   width: 94px;
   height: 17px;
   font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .socialMediaText {
   position: absolute;
@@ -467,7 +467,7 @@
   width: 89px;
   height: 19px;
   font: 700 14px/1.35 "Open Sans", Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: right;
 }
 .grand-guide .socialMediaImage1 {
@@ -507,7 +507,7 @@
   width: 76px;
   height: 28px;
   font: 900 18px/1.51 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   letter-spacing: -0.9px;
 }
 .grand-guide .socialMediaMiniDescription4 {
@@ -519,7 +519,7 @@
   width: 94px;
   height: 17px;
   font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .socialMediaHighlightContainer {
   position: absolute;
@@ -537,7 +537,7 @@
   width: 84px;
   height: 28px;
   font: 900 18px/1.51 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .socialMediaImage5 {
   position: absolute;
@@ -555,6 +555,6 @@
   width: 93px;
   height: 17px;
   font: 400 12px/1.39 Inter, Helvetica, Arial, serif;
-  color: white;
+  color: rgb(255, 255, 255);
   letter-spacing: -0.1px;
 }
