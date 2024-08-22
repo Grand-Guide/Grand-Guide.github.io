@@ -133,6 +133,10 @@
   font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
   color: rgb(255, 215, 0);
 }
+.grand-guide .heroTitleContribution_span4 {
+  font: 700 1em/1 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
+}
 .grand-guide .contributeText {
   position: absolute;
   top: 35px;
@@ -178,6 +182,10 @@
 .grand-guide .contributionDescription_span3 {
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
   color: rgb(255, 233, 0);
+}
+.grand-guide .contributionDescription_span4 {
+  font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
+  color: rgb(255, 255, 255);
 }
 .grand-guide .sprite {
   position: absolute;
