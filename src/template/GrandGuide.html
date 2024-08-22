@@ -1,70 +1,96 @@
 <!DOCTYPE html>
-
 <html>
-
   <head>
+    <meta charset="UTF-8" />
+    <title>Grand Guide - Wiki</title>
 
-    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iceland&display=swap">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta 
+        name="description" 
+        content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!"
+    />
+    <meta property="og:title" content="Grand Guide - Wiki" />
+    <meta property="og:description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" />
+    <meta property="og:url" content="https://grand-guide.github.io/" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
-
     <!-- Please DO NOT remove this line, all link and script tags will be merged to here -->
+    <link rel="stylesheet" type="text/css" href="./css/common.css" />
+    <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="./css/GrandGuide.css" />
+    <style>
+      .heroTitleSearch_span0,
+      .heroTitleSearch_span1 {
+        display: inline-block;
+        vertical-align: middle;
+      }
 
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
+      /* Additional styles to remove underline from links */
+      .textServers, .textGitBase, .textContactUs {
+        text-decoration: none;
+        color: inherit; /* Maintain text color */
+        cursor: pointer; /* Indicate clickable */
+      }
 
-    <link rel="stylesheet" type="text/css" href="/css/fonts.css" />
-
-    <link rel="stylesheet" type="text/css" href="/css/GrandGuide.css" />
-
+      .textServers:hover, .textGitBase:hover, .textContactUs:hover {
+        text-decoration: underline; /* Optional: add underline on hover for visual feedback */
+      }
+    </style>
   </head>
-
   <body class="flex-column">
-
     <main class="grand-guide mainSection">
-      <!-- Main content area of the webpage --> 
+      <!-- Main content area of the webpage -->
       <section class="searchSection">
-        <!-- Section for searching and discovering content --> 
+        <!-- Section for searching and discovering content -->
+        <div class="searchWrapper">
+          <input type="text" class="searchInput" placeholder="O que você quer pesquisar?" />
+          <button class="searchButton">
+            <img src="/web/assets/searchicon.svg" alt="Search Icon" />
+          </button>
+        </div>
+        
         <div class="formGroup">
-          <!-- Group of form elements --> 
+          <!-- Group of form elements -->
           <div class="formWrapper"></div>
-          <!-- Wrapper for form elements styling. --> 
+          <!-- Wrapper for form elements styling. -->
           <h1 class="heroTitleSearch_box">
-            <!-- Main title for search functionality --> 
+            <!-- Main title for search functionality -->
             <span class="heroTitleSearch">
-              <span class="heroTitleSearch_span0">GG</span>
-              <span class="heroTitleSearch_span1">!</span>
+              <span class="heroTitleSearch_span0">GG</span
+              ><span class="heroTitleSearch_span1">!</span>
             </span>
           </h1>
-          <div class="textServers">
+          <a href="https://example.com/servers" class="textServers">
             <!-- Label indicating servers --> 
             SERVERS
-          </div>
-          <div class="textGitBase">
-            <!-- Label indicating Git base --> 
+          </a>
+          <a href="https://example.com/gitbase" class="textGitBase">
+            <!-- Label indicating Git base -->
             GIT-BASE
-          </div>
-          <div class="groupSection">
-            <!-- Group of content including prompt and image --> 
-            <div class="rectangleIndicator"></div>
-            <p class="searchPrompt">
-              <!-- Prompt asking what the user wants to search for --> 
-              O que você quer pesquisar?
-            </p>
-            <img class="searchImage" src="/assets/b6fbcde830864ff817db47e7565970ab.svg" alt="alt text" />
-            <!-- Image related to the search section. --> 
-          </div>
-          <div class="textContactUs">
-            <!-- Label for contacting support --> 
+          </a>
+          <a href="https://example.com/contact" class="textContactUs">
+            <!-- Label for contacting support -->
             CONTATE-NOS
+          </a>
+          <div class="groupSection">
+            <input
+              class="searchInput"
+              type="text"
+              placeholder="O que você quer pesquisar?"
+            />
+            <!-- Image related to the search section. -->
           </div>
         </div>
         <h1 class="heroTitleContribution_box">
-          <!-- Main title for contribution section --> 
+          <!-- Main title for contribution section -->
           <span class="heroTitleContribution">
-            <span class="heroTitleContribution_span0">Sua </span>
-            <span class="heroTitleContribution_span1">Fan</span>
+            <span class="heroTitleContribution_span0">Sua </span
+            ><span class="heroTitleContribution_span1">Fan</span>
             <span class="heroTitleContribution_span2">
               -Wiki
               <br />
@@ -73,40 +99,84 @@
             <span class="heroTitleContribution_span3">Grand Fantasia!</span>
           </span>
         </h1>
-        <div class="contributeText">
-          <!-- Text inviting users to contribute --> 
+        <a href="https://example.com/contact" class="contributeText">
+          <!-- Text inviting users to contribute -->
           CONTRIBUIR
-        </div>
+        </a>
         <div class="contributionWrapper">
-          <!-- Wrapper for contribution descriptions --> 
+          <!-- Wrapper for contribution descriptions -->
           <p class="contributionDescription_box">
-            <!-- Description about contribution opportunities --> 
+            <!-- Description about contribution opportunities -->
             <span class="contributionDescription">
-              <span class="contributionDescription_span0">Explore uma vasta base de </span>
-              <span class="contributionDescription_span1">conhecimento</span>
-              <span class="contributionDescription_span2"> feita por fãs de </span>
-              <span class="contributionDescription_span3">Grand Fantasia.</span>
+              <span class="contributionDescription_span0"
+                >Explore uma vasta base de </span
+              ><span class="contributionDescription_span1">conhecimento</span
+              ><span class="contributionDescription_span2">
+                feita por fãs de </span
+              ><span class="contributionDescription_span3"
+                >Grand Fantasia.</span
+              >
             </span>
           </p>
         </div>
-        <img class="fanBaseImage1" src="/assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png" alt="alt text" />
-        <img class="fanBaseImage2" src="/assets/27a08a2145e18e07cb83825f6eb270e5.png" alt="alt text" />
-        <img class="fanBaseImage3" src="/assets/209e4cd1a8756850a15716084e4fd206.png" alt="alt text" />
-        <img class="fanBaseImage4" src="/assets/7bbeef759080dc82bbcb6b1e061d4f3d.png" alt="alt text" />
-        <img class="fanBaseImage5" src="/assets/10daad7c81f9e8c6d4406086a3bdbcdd.png" alt="alt text" />
-        <img class="fanBaseImage6" src="/assets/6fc2d1db6c3dcf30ad972107007c9d8c.png" alt="alt text" />
-        <img class="fanBaseImage7" src="/assets/41db65e0fc470332b429a9d7f8301da1.png" alt="alt text" />
-        <img class="fanBaseImage8" src="/assets/245d322eb47c1e2f2209cf7e03fb4b11.png" alt="alt text" />
-        <img class="fanBaseImage9" src="/assets/df2963173a106e9af4bf1b9566b4b29a.png" alt="alt text" />
+        <img
+          class="sprite"
+          src="./assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage2"
+          src="./assets/27a08a2145e18e07cb83825f6eb270e5.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage3"
+          src="./assets/209e4cd1a8756850a15716084e4fd206.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage4"
+          src="./assets/7bbeef759080dc82bbcb6b1e061d4f3d.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage5"
+          src="./assets/10daad7c81f9e8c6d4406086a3bdbcdd.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage6"
+          src="./assets/6fc2d1db6c3dcf30ad972107007c9d8c.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage7"
+          src="./assets/41db65e0fc470332b429a9d7f8301da1.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage8"
+          src="./assets/245d322eb47c1e2f2209cf7e03fb4b11.png"
+          alt="alt text"
+        />
+        <img
+          class="fanBaseImage9"
+          src="./assets/df2963173a106e9af4bf1b9566b4b29a.png"
+          alt="alt text"
+        />
       </section>
 
       <section class="imageCollectionSection">
-        <!-- Section displaying a collection of images --> 
-        <img class="imageCollectionImage1" src="/assets/ec0aa24730c82ee255d94495ef2d7479.png" alt="alt text" />
+        <!-- Section displaying a collection of images -->
+        <img
+          class="imageCollectionImage1"
+          src="./assets/ec0aa24730c82ee255d94495ef2d7479.png"
+          alt="alt text"
+        />
         <div class="imageCollectionBox"></div>
         <div class="contentBox">
           <h1 class="heroTitleDataRegistered_box">
-            <!-- Title for the registered data section --> 
+            <!-- Title for the registered data section -->
             <span class="heroTitleDataRegistered">
               <span class="heroTitleDataRegistered_span0">
                 2024
@@ -115,11 +185,20 @@
               <span class="heroTitleDataRegistered_span1">Dados Registrados</span>
             </span>
           </h1>
-          <p class="highlightDescription1">Dados verificados e validados pela equipe de analise assegurando a precisão e a confiança em cada detalhe.</p>
-          <p class="highlightDescription2">Dicas e estratégias fornecidas por jogadores experientes, com anos de conhecimento e prática, oferecendo dicas valiosas</p>
-          <p class="highlightDescription3">Com a colaboração de servidores privados e o apoio de fãs ao redor do mundo, criamos uma base sólida e confiável.</p>
+          <p class="highlightDescription1">
+            Dados verificados e validados pela equipe de analise assegurando a
+            precisão e a confiança em cada detalhe.
+          </p>
+          <p class="highlightDescription2">
+            Dicas e estratégias fornecidas por jogadores experientes, com anos de
+            conhecimento e prática, oferecendo dicas valiosas
+          </p>
+          <p class="highlightDescription3">
+            Com a colaboração de servidores privados e o apoio de fãs ao redor do
+            mundo, criamos uma base sólida e confiável.
+          </p>
           <h1 class="heroTitleDataConfirmed_box">
-            <!-- Title for the confirmed data section --> 
+            <!-- Title for the confirmed data section -->
             <span class="heroTitleDataConfirmed">
               <span class="heroTitleDataConfirmed_span0">
                 2024
@@ -129,7 +208,7 @@
             </span>
           </h1>
           <h1 class="heroTitleVeteranGuides_box">
-            <!-- Title for veteran guides section --> 
+            <!-- Title for veteran guides section -->
             <span class="heroTitleVeteranGuides">
               <span class="heroTitleVeteranGuides_span0">
                 2024
@@ -139,9 +218,13 @@
             </span>
           </h1>
         </div>
-        <img class="imageCollectionImage3" src="/assets/2a61ef7ab7fc8ca80caa952f25415e93.png" alt="alt text" />
+        <img
+          class="imageCollectionImage3"
+          src="./assets/2a61ef7ab7fc8ca80caa952f25415e93.png"
+          alt="alt text"
+        />
         <h1 class="heroTitleTips">
-          <!-- Title for tips to start the journey --> 
+          <!-- Title for tips to start the journey -->
           comece sua jornada com dicas
           <br />
           valiosas para cada classe!
@@ -149,35 +232,59 @@
       </section>
 
       <section class="socialMediaSection">
-        <!-- Section for social media links and information --> 
+        <!-- Section for social media links and information -->
         <div class="socialMediaWrapper1"></div>
-        <div class="socialMediaWrapper2" style="--src:url(/assets/94f7ad8ed6ae1096b1000bb9d410d1ac.png)"></div>
-        <div class="socialMediaWrapper3"><div class="socialMediaMiniDescription1">Mini descrição 1</div></div>
-        <div class="socialMediaWrapper4"><div class="socialMediaMiniDescription2">Mini descrição 2</div></div>
+        <div
+          class="socialMediaWrapper2"
+          style="--src:url(./assets/94f7ad8ed6ae1096b1000bb9d410d1ac.png)"
+        ></div>
+        <div class="socialMediaWrapper3">
+          <div class="socialMediaMiniDescription1">Mini descrição 1</div>
+        </div>
+        <div class="socialMediaWrapper4">
+          <div class="socialMediaMiniDescription2">Mini descrição 2</div>
+        </div>
         <div class="socialMediaText">
-          <!-- Label for social media section --> 
+          <!-- Label for social media section -->
           Redes Socias
         </div>
-        <img class="socialMediaImage1" src="/assets/091446f82f2e16c325c81673e1fec1ae.svg" alt="alt text" />
-        <img class="socialMediaImage2" src="/assets/65b2fdf0f3161a1b411265da3eed4e9d.svg" alt="alt text" />
-        <img class="socialMediaImage3" src="/assets/bc7f376ee6588e73ad2a64b7eff2ce58.svg" alt="alt text" />
-        <img class="socialMediaImage4" src="/assets/df3a1857913a664c6564f27d17e07c71.svg" alt="alt text" />
+        <img
+          class="socialMediaImage1"
+          src="./assets/091446f82f2e16c325c81673e1fec1ae.svg"
+          alt="alt text"
+        />
+        <img
+          class="socialMediaImage2"
+          src="./assets/65b2fdf0f3161a1b411265da3eed4e9d.svg"
+          alt="alt text"
+        />
+        <img
+          class="socialMediaImage3"
+          src="./assets/bc7f376ee6588e73ad2a64b7eff2ce58.svg"
+          alt="alt text"
+        />
+        <img
+          class="socialMediaImage4"
+          src="./assets/df3a1857913a664c6564f27d17e07c71.svg"
+          alt="alt text"
+        />
         <p class="socialMediaHighlight1">
-          <!-- Highlight text in the social media section. --> 
+          <!-- Highlight text in the social media section. -->
           Texto - 1
         </p>
         <div class="socialMediaMiniDescription4">Mini descrição 4</div>
         <div class="socialMediaHighlightContainer">
-          <!-- Container for highlights related to social media. --> 
+          <!-- Container for highlights related to social media. -->
           <p class="socialMediaHighlight2">Texto - 5</p>
         </div>
-        <img class="socialMediaImage5" src="/assets/0776dea26a868d2d2848af5910672309.png" alt="alt text" />
-        <!-- Image associated with social media content. --> 
+        <img
+          class="socialMediaImage5"
+          src="./assets/0776dea26a868d2d2848af5910672309.png"
+          alt="alt text"
+        />
+        <!-- Image associated with social media content. -->
         <div class="socialMediaMiniDescription6">Mini descrição 6</div>
       </section>
-
     </main>
-
   </body>
-
 </html>

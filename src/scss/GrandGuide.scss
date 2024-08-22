@@ -89,16 +89,6 @@
     height: 41px;
   }
 
-  .rectangleIndicator {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 309px;
-    height: 41px;
-    outline: 1px solid rgb(255 215 0);
-    outline-offset: -1px;
-  }
-
   .searchPrompt {
     position: absolute;
     top: 14px;
@@ -221,7 +211,7 @@
     color: rgb(255 233 0);
   }
 
-  .fanBaseImage1 {
+  .sprite {
     position: absolute;
     top: 137px;
     left: 1218px;

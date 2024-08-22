@@ -17,6 +17,63 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     opacity: 1;
 }
 
+.searchWrapper {
+    display: flex;
+    align-items: center;
+    position: relative; /* Adicione esta linha para garantir que o ícone fique posicionado corretamente */
+  }
+  
+  .searchInput {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ffd700;
+    border-radius: 1px;
+    background-color: #1E252E;
+    color: #ff0000;
+    font-family: 'Iceland', sans-serif; /* Define a fonte Chakra Petch */
+    font-weight: 400; /* Ajuste o peso da fonte conforme necessário */
+    font-size: 15px; /* Ajuste o tamanho da fonte conforme necessário */
+  }
+    
+  .searchInput::placeholder {
+    color: #ffffff; /* Define a cor do texto do placeholder */
+  }
+  
+  .searchButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex; /* Adicione esta linha para centralizar o ícone */
+    align-items: center; /* Adicione esta linha para centralizar o ícone */
+  }
+  
+  .searchButton img {
+    width: 24px; /* Ajuste o tamanho conforme necessário */
+    height: 24px; /* Ajuste o tamanho conforme necessário */
+  }
+
+.textServers {
+  color: #1E252E; /* Cor do texto */
+  text-decoration: none; /* Remove o sublinhado */
+  font-weight: bold; /* Negrito, se desejar */
+}
+
+.textServers:hover {
+  color: #1E252E; /* Cor ao passar o mouse */
+  text-decoration: underline; /* Sublinhado ao passar o mouse */
+}
+
+.contributeText {
+    color: #1E252E; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito, se desejar */
+  }
+  
+  .contributeText:hover {
+    color: #1E252E; /* Cor ao passar o mouse */
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+  }
+
 ul {
     display: block;
     margin: 0;
