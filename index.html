@@ -17,7 +17,16 @@
     <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
     
     <!-- Inclusão de fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/fonts/font.css" />
+
+    <!-- Inclusão do arquivo CSS -->
+    <link rel="stylesheet" href="src/css/common.css" /> <!-- Certifique-se de atualizar o caminho -->
     
     <style>
         body {
@@ -28,148 +37,90 @@
             height: 100vh;
             margin: 0;
             font-family: 'CustomFont', sans-serif; /* Substitua 'CustomFont' pelo nome real da sua fonte */
-            background-color: #f7f7f7;
-            color: #333;
+            background-color: #030303;
+            background-image: linear-gradient(to bottom, #2A2D35 0%, #030303 100%);
+            color: #FFFFFF;
             text-align: center;
         }
 
-        .container {
+        .loading-container {
             max-width: 800px;
             width: 100%;
             padding: 20px;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
 
-        .header {
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            font-size: 2.5em;
-            color: #333;
-        }
-
-        .header p {
-            font-size: 1.2em;
-            color: #666;
-            position: relative;
-            display: inline-block;
-            padding-right: 60px; /* Espaço para os pontos de carregamento */
-        }
-
-        .dots {
-            position: absolute;
-            right: 0;
-            top: 0;
-            height: 100%;
-            width: 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2em;
-            color: #666;
-            white-space: nowrap;
-        }
-
-        .dot {
-            opacity: 0;
-            animation: dot-blinking 3s steps(3, end) forwards;
-        }
-
-        .dot:nth-child(1) {
-            animation-delay: 0s;
-        }
-
-        .dot:nth-child(2) {
-            animation-delay: 1s;
-        }
-
-        .dot:nth-child(3) {
-            animation-delay: 2s;
-        }
-
-        @keyframes dot-blinking {
-            0% {
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-            }
-            40% {
-                opacity: 1;
-            }
-            60% {
-                opacity: 1;
-            }
-            80% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .random-image {
-            width: 100%;
+        .loading-image {
             max-width: 300px;
             height: auto;
-            margin: 20px auto;
+            margin: 0 auto 20px auto;
             display: none; /* Oculta a imagem inicialmente */
         }
 
-        .random-image.visible {
-            display: block; /* Mostra a imagem quando estiver carregada */
-        }
-
-        .placeholder {
-            width: 100%;
-            max-width: 300px;
-            height: auto;
-            background-color: #ccc;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-
-        .redirect-message {
+        .loading-text {
             font-size: 1.5em;
-            color: #333;
-        }
-
-        .redirect-message span {
+            margin-bottom: 10px;
+            font-family: 'Chakra Petch', sans-serif;
             font-weight: bold;
-            color: #f39c12;
         }
 
-        .construction-message {
-            font-size: 1.2em;
-            color: #f39c12;
+        .loading-divider {
+            width: 4%; /* Ajuste conforme necessário */
+            height: 2px;
+            margin: 0 auto 10px auto;
+            background-color: #FFFFFF;
+            border-radius: 1px;
+        }
+
+        .loading-title {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #FFFFFF; /* Cor branca */
+            font-family: 'Barlow Condensed', sans-serif;
+        }
+
+        .loading-bar-container {
+            width: 100%;
+            height: 10px;
+            background-color: #333;
+            border-radius: 5px;
+            overflow: hidden;
             margin-top: 20px;
-            opacity: 0.8;
+            position: relative;
+        }
+
+        .loading-bar {
+            height: 100%;
+            width: 0;
+            background-color: #FFFFFF; /* Cor branca */
+            border-radius: 5px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+            }
+            100% {
+                box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.7);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header class="header">
-            <h1>Bem-vindo ao Grand Guide</h1>
-            <p>Estamos redirecionando você para a nova página<span class="dots">
-                <span class="dot">.</span>
-                <span class="dot">.</span>
-                <span class="dot">.</span>
-            </span></p>
-        </header>
-        <img id="random-image" class="random-image" src="" alt="Imagem Aleatória">
-
-        <div class="construction-message">
-            <p>Lembre-se: o site ainda está em construção. Novidades em breve!</p>
+    <div class="loading-container">
+        <img id="random-image" class="loading-image" src="" alt="a">
+        <div class="loading-text">Aguarde um pouco enquanto redirecionamos você...</div>
+        <div class="loading-divider"></div>
+        <div class="loading-title">O site ainda está em construção. Novidades em breve!</div>
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loadingBar"></div>
         </div>
     </div>
+    
     <script>
         // Lista das imagens GIF
         const images = [
@@ -187,19 +138,41 @@
 
         window.onload = function() {
             const imgElement = document.getElementById('random-image');
-            const placeholder = document.getElementById('placeholder');
 
+            // Seleciona uma imagem aleatória
             imgElement.src = getRandomImage();
+
+            // Mostra a imagem apenas após o carregamento completo
             imgElement.onload = function() {
-                imgElement.classList.add('visible');
-                placeholder.style.display = 'none';
+                imgElement.style.display = 'block'; // Exibe a imagem após o carregamento
             };
         };
 
-        // Redireciona após 4 segundos
+        // Simula o progresso de carregamento
+        let progress = 0;
+        const loadingBar = document.getElementById('loadingBar');
+
+        function updateLoadingBar() {
+            progress += 1;
+            loadingBar.style.width = progress + '%';
+
+            if (progress < 100) {
+                setTimeout(updateLoadingBar, 40); // Ajuste a velocidade do carregamento
+            }
+        }
+
+        updateLoadingBar();
+
+        // Redireciona após o carregamento completo
         setTimeout(function() {
             window.location.href = "./web/GrandGuide.html";
-        }, 4000);
+        }, 400000); // Redireciona após 400 segundos (ajuste conforme necessário)
     </script>
+
 </body>
+
+<div class="footer">
+    <p>&copy; 2024 Grand Guide. All rights reserved.</p>
+</div>
+
 </html>

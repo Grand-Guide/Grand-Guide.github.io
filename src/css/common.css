@@ -90,6 +90,36 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     animation: moveUpDown 3s ease-in-out infinite; /* Mantém a duração e a curva de animação */
   }
   
+  .random-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+    display: none; /* A imagem começa oculta */
+}
+
+.random-image.visible {
+    display: block; /* Mostra a imagem após o carregamento */
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.footer {
+    position: absolute; /* Alterado para absoluto */
+    bottom: 0; /* Fixa o rodapé na parte inferior */
+    left: 20; /* Alinha o rodapé à esquerda */
+    width: 100%; /* Faz o rodapé ocupar toda a largura da página */
+    background-color: #030303; /* Cor de fundo para o rodapé */
+    color: #FFFFFF; /* Cor do texto */
+    text-align: left; /* Centraliza o texto horizontalmente */
+    padding: 5px; /* Reduz o padding para um tamanho mais discreto */
+    font-size: 0.7em; /* Ajusta o tamanho da fonte para um tamanho menor */
+    font-family: 'Barlow Condensed', sans-serif; /* Fonte opcional */
+    box-sizing: border-box; /* Inclui o padding na largura total do elemento */
+}
+
 ul {
     display: block;
     margin: 0;
