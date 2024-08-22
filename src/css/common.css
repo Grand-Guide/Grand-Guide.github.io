@@ -74,6 +74,22 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     text-decoration: underline; /* Sublinhado ao passar o mouse */
   }
 
+  @keyframes moveUpDown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px); /* Aumente a distância de subida */
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  .sprite {
+    animation: moveUpDown 3s ease-in-out infinite; /* Mantém a duração e a curva de animação */
+  }
+  
 ul {
     display: block;
     margin: 0;
