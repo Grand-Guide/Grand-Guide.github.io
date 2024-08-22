@@ -74,15 +74,6 @@
   width: 309px;
   height: 41px;
 }
-.grand-guide .rectangleIndicator {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 309px;
-  height: 41px;
-  outline: 1px solid rgb(255, 215, 0);
-  outline-offset: -1px;
-}
 .grand-guide .searchPrompt {
   position: absolute;
   top: 14px;
@@ -188,7 +179,7 @@
   font: 600 1em/1.5 "Chakra Petch", Helvetica, Arial, serif;
   color: rgb(255, 233, 0);
 }
-.grand-guide .fanBaseImage1 {
+.grand-guide .sprite {
   position: absolute;
   top: 137px;
   left: 1218px;

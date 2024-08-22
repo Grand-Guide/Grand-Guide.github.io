@@ -1,39 +1,64 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
-
     <meta charset="UTF-8" />
     <title>Grand Guide - Wiki</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Iceland&display=swap">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#000000" />
     <meta name="description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
-
     <meta property="og:title" content="Grand Guide - Wiki" />
     <meta property="og:description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
     <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" />
     <meta property="og:url" content="https://grand-guide.github.io/" />
     <meta property="og:type" content="website" />
-
-
     <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
     <link rel="stylesheet" type="text/css" href="./css/common.css" />
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/GrandGuide.css" />
+    <style>
+        .heroTitleSearch_span0,
+        .heroTitleSearch_span1 {
+            display: inline-block;
+            vertical-align: middle;
+        }
 
+        /* Additional styles to remove underline from links */
+        .textServers,
+        .textGitBase,
+        .textContactUs {
+            text-decoration: none;
+            color: inherit;
+            /* Maintain text color */
+            cursor: pointer;
+            /* Indicate clickable */
+        }
 
-
-
+        .textServers:hover,
+        .textGitBase:hover,
+        .textContactUs:hover {
+            text-decoration: underline;
+            /* Optional: add underline on hover for visual feedback */
+        }
+    </style>
 </head>
 
 <body class="flex-column">
-
     <main class="grand-guide mainSection">
         <!-- Main content area of the webpage -->
         <section class="searchSection">
             <!-- Section for searching and discovering content -->
+            <div class="searchWrapper">
+                <input type="text" class="searchInput" placeholder="O que você quer pesquisar?" />
+                <button class="searchButton">
+                    <img src="/web/assets/searchicon.svg" alt="Search Icon" />
+                </button>
+            </div>
+
             <div class="formGroup">
                 <!-- Group of form elements -->
                 <div class="formWrapper"></div>
@@ -41,38 +66,30 @@
                 <h1 class="heroTitleSearch_box">
                     <!-- Main title for search functionality -->
                     <span class="heroTitleSearch">
-              <span class="heroTitleSearch_span0">GG</span>
-                    <span class="heroTitleSearch_span1">!</span>
+              <span class="heroTitleSearch_span0">GG</span><span class="heroTitleSearch_span1">!</span>
                     </span>
                 </h1>
-                <div class="textServers">
+                <a href="https://example.com/servers" class="textServers">
                     <!-- Label indicating servers -->
                     SERVERS
-                </div>
-                <div class="textGitBase">
+                </a>
+                <a href="https://example.com/gitbase" class="textGitBase">
                     <!-- Label indicating Git base -->
                     GIT-BASE
-                </div>
-                <div class="groupSection">
-                    <!-- Group of content including prompt and image -->
-                    <div class="rectangleIndicator"></div>
-                    <p class="searchPrompt">
-                        <!-- Prompt asking what the user wants to search for -->
-                        O que você quer pesquisar?
-                    </p>
-                    <img class="searchImage" src="./assets/b6fbcde830864ff817db47e7565970ab.svg" alt="alt text" />
-                    <!-- Image related to the search section. -->
-                </div>
-                <div class="textContactUs">
+                </a>
+                <a href="https://example.com/contact" class="textContactUs">
                     <!-- Label for contacting support -->
                     CONTATE-NOS
+                </a>
+                <div class="groupSection">
+                    <input class="searchInput" type="text" placeholder="O que você quer pesquisar?" />
+                    <!-- Image related to the search section. -->
                 </div>
             </div>
             <h1 class="heroTitleContribution_box">
                 <!-- Main title for contribution section -->
                 <span class="heroTitleContribution">
-            <span class="heroTitleContribution_span0">Sua </span>
-                <span class="heroTitleContribution_span1">Fan</span>
+            <span class="heroTitleContribution_span0">Sua </span><span class="heroTitleContribution_span1">Fan</span>
                 <span class="heroTitleContribution_span2">
               -Wiki
               <br />
@@ -81,23 +98,23 @@
                 <span class="heroTitleContribution_span3">Grand Fantasia!</span>
                 </span>
             </h1>
-            <div class="contributeText">
+            <a href="https://example.com/contact" class="contributeText">
                 <!-- Text inviting users to contribute -->
                 CONTRIBUIR
-            </div>
+            </a>
             <div class="contributionWrapper">
                 <!-- Wrapper for contribution descriptions -->
                 <p class="contributionDescription_box">
                     <!-- Description about contribution opportunities -->
                     <span class="contributionDescription">
-              <span class="contributionDescription_span0">Explore uma vasta base de </span>
-                    <span class="contributionDescription_span1">conhecimento</span>
-                    <span class="contributionDescription_span2"> feita por fãs de </span>
-                    <span class="contributionDescription_span3">Grand Fantasia.</span>
+              <span class="contributionDescription_span0"
+                >Explore uma vasta base de </span><span class="contributionDescription_span1">conhecimento</span><span class="contributionDescription_span2">
+                feita por fãs de </span><span class="contributionDescription_span3"
+                >Grand Fantasia.</span>
                     </span>
                 </p>
             </div>
-            <img class="fanBaseImage1" src="./assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png" alt="alt text" />
+            <img class="sprite" src="./assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png" alt="alt text" />
             <img class="fanBaseImage2" src="./assets/27a08a2145e18e07cb83825f6eb270e5.png" alt="alt text" />
             <img class="fanBaseImage3" src="./assets/209e4cd1a8756850a15716084e4fd206.png" alt="alt text" />
             <img class="fanBaseImage4" src="./assets/7bbeef759080dc82bbcb6b1e061d4f3d.png" alt="alt text" />
@@ -123,9 +140,18 @@
                     <span class="heroTitleDataRegistered_span1">Dados Registrados</span>
                     </span>
                 </h1>
-                <p class="highlightDescription1">Dados verificados e validados pela equipe de analise assegurando a precisão e a confiança em cada detalhe.</p>
-                <p class="highlightDescription2">Dicas e estratégias fornecidas por jogadores experientes, com anos de conhecimento e prática, oferecendo dicas valiosas</p>
-                <p class="highlightDescription3">Com a colaboração de servidores privados e o apoio de fãs ao redor do mundo, criamos uma base sólida e confiável.</p>
+                <p class="highlightDescription1">
+                    Dados verificados e validados pela equipe de analise assegurando a
+                    precisão e a confiança em cada detalhe.
+                </p>
+                <p class="highlightDescription2">
+                    Dicas e estratégias fornecidas por jogadores experientes, com anos de
+                    conhecimento e prática, oferecendo dicas valiosas
+                </p>
+                <p class="highlightDescription3">
+                    Com a colaboração de servidores privados e o apoio de fãs ao redor do
+                    mundo, criamos uma base sólida e confiável.
+                </p>
                 <h1 class="heroTitleDataConfirmed_box">
                     <!-- Title for the confirmed data section -->
                     <span class="heroTitleDataConfirmed">
@@ -159,7 +185,7 @@
         <section class="socialMediaSection">
             <!-- Section for social media links and information -->
             <div class="socialMediaWrapper1"></div>
-            <div class="socialMediaWrapper2" style="--src:url(/assets/94f7ad8ed6ae1096b1000bb9d410d1ac.png)"></div>
+            <div class="socialMediaWrapper2" style="--src:url(./assets/94f7ad8ed6ae1096b1000bb9d410d1ac.png)"></div>
             <div class="socialMediaWrapper3">
                 <div class="socialMediaMiniDescription1">Mini descrição 1</div>
             </div>
@@ -187,9 +213,7 @@
             <!-- Image associated with social media content. -->
             <div class="socialMediaMiniDescription6">Mini descrição 6</div>
         </section>
-
     </main>
-
 </body>
 
 </html>
