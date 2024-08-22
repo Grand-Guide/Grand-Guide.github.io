@@ -146,9 +146,10 @@ gulp.task('server', function () {
     ui: false,
     server: {
       port,
-      baseDir: './web',
+      baseDir: './',
       directory: true,
     },
+    startPath: '/index.html' // Configura a página inicial
   });
 });
 
