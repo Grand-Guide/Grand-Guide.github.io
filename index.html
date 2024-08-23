@@ -2,45 +2,59 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8" />
-    <title>Redirecionando...</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#000000" />
-    <meta 
-        name="description" 
-        content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!"
-    />
+    <title>Grand Guide - Wiki</title>
+
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Grand Guide - Wiki de Grand Fantasia">
+    <meta name="description" content="Explore a Fan-Wiki definitiva de Grand Fantasia com guias completos, dicas de especialistas e uma comunidade global de fãs.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grand-guide.github.io/">
+    <meta property="og:title" content="Grand Guide - Wiki de Grand Fantasia">
+    <meta property="og:description" content="Explore a Fan-Wiki definitiva de Grand Fantasia com guias completos, dicas de especialistas e uma comunidade global de fãs.">
+    <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://grand-guide.github.io/">
+    <meta property="twitter:title" content="Grand Guide - Wiki de Grand Fantasia">
+    <meta property="twitter:description" content="Explore a Fan-Wiki definitiva de Grand Fantasia com guias completos, dicas de especialistas e uma comunidade global de fãs.">
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png">
+
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Grand Guide Team">
+    <meta name="keywords" content="Grand Fantasia, Wiki, Fan-Wiki, MMORPG, Guias, Dicas, RPG, Comunidade">
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
     <!-- Google Metrics & Tags -->
     <meta name="google-site-verification" content="yuiZ4qqTEWJvA6y08-wAKUR7SsV2ggtFKgJViavBel4" />
-
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVXGQ0DW27"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-EVXGQ0DW27');
     </script>
 
-    <meta property="og:title" content="Grand Guide - Wiki" />
-    <meta property="og:description" content="Mergulhe na Fan-Wiki definitiva de Grand Fantasia. Descubra uma vasta base de conhecimento com dados verificados, guias veteranos e dicas de jogadores experientes. Junte-se à comunidade global de fãs!" />
-    <meta property="og:image" content="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/images/ET03002.png" />
-    <meta property="og:url" content="https://grand-guide.github.io/" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
-    
-    <!-- Inclusão de fontes -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="public/fonts/font.css" />
 
-    <!-- Inclusão do arquivo CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="src/css/common.css" /> <!-- Certifique-se de atualizar o caminho -->
-    
+
     <style>
         body {
             display: flex;
@@ -49,7 +63,7 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'CustomFont', sans-serif; /* Substitua 'CustomFont' pelo nome real da sua fonte */
+            font-family: 'Chakra Petch', sans-serif;
             background-color: #030303;
             background-image: linear-gradient(to bottom, #2A2D35 0%, #030303 100%);
             color: #FFFFFF;
@@ -77,7 +91,7 @@
         }
 
         .loading-divider {
-            width: 4%; /* Ajuste conforme necessário */
+            width: 4%;
             height: 2px;
             margin: 0 auto 10px auto;
             background-color: #FFFFFF;
@@ -87,7 +101,7 @@
         .loading-title {
             font-size: 14px;
             margin-bottom: 15px;
-            color: #FFFFFF; /* Cor branca */
+            color: #FFFFFF;
             font-family: 'Barlow Condensed', sans-serif;
         }
 
@@ -104,7 +118,7 @@
         .loading-bar {
             height: 100%;
             width: 0;
-            background-color: #FFFFFF; /* Cor branca */
+            background-color: #FFFFFF;
             border-radius: 5px;
             position: absolute;
             top: 0;
@@ -157,7 +171,7 @@
 
             // Mostra a imagem apenas após o carregamento completo
             imgElement.onload = function() {
-                imgElement.style.display = 'block'; // Exibe a imagem após o carregamento
+                imgElement.style.display = 'block';
             };
         };
 
@@ -170,7 +184,7 @@
             loadingBar.style.width = progress + '%';
 
             if (progress < 100) {
-                setTimeout(updateLoadingBar, 40); // Ajuste a velocidade do carregamento
+                setTimeout(updateLoadingBar, 40);
             }
         }
 
@@ -179,9 +193,8 @@
         // Redireciona após o carregamento completo
         setTimeout(function() {
             window.location.href = "./web/GrandGuide.html";
-        }, 4000); // Redireciona após 4 segundos (ajuste conforme necessário)
+        }, 4000); // Redireciona após 4 segundos
     </script>
-
 </body>
 
 <div class="footer">
