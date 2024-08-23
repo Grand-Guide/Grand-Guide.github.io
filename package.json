@@ -4,7 +4,7 @@
   "description": "a grand fantasia wiki",
   "homepage": "https://github.com/Grand-Guide/Grand-Guide.github.io",
   "scripts": {
-    "start": "gulp dev",
+    "start": "gulp dev --gulpfile gulpfile.mjs",
     "build": "gulp build",
     "build-relative-path": "gulp build --relativePath",
     "deploy-init": "gulp deploy-init",

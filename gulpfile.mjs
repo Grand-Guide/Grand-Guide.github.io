@@ -1,14 +1,21 @@
-const gulp = require('gulp');
-const shell = require('gulp-shell');
-const filter = require('gulp-filter-each');
-const fileInclude = require('gulp-file-include');
-const through = require('through2');
-const prettyHtml = require('gulp-pretty-html');
-const sass = require('gulp-sass')(require('sass'));
-const autoprefixer = require('gulp-autoprefixer');
-const browserSync = require('browser-sync').create();
-false;
+import gulp from 'gulp';
+import shell from 'gulp-shell';
+import filter from 'gulp-filter-each';
+import fileInclude from 'gulp-file-include';
+import through from 'through2';
+import prettyHtml from 'gulp-pretty-html';
+import gulpSass from 'gulp-sass';
+import * as dartSass from 'sass';
+import autoprefixer from 'gulp-autoprefixer';
+import browserSync from 'browser-sync';
+import yargs from 'yargs';
+
+const sass = gulpSass(dartSass);
 const port = 3001;
+
+// Configuração de yargs para aceitar argumentos
+const argv = yargs(process.argv.slice(2)).argv;
+const relativePath = argv.relativePath || false;
 
 gulp.task('build-template', async function () {
   return new Promise((resolve) => {
@@ -52,7 +59,7 @@ gulp.task('build-template', async function () {
           html = html.replace(/<!-- prettier-ignore -->/g, '');
 
           // change path from absolute to relative
-          if (require('yargs').argv.relativePath) {
+          if (relativePath) {
             html = html.replace(/href="\/css\//g, 'href="./css/');
             html = html.replace(
               /--src:url\(\/assets\//g,
@@ -76,14 +83,12 @@ gulp.task('build-scss', async function () {
   return new Promise((resolve) => {
     gulp
       .src('src/scss/*.scss')
-      .pipe(sass().on('error', sass.logError))
+      .pipe(sass().on('error', sass.logError)) // Corrigindo a chamada do método
       .pipe(autoprefixer({ cascade: false }))
       .pipe(gulp.dest('./web/css'))
       .on('end', resolve);
   });
 });
-
-false;
 
 gulp.task('copy-css', async function () {
   return new Promise((resolve) => {
@@ -104,7 +109,7 @@ gulp.task('copy-js', async function () {
 gulp.task('copy-assets', async function () {
   return new Promise((resolve) => {
     gulp
-      .src('src/assets/*.*')
+      .src('src/assets/**/*.*')  // Verifique se o caminho está correto
       .pipe(gulp.dest('./web/assets'))
       .on('end', resolve);
   });
@@ -133,7 +138,7 @@ gulp.task('watch', function (resolve) {
     'src/template/**',
     'src/scss/**',
     'src/css/**',
-    'src/js/**' /*, 'src/assets/**'*/,
+    'src/js/**',
   ];
   gulp
     .watch(watchSrcFolders, gulp.series('build'))
@@ -149,7 +154,7 @@ gulp.task('server', function () {
       baseDir: './',
       directory: true,
     },
-    startPath: '/index.html' // Configura a página inicial
+    startPath: '/index.html', // Configura a página inicial
   });
 });
 
