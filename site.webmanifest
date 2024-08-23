@@ -1,0 +1,22 @@
+{
+    "name": "Grand Guide",
+    "short_name": "GrandGuide",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#030303",
+    "theme_color": "#000000",
+    "description": "A Fan-Wiki completa sobre Grand Fantasia.",
+    "icons": [
+      {
+        "src": "public/favicon.ico",
+        "type": "image/ico",
+        "sizes": "192x192"
+      },
+      {
+        "src": "public/favicon.ico",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  
