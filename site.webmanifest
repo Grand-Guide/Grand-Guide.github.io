@@ -8,12 +8,12 @@
     "description": "A Fan-Wiki completa sobre Grand Fantasia.",
     "icons": [
       {
-        "src": "public/favicon.ico",
-        "type": "image/ico",
+        "src": "/images/icon-192x192.png",
+        "type": "image/png",
         "sizes": "192x192"
       },
       {
-        "src": "public/favicon.ico",
+        "src": "/images/icon-512x512.png",
         "type": "image/png",
         "sizes": "512x512"
       }
