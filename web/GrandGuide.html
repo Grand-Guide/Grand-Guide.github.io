@@ -33,6 +33,10 @@
     <link rel="stylesheet" type="text/css" href="./css/fonts.css" />
     <link rel="stylesheet" type="text/css" href="./css/GrandGuide.css" />
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVXGQ0DW27"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
     <style>
         .heroTitleSearch_span0,
         .heroTitleSearch_span1 {
@@ -90,6 +94,10 @@
                     <img src="/web/assets/searchicon.svg" alt="Search Icon" />
                 </button>
             </div>
+
+            <input type="text" id="searchInput" placeholder="Pesquise itens..." onkeyup="searchItems()">
+            <div id="results"></div>
+
 
             <div class="formGroup">
                 <!-- Group of form elements -->

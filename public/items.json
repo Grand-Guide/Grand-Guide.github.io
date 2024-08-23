@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "name": "Espada Lendária",
+        "description": "Uma espada com poderes lendários.",
+        "image": "https://example.com/espada_lendaria.png"
+    },
+    {
+        "id": 2,
+        "name": "Armadura Mística",
+        "description": "Uma armadura encantada com magia.",
+        "image": "https://example.com/armadura_mistica.png"
+    },
+    {
+        "id": 3,
+        "name": "Poção de Cura",
+        "description": "Restaura a saúde instantaneamente.",
+        "image": "https://example.com/pocao_cura.png"
+    }
+]

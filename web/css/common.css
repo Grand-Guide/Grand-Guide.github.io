@@ -123,6 +123,31 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     box-sizing: border-box; /* Inclui o padding na largura total do elemento */
 }
 
+#results {
+    margin-top: 20px;
+}
+
+.item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.item img {
+    margin-right: 15px;
+}
+
+.item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.item p {
+    margin: 5px 0 0;
+}
+
 ul {
     display: block;
     margin: 0;
