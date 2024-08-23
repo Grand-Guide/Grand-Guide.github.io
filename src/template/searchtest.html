@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Pesquisa de Itens</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .search-wrapper {
+            margin: 20px;
+        }
+        .search-input {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .search-button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .results {
+            margin-top: 20px;
+        }
+        .item {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .item img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="search-wrapper">
+        <input type="text" id="searchInput" class="search-input" placeholder="Pesquise itens..." onkeyup="searchItems()">
+        <button class="search-button" onclick="searchItems()">Pesquisar</button>
+    </div>
+    <div id="results" class="results"></div>
+
+    <script>
+        // Função para buscar e filtrar itens
+        function searchItems() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const resultsDiv = document.getElementById('results');
+
+            fetch('https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/items.json')
+                .then(response => response.json())
+                .then(data => {
+                    const filteredItems = data.filter(item => item.name.toLowerCase().includes(input));
+                    
+                    resultsDiv.innerHTML = ''; // Limpa os resultados anteriores
+                    
+                    filteredItems.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.classList.add('item');
+
+                        itemDiv.innerHTML = `
+                            <img src="${item.image}" alt="${item.name}">
+                            <div>
+                                <h3>${item.name}</h3>
+                                <p>${item.description}</p>
+                            </div>
+                        `;
+
+                        resultsDiv.appendChild(itemDiv);
+                    });
+
+                    if (filteredItems.length === 0) {
+                        resultsDiv.innerHTML = '<p>Nenhum item encontrado</p>';
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao buscar os dados:', error);
+                });
+        }
+    </script>
+</body>
+</html>

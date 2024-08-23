@@ -74,6 +74,51 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     text-decoration: underline; /* Sublinhado ao passar o mouse */
   }
 
+  .textGitBase {
+    color: #1E252E; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito, se desejar */
+  }
+  
+  .textGitBase:hover {
+    color: #1E252E; /* Cor ao passar o mouse */
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+  }
+
+  .textContactUs {
+    color: #1E252E; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: bold; /* Negrito, se desejar */
+  }
+  
+  .textContactUs:hover {
+    color: #1E252E; /* Cor ao passar o mouse */
+    text-decoration: underline; /* Sublinhado ao passar o mouse */
+  }
+
+  /* CSS for the hover animation */
+.fanBaseImage2,
+.fanBaseImage3,
+.fanBaseImage4,
+.fanBaseImage5,
+.fanBaseImage6,
+.fanBaseImage7,
+.fanBaseImage8,
+.fanBaseImage9 {
+  transition: transform 0.3s ease-in-out;
+}
+
+.fanBaseImage2:hover,
+.fanBaseImage3:hover,
+.fanBaseImage4:hover,
+.fanBaseImage5:hover,
+.fanBaseImage6:hover,
+.fanBaseImage7:hover,
+.fanBaseImage8:hover,
+.fanBaseImage9:hover {
+  transform: translateY(-12px);
+}
+
   @keyframes moveUpDown {
     0% {
       transform: translateY(0);
@@ -118,31 +163,6 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     font-size: 0.7em; /* Ajusta o tamanho da fonte para um tamanho menor */
     font-family: 'Barlow Condensed', sans-serif; /* Fonte opcional */
     box-sizing: border-box; /* Inclui o padding na largura total do elemento */
-}
-
-#results {
-    margin-top: 20px;
-}
-
-.item {
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.item img {
-    margin-right: 15px;
-}
-
-.item h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-.item p {
-    margin: 5px 0 0;
 }
 
 ul {
