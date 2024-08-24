@@ -1,0 +1,172 @@
+[
+    {
+        "id": "001",
+        "name": "Espada Sagrada Arcaica",
+        "cover": "/public/pages/assets/8474.png",
+        "description": "A espada sagrada de um antigo guerreiro em batalha, ah um nome cravado nela.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Pendente",
+        "quality": "Incomum"
+    },
+    {
+        "id": "002",
+        "name": "Arco do Destino",
+        "cover": "/public/pages/assets/8665.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Sagrado"
+    },
+    {
+        "id": "003",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Lendário"
+    },
+    {
+        "id": "004",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico"
+    },
+    {
+        "id": "005",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Sagrado"
+    },
+    {
+        "id": "006",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Comum"
+    },
+    {
+        "id": "007",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Raro"
+    },
+    {
+        "id": "008",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Incomum"
+    },
+    {
+        "id": "009",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Lendário"
+    },
+    {
+        "id": "010",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico"
+    },
+    {
+        "id": "011",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Sagrado"
+    },
+    {
+        "id": "012",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Comum"
+    },
+    {
+        "id": "013",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Raro"
+    },
+    {
+        "id": "014",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Incomum"
+    },
+    {
+        "id": "015",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Lendário"
+    },
+    {
+        "id": "016",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico"
+    },
+    {
+        "id": "017",
+        "name": "Arco do Destino",
+        "cover": "fire-bow.png",
+        "description": "Um arco que dispara flechas estelares.",
+        "price": "1000",
+        "update": "23/08/2024",
+        "status": "Verificado",
+        "quality": "Sagrado"
+    }
+]

@@ -1,0 +1,426 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #101010;
+    color: #FFFFFF;
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Fonte padrão */
+}
+
+.header, .filters, .item-list, .pagination {
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.logo img {
+    font-family: 'Iceland', sans-serif;
+}
+
+.item-name, .item-description {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 600; /* Ou 400 para semibold */
+}
+
+.item-price {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Inter Black */
+}
+
+.item-status {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600; /* Inter Semibold */
+}
+
+.tools button {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400; /* Inter Regular */
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra Lateral */
+.sidebar {
+    width: 220px;
+    background-color: #1C1C1C;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #333333;
+    height: 100vh; /* Adiciona altura total da tela */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho total */
+}
+
+.logo img {
+    width: 40px;
+    margin-bottom: 20px; /* Reduz o espaçamento abaixo do logo */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove a margem do ul */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* Reduz o espaçamento entre os itens */
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li {
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.sidebar ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background: #333;
+    transform: translateY(-50%);
+}
+
+.sidebar ul li:first-child::before {
+    display: none;
+}
+
+.sidebar ul li i {
+    margin-right: 12px;
+    font-size: 15px;
+}
+
+/* Adicional para corrigir ícone ausente e alinhamento */
+.sidebar ul li:first-child i {
+    display: inline-block; /* Garante que o ícone seja exibido */
+}
+
+.sidebar ul li:hover {
+    background-color: #2C2C2C;
+    color: #00BFFF;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.main-content {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header .breadcrumb {
+    font-size: 12px;
+    color: #CCCCCC;
+}
+
+.header .breadcrumb .current {
+    color: #FFFFFF;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #CCCCCC;
+}
+
+.user-info .storage {
+    margin-right: 15px;
+}
+
+.user-info .user-name {
+    margin-right: 10px;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.tools {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.tools button {
+    background-color: #00BFFF;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.tools button i {
+    margin-right: 8px;
+}
+
+.tools button:hover {
+    background-color: #008CBA;
+}
+
+.search-bar {
+    display: flex;
+    background-color: #2C2C2C;
+    border-radius: 5px;
+    width: 300px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    background-color: #333333;
+    color: #FFF;
+    font-size: 14px;
+    width: 100%;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #00BFFF;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #008CBA;
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: #252525;
+    border-radius: 5px;
+    font-weight: 600;
+    color: #BBBBBB;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.item-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #2C2C2C;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.item img {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.item-id, .item-name, .item-description, .item-price, .item-update, .item-status, .item-operations {
+    font-size: 14px;
+}
+
+.item-status.published {
+    color: #00FF7F;
+    font-weight: 600;
+}
+a
+.item-operations a {
+    color: #00BFFF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.item-operations a:hover {
+    color: #008CBA;
+}
+
+.breadcrumb-link {
+    color: #CCCCCC; /* Cor do texto do link */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: 600; /* Mesma fonte em negrito */
+}
+
+.breadcrumb-link:hover {
+    color: #ffffff; /* Cor do link ao passar o mouse */
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+
+.pagination-button {
+    cursor: pointer;
+    color: #00BFFF;
+    font-weight: 600;
+    margin: 0 5px;
+}
+
+.pagination-button.active {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+#page-numbers {
+    display: flex;
+}
+
+#page-numbers span {
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+#page-numbers .active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Estilo dos ícones */
+.fas {
+    font-size: 18px;
+}
+
+.pagination-button:hover {
+    color: #FFFFFF;
+}
+
+.pagination span {
+    cursor: pointer;
+    color: #00BFFF;
+    font-weight: 600;
+}
+
+.pagination span:hover {
+    color: #FFFFFF;
+}
+
+.filters, .item {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 3fr 1fr 1fr 1fr 2fr;
+    align-items: center;
+    text-align: center;
+}
+
+.item-description {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.filters, .item {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr 0.8fr 3fr 1fr 1fr 1fr 2fr; /* Aumenta a coluna do Nome e reduz a do Cover */
+    align-items: center;
+    text-align: center;
+}
+
+.item-cover {
+    margin-left: 35px; /* Aproxima o Cover do Nome */
+}
+
+.item-id, .item-name, .item-description, .item-price, .item-update, .item-status, .item-operations {
+    padding-left: 5px; /* Reduzindo o padding para aproximar o texto */
+    padding-right: 5px; /* Reduzindo o padding para aproximar o texto */
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.category-toggle {
+    cursor: pointer;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #00BFFF;
+}
+
+.category-toggle:hover {
+    color: #FFFFFF;
+}
+
+/* Definindo classes de qualidade específicas */
+.item-quality.Lendário::before {
+    content: '\f005'; /* Código do ícone de estrela cheia */
+    font-family: 'Font Awesome 5 Free';
+    color: #FFFF00; /* Amarelo */
+    margin-right: 8px;
+}
+
+.item-quality.Exótico::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    color: #FFA500; /* Laranja */
+    margin-right: 8px;
+}
+
+.item-quality.Sagrado::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    color: #FF0000; /* Vermelho */
+    margin-right: 8px;
+}
+
+.item-quality.Comum::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    color: #FFFFFF; /* Branco */
+    margin-right: 8px;
+}
+
+.item-quality.Raro::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    color: #0000FF; /* Azul */
+    margin-right: 8px;
+}
+
+.item-quality.Incomum::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    color: #008000; /* Verde */
+    margin-right: 8px;
+}

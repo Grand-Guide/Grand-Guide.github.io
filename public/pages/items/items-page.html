@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Guide - Wiki - Grand Fantasia Database</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Iceland&family=Inter:wght@100;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Adiciona ícones para diferentes qualidades */
+        .item-quality.high::before {
+            content: '\f005'; /* Código do ícone de estrela cheia */
+            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
+            color: #FFD700; /* Cor dourada para alta qualidade */
+            margin-right: 8px;
+        }
+
+        .item-quality.medium::before {
+            content: '\f006'; /* Código do ícone de estrela meia cheia */
+            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
+            color: #C0C0C0; /* Cor prata para média qualidade */
+            margin-right: 8px;
+        }
+
+        .item-quality.low::before {
+            content: '\f005'; /* Código do ícone de estrela cheia */
+            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
+            color: #CD5C5C; /* Cor cobre para baixa qualidade */
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Barra Lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="/public/favicon.ico" alt="Logo">
+            </div>
+            <ul>
+                <li><i class="fas fa-sword"></i> Armas</li>
+                <li><i class="fas fa-shield-alt"></i> Armaduras</li>
+                <li><i class="fas fa-hat-wizard"></i> Fantasias</li>
+                <li><i class="fas fa-scroll"></i> Receitas</li>
+                <li><i class="fas fa-flask"></i> Suprimentos</li>
+                <li><i class="fas fa-gem"></i> Pedras Rúnicas</li>
+                <li><i class="fas fa-cube"></i> Núcleos</li>
+                <li><i class="fas fa-horse-head"></i> Montarias</li>
+                <li><i class="fas fa-chair"></i> Tronos</li>
+            </ul>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <div class="header">
+                <div class="breadcrumb">
+                    <a href="https://grand-guide.github.io/" class="breadcrumb-link">INÍCIO</a> / 
+                    <span class="current">Lista de Itens</span>
+                </div>
+                <div class="user-info">
+                    <span class="user-name">Nome Do Jogador</span>
+                    <img src="user-avatar.png" alt="Avatar do Usuário" class="user-avatar">
+                </div>
+            </div>
+
+            <!-- Ferramentas -->
+            <div class="tools">
+                <button class="add-btn"><i class="fas fa-plus"></i> Contribuir</button>
+                <button class="filter-tool"><i class="fas fa-filter"></i> Filtrar Itens</button>
+                <button class="sort-tool"><i class="fas fa-sort"></i> Ordenar Itens</button>
+                <div class="search-bar">
+                    <input type="text" placeholder="Buscar itens">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+
+            <!-- Filtros/Informações -->
+            <div class="filters">
+                <span>ID</span>
+                <span>NOME</span>
+                <span>ICON</span>
+                <span>DESCRIÇÃO</span>
+                <span>VALOR</span>
+                <span>DATA DE CRIAÇÃO</span>
+                <span>STATUS</span>
+                <span>QUALIDADE</span>
+            </div>
+            
+            <!-- Lista de Itens -->
+            <div class="item-list" id="item-list">
+                <!-- Os itens serão carregados dinamicamente aqui -->
+            </div>
+
+            <!-- Navegador de Páginas -->
+            <div class="pagination">
+                <span class="pagination-button" id="prev-page">
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                <span id="page-numbers"></span>
+                <span class="pagination-button" id="next-page">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Configurações de paginação
+        const itemsPerPage = 12;
+        let currentPage = 1;
+        let items = [];
+
+        // Função para carregar itens do arquivo JSON
+        async function loadItems() {
+            try {
+                const response = await fetch('items.json');
+                items = await response.json();
+                displayItems();
+                setupPagination();
+            } catch (error) {
+                console.error('Erro ao carregar os itens:', error);
+            }
+        }
+
+        // Função para exibir itens da página atual
+function displayItems() {
+    const itemList = document.getElementById('item-list');
+    itemList.innerHTML = '';
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = Math.min(start + itemsPerPage, items.length);
+
+    for (let i = start; i < end; i++) {
+        const item = items[i];
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('item');
+
+        // Determine a classe de qualidade com base no item
+        const qualityClass = `item-quality ${getQualityClass(item.quality)}`;
+
+        itemElement.innerHTML = `
+                        <span class="item-id">${item.id}</span>
+                        <span class="item-name">${item.name}</span>
+                        <img src="${item.cover}" alt="${item.name}" class="item-cover">
+                        <span class="item-description">${item.description}</span>
+                        <span class="item-price">${item.price}</span>
+                        <span class="item-update">${item.update}</span>
+                        <span class="item-status ${item.status === 'disponível' ? 'published' : ''}">
+                            <i class="fas fa-check-circle"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+                        </span>
+                        <div class="item-quality ${getQualityClass(item.quality)}">
+                            ${item.quality}
+                        </div>
+                    `;
+
+        itemList.appendChild(itemElement);
+    }
+}
+
+// Função para determinar a classe de qualidade
+function getQualityClass(quality) {
+    switch (quality) {
+        case 'Lendário':
+        case 'Exótico':
+        case 'Sagrado':
+        case 'Comum':
+        case 'Raro':
+        case 'Incomum':
+            return quality; // Retorna a qualidade diretamente como classe
+        default:
+            return '';
+    }
+}
+
+        // Função para configurar a paginação
+        function setupPagination() {
+            const pageNumbers = document.getElementById('page-numbers');
+            pageNumbers.innerHTML = '';
+
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageNumber = document.createElement('span');
+                pageNumber.classList.add('pagination-button');
+                pageNumber.textContent = i;
+                if (i === currentPage) {
+                    pageNumber.classList.add('active');
+                }
+                pageNumber.addEventListener('click', () => {
+                    currentPage = i;
+                    displayItems();
+                    setupPagination();
+                });
+                pageNumbers.appendChild(pageNumber);
+            }
+
+            document.getElementById('prev-page').style.display = currentPage > 1 ? 'inline' : 'none';
+            document.getElementById('next-page').style.display = currentPage < totalPages ? 'inline' : 'none';
+        }
+
+        // Adiciona eventos aos botões de navegação
+        document.getElementById('prev-page').addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayItems();
+                setupPagination();
+            }
+        });
+
+        document.getElementById('next-page').addEventListener('click', () => {
+            const totalPages = Math.ceil(items.length / itemsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayItems();
+                setupPagination();
+            }
+        });
+
+        // Carregar itens quando a página é carregada
+        document.addEventListener('DOMContentLoaded', loadItems);
+    </script>
+</body>
+</html>
