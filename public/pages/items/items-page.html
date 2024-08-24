@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Guide - Wiki - Grand Fantasia Database</title>
-    
+
     <!-- Animations Sheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 
@@ -57,6 +57,26 @@
         .item-status.pendente i {
             content: '\f071'; /* Ícone de triângulo com alerta */
         }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .user-icon {
+            width: 50px; /* Ajuste o tamanho conforme necessário */
+            height: 50px;
+            border-radius: 50%; /* Torna a imagem redonda */
+            object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
+            margin-right: 10px;
+        }
+
+        .user-name {
+            font-size: 18px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif; /* Utilize a fonte de sua escolha */
+        }
     </style>
 </head>
 <body>
@@ -69,15 +89,16 @@
                 <span class="logo-text">Grand Guide</span>
             </div>
             <ul>
-                <li><i class="fas fa-crosshairs"></i> Armas</li>
-                <li><i class="fas fa-shield-alt"></i> Armaduras</li>
-                <li><i class="fas fa-hat-wizard"></i> Fantasias</li>
-                <li><i class="fas fa-scroll"></i> Receitas</li>
-                <li><i class="fas fa-flask"></i> Suprimentos</li>
-                <li><i class="fas fa-gem"></i> Pedras Rúnicas</li>
-                <li><i class="fas fa-cube"></i> Núcleos</li>
-                <li><i class="fas fa-horse-head"></i> Montarias</li>
-                <li><i class="fas fa-chair"></i> Tronos</li>
+                <li id="all-items-btn"><i class="fas fa-list-ul"></i> Todos os Itens</li>
+                <li data-category="arma"><i class="fas fa-crosshairs"></i> Armas</li>
+                <li data-category="armadura"><i class="fas fa-shield-alt"></i> Armaduras</li>
+                <li data-category="fantasia"><i class="fas fa-hat-wizard"></i> Fantasias</li>
+                <li data-category="receita"><i class="fas fa-scroll"></i> Receitas</li>
+                <li data-category="suprimento"><i class="fas fa-flask"></i> Suprimentos</li>
+                <li data-category="pedra"><i class="fas fa-gem"></i> Pedras Rúnicas</li>
+                <li data-category="nucleo"><i class="fas fa-cube"></i> Núcleos</li>
+                <li data-category="montaria"><i class="fas fa-horse-head"></i> Montarias</li>
+                <li data-category="trono"><i class="fas fa-chair"></i> Tronos</li>
             </ul>
         </aside>
 
@@ -88,22 +109,20 @@
                     <a href="https://grand-guide.github.io/" class="breadcrumb-link">INÍCIO</a> / 
                     <span class="current">ITEMS</span>
                 </div>
-                <div class="user-info">
-                    <span class="user-name">Nome Do Jogador</span>
-                    <img src="user-avatar.png" alt="Avatar do Usuário" class="user-avatar">
-                </div>
             </div>
 
             <!-- Ferramentas -->
             <div class="tools">
-                <button class="add-btn"><i class="fas fa-plus"></i> Contribuir</button>
-                <button class="filter-tool"><i class="fas fa-filter"></i> Filtrar Itens</button>
-                <button class="sort-tool"><i class="fas fa-sort"></i> Ordenar Itens</button>
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="Buscar itens">
-                    <button type="submit"><i class="fas fa-search"></i></button>
-                </div>
+          <button class="add-btn"><i class="fas fa-plus"></i> Contribuir</button>
+           <button class="filter-tool"><i class="fas fa-filter"></i> Filtrar Itens</button>
+         <button class="sort-tool"><i class="fas fa-sort"></i> Ordenar Itens</button>
+          <div class="search-bar">
+        <input type="text" id="search-input" placeholder="Buscar itens">
+        <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
             </div>
+
+
 
             <!-- Filtros/Informações -->
             <div class="filters">
@@ -143,17 +162,30 @@
         let filteredItems = [];
 
         // Função para carregar itens do arquivo JSON
-        async function loadItems() {
+        async function loadItems(category = null) {
+            const file = category ? `${category}.json` : 'items.json'; // Carrega o arquivo de acordo com a categoria, 'items.json' é o padrão
             try {
-                const response = await fetch('items.json');
+                const response = await fetch(file);
                 originalItems = await response.json();
                 filteredItems = [...originalItems];
+                currentPage = 1; // Reinicia para a primeira página ao carregar nova categoria
                 displayItems();
                 setupPagination();
             } catch (error) {
                 console.error('Erro ao carregar os itens:', error);
             }
         }
+
+        // Evento de clique nas categorias da barra lateral
+        document.querySelectorAll('.sidebar ul li').forEach(item => {
+            item.addEventListener('click', function() {
+                const category = this.getAttribute('data-category');
+                loadItems(category); // Carrega os itens da categoria clicada
+            });
+        });
+
+        // Carrega 'items.json' ao iniciar a página
+        loadItems();
 
         // Função para exibir itens da página atual
         function displayItems() {
@@ -166,7 +198,7 @@
             for (let i = start; i < end; i++) {
                 const item = filteredItems[i];
                 const itemElement = document.createElement('div');
-                itemElement.classList.add('item');
+                itemElement.classList.add('item', 'animate__animated', 'animate__fadeInUp');
 
                 // Determine a classe de qualidade com base no item
                 const qualityClass = `item-quality ${getQualityClass(item.quality)}`;
@@ -177,32 +209,28 @@
                     <img src="${item.cover}" alt="${item.name}" class="item-cover">
                     <span class="item-description">${item.description}</span>
                     <span class="item-price">${item.price}</span>
-                    <span class="item-update">${item.update}</span>
-                    <span class="item-status ${item.status === 'Verificado' ? 'verificado' : 'pendente'}">
-                        <i class="fas ${item.status === 'Verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-                    </span>
-                    <div class="item-quality ${getQualityClass(item.quality)}">
-                        ${item.quality}
-                    </div>
+                    <span class="item-updated">${item.updated}</span>
+                    <span class="item-status ${item.status}"><i class="fas ${getStatusIcon(item.status)}"></i></span>
+                    <span class="${qualityClass}">${item.quality}</span>
                 `;
 
                 itemList.appendChild(itemElement);
             }
         }
 
-        // Função para determinar a classe de qualidade
+        // Função para obter a classe de qualidade
         function getQualityClass(quality) {
             switch (quality) {
-                case 'Lendário':
-                case 'Exótico':
-                case 'Sagrado':
-                case 'Comum':
-                case 'Raro':
-                case 'Incomum':
-                    return quality; // Retorna a qualidade diretamente como classe
-                default:
-                    return '';
+                case 'alta': return 'high';
+                case 'media': return 'medium';
+                case 'baixa': return 'low';
+                default: return '';
             }
+        }
+
+        // Função para obter o ícone de status
+        function getStatusIcon(status) {
+            return status === 'verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle';
         }
 
         // Função para configurar a paginação
@@ -214,8 +242,8 @@
 
             for (let i = 1; i <= totalPages; i++) {
                 const pageNumber = document.createElement('span');
-                pageNumber.classList.add('pagination-button');
                 pageNumber.textContent = i;
+                pageNumber.classList.add('pagination-page');
                 if (i === currentPage) {
                     pageNumber.classList.add('active');
                 }
@@ -227,10 +255,22 @@
                 pageNumbers.appendChild(pageNumber);
             }
 
-            document.getElementById('prev-page').style.display = currentPage > 1 ? 'inline' : 'none';
-            document.getElementById('next-page').style.display = currentPage < totalPages ? 'inline' : 'none';
+            document.getElementById('prev-page').style.display = currentPage === 1 ? 'none' : 'inline';
+            document.getElementById('next-page').style.display = currentPage === totalPages ? 'none' : 'inline';
         }
 
+        // Adiciona evento de busca
+        document.getElementById('search-input').addEventListener('input', function() {
+            const query = this.value.toLowerCase();
+            filteredItems = originalItems.filter(item => 
+                item.name.toLowerCase().includes(query) || item.id.toLowerCase().includes(query)
+            );
+            currentPage = 1;
+            displayItems();
+            setupPagination();
+        });
+
+        // Adiciona eventos de navegação
         document.getElementById('prev-page').addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -248,25 +288,21 @@
             }
         });
 
-        // Função para filtrar itens com base no texto da pesquisa
-        function filterItems(query) {
-            return originalItems.filter(item => 
-                item.name.toLowerCase().includes(query.toLowerCase()) ||
-                item.description.toLowerCase().includes(query.toLowerCase())
-            );
+        // Função para carregar as informações do usuário
+        async function loadUserInfo() {
+            try {
+                const response = await fetch('/pages/items/user-info.json');
+                const userInfo = await response.json();
+                
+                document.getElementById('user-icon').src = userInfo.icon; // A URL do ícone do usuário
+                document.getElementById('user-name').textContent = userInfo.name; // O nome do usuário
+            } catch (error) {
+                console.error('Erro ao carregar as informações do usuário:', error);
+            }
         }
 
-        // Adiciona o evento de pesquisa
-        document.getElementById('search-input').addEventListener('input', (event) => {
-            const query = event.target.value;
-            filteredItems = query ? filterItems(query) : [...originalItems];
-            currentPage = 1; // Voltar para a primeira página após a pesquisa
-            displayItems();
-            setupPagination();
-        });
-
-        // Carrega os itens ao iniciar a página
-        loadItems();
+        // Carrega as informações do usuário ao iniciar a página
+        loadUserInfo();
     </script>
 </body>
 </html>

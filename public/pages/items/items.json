@@ -21,7 +21,7 @@
     },
     {
         "id": "003",
-        "name": "Arco do Destino",
+        "name": "armadura do caos",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -31,7 +31,7 @@
     },
     {
         "id": "004",
-        "name": "Arco do Destino",
+        "name": "Fantasia do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -41,7 +41,7 @@
     },
     {
         "id": "005",
-        "name": "Arco do Destino",
+        "name": "Receita do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -51,7 +51,7 @@
     },
     {
         "id": "006",
-        "name": "Arco do Destino",
+        "name": "Suprimento do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -61,7 +61,7 @@
     },
     {
         "id": "007",
-        "name": "Arco do Destino",
+        "name": "Pedra do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -71,7 +71,7 @@
     },
     {
         "id": "008",
-        "name": "Arco do Destino",
+        "name": "Núcleo do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -81,7 +81,7 @@
     },
     {
         "id": "009",
-        "name": "Arco do Destino",
+        "name": "Montaria do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -91,7 +91,7 @@
     },
     {
         "id": "010",
-        "name": "Arco do Destino",
+        "name": "Trono do Destino",
         "cover": "fire-bow.png",
         "description": "Um arco que dispara flechas estelares.",
         "price": "1000",
@@ -157,7 +157,8 @@
         "price": "1000",
         "update": "23/08/2024",
         "status": "Verificado",
-        "quality": "Exótico"
+        "quality": "Exótico",
+        "category": "suprimento"
     },
     {
         "id": "017",

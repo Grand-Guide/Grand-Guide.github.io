@@ -1,94 +1,70 @@
-async function loadItems(page = 1, searchTerm = '') {
-    const itemsPerPage = 12;
-    
+const itemsPerPage = 12;
+let currentPage = 1;
+let items = [];
+
+// Função para carregar itens do arquivo JSON
+async function loadItems(category) {
+    const fileName = category ? `${category}.json` : 'items.json'; // Define o nome do arquivo
     try {
-        const response = await fetch('items.json');
-        const items = await response.json();
-
-        const itemList = document.getElementById('item-list');
-        const existingItems = Array.from(itemList.children);
-
-        // Filtra os itens com base no termo de pesquisa
-        const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-        const start = (page - 1) * itemsPerPage;
-        const end = start + itemsPerPage;
-        const itemsToDisplay = filteredItems.slice(start, end);
-
-        // Remove itens que não devem ser exibidos e aplica animação de saída
-        existingItems.forEach(item => {
-            const itemName = item.querySelector('.item-name').textContent;
-            if (!itemsToDisplay.some(i => i.name === itemName)) {
-                item.classList.add('hide');
-                setTimeout(() => item.remove(), 300); // Tempo deve ser igual ao tempo de animação de saída
-            }
-        });
-
-        // Adiciona novos itens e aplica animação de entrada
-        itemsToDisplay.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.classList.add('item');
-            itemElement.innerHTML = `
-                <span class="item-id">${item.id}</span>
-                <span class="item-name">${item.name}</span>
-                <img src="${item.cover}" alt="${item.name}" class="item-cover">
-                <span class="item-description">${item.description}</span>
-                <span class="item-price">${item.price}</span>
-                <span class="item-update">${item.update}</span>
-                <span class="item-status ${item.status === 'disponível' ? 'published' : ''}">
-                    <i class="fas fa-check-circle"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-                </span>
-                <div class="item-quality">
-                    ${item.quality}
-                </div>
-            `;
-            itemList.appendChild(itemElement);
-            // Força o navegador a aplicar o estilo de entrada após adicionar o item
-            requestAnimationFrame(() => {
-                itemElement.classList.add('show');
-            });
-        });
-
-        updatePagination(page, Math.ceil(filteredItems.length / itemsPerPage));
+        const response = await fetch(fileName);
+        items = await response.json();
+        displayItems();
+        setupPagination();
     } catch (error) {
         console.error('Erro ao carregar os itens:', error);
     }
 }
 
-function updatePagination(currentPage, totalPages) {
+// Função para exibir os itens na página
+function displayItems() {
+    const itemList = document.getElementById('item-list');
+    itemList.innerHTML = '';
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = Math.min(start + itemsPerPage, items.length);
+
+    for (let i = start; i < end; i++) {
+        const item = items[i];
+        const itemElement = document.createElement('div');
+        itemElement.classList.add('item');
+        itemElement.innerHTML = `
+            <span>${item.name}</span>
+            <img src="${item.cover}" alt="${item.name}">
+            <span>${item.description}</span>
+            <span>${item.price} G</span>
+        `;
+        itemList.appendChild(itemElement);
+    }
+}
+
+// Função para configurar a paginação
+function setupPagination() {
     const pageNumbers = document.getElementById('page-numbers');
     pageNumbers.innerHTML = '';
+    const totalPages = Math.ceil(items.length / itemsPerPage);
 
     for (let i = 1; i <= totalPages; i++) {
         const pageNumber = document.createElement('span');
         pageNumber.textContent = i;
-        pageNumber.classList.add('page-number');
         if (i === currentPage) {
             pageNumber.classList.add('active');
         }
-        pageNumber.onclick = () => loadItems(i, document.querySelector('.search-bar input').value);
+        pageNumber.addEventListener('click', () => {
+            currentPage = i;
+            displayItems();
+        });
         pageNumbers.appendChild(pageNumber);
     }
-
-    document.getElementById('prev-page').style.display = currentPage === 1 ? 'none' : 'inline';
-    document.getElementById('next-page').style.display = currentPage === totalPages ? 'none' : 'inline';
 }
 
-// Adiciona evento para atualizar a lista de itens ao digitar na barra de pesquisa
-document.querySelector('.search-bar input').addEventListener('input', (event) => {
-    const searchTerm = event.target.value;
-    loadItems(1, searchTerm); // Recarrega a lista com o termo de pesquisa
+// Adiciona eventos de clique para cada categoria na barra lateral
+document.querySelectorAll('.sidebar li').forEach(categoryElement => {
+    categoryElement.addEventListener('click', () => {
+        const category = categoryElement.getAttribute('data-category');
+        currentPage = 1; // Reseta para a primeira página
+        loadItems(category); // Carrega os itens da categoria selecionada
+    });
 });
 
-document.getElementById('prev-page').onclick = () => {
-    const currentPage = parseInt(document.querySelector('.page-number.active').textContent);
-    if (currentPage > 1) loadItems(currentPage - 1);
-};
-
-document.getElementById('next-page').onclick = () => {
-    const currentPage = parseInt(document.querySelector('.page-number.active').textContent);
-    const totalPages = document.querySelectorAll('.page-number').length;
-    if (currentPage < totalPages) loadItems(currentPage + 1);
-};
-
-// Carrega os itens ao iniciar a página
-document.addEventListener('DOMContentLoaded', () => loadItems(1));
+// Carrega os itens iniciais ao carregar a página
+loadItems();
