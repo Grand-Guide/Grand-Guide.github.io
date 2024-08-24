@@ -26,6 +26,7 @@
     "yargs": "^17.7.2"
   },
   "dependencies": {
+    "firebase": "^10.13.0",
     "firebase-tools": "^13.15.4"
   }
 }
