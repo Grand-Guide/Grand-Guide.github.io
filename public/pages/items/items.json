@@ -10,13 +10,13 @@
         "quality": "Incomum"
     },
     {
-        "id": "002",
-        "name": "Arco do Destino",
-        "cover": "/public/pages/assets/8665.png",
+        "id": "34401",
+        "name": "Medo Espreitador do Abismo",
+        "cover": "/public/pages/assets/34401.png",
         "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
+        "price": "27G",
+        "update": "24/08/2024",
+        "status": "Pendente",
         "quality": "Sagrado"
     },
     {

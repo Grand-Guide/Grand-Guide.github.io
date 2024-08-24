@@ -1,4 +1,4 @@
-async function loadItems(page = 1) {
+async function loadItems(page = 1, searchTerm = '') {
     const itemsPerPage = 12;
     
     try {
@@ -6,17 +6,27 @@ async function loadItems(page = 1) {
         const items = await response.json();
 
         const itemList = document.getElementById('item-list');
-        itemList.innerHTML = ''; // Limpar itens existentes
+        const existingItems = Array.from(itemList.children);
 
-        // Calcula o índice inicial e final dos itens a serem exibidos
+        // Filtra os itens com base no termo de pesquisa
+        const filteredItems = items.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
         const start = (page - 1) * itemsPerPage;
         const end = start + itemsPerPage;
-        const itemsToDisplay = items.slice(start, end);
+        const itemsToDisplay = filteredItems.slice(start, end);
 
+        // Remove itens que não devem ser exibidos e aplica animação de saída
+        existingItems.forEach(item => {
+            const itemName = item.querySelector('.item-name').textContent;
+            if (!itemsToDisplay.some(i => i.name === itemName)) {
+                item.classList.add('hide');
+                setTimeout(() => item.remove(), 300); // Tempo deve ser igual ao tempo de animação de saída
+            }
+        });
+
+        // Adiciona novos itens e aplica animação de entrada
         itemsToDisplay.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.classList.add('item');
-
             itemElement.innerHTML = `
                 <span class="item-id">${item.id}</span>
                 <span class="item-name">${item.name}</span>
@@ -31,11 +41,14 @@ async function loadItems(page = 1) {
                     ${item.quality}
                 </div>
             `;
-
             itemList.appendChild(itemElement);
+            // Força o navegador a aplicar o estilo de entrada após adicionar o item
+            requestAnimationFrame(() => {
+                itemElement.classList.add('show');
+            });
         });
 
-        updatePagination(page, Math.ceil(items.length / itemsPerPage));
+        updatePagination(page, Math.ceil(filteredItems.length / itemsPerPage));
     } catch (error) {
         console.error('Erro ao carregar os itens:', error);
     }
@@ -52,7 +65,7 @@ function updatePagination(currentPage, totalPages) {
         if (i === currentPage) {
             pageNumber.classList.add('active');
         }
-        pageNumber.onclick = () => loadItems(i);
+        pageNumber.onclick = () => loadItems(i, document.querySelector('.search-bar input').value);
         pageNumbers.appendChild(pageNumber);
     }
 
@@ -60,7 +73,11 @@ function updatePagination(currentPage, totalPages) {
     document.getElementById('next-page').style.display = currentPage === totalPages ? 'none' : 'inline';
 }
 
-document.addEventListener('DOMContentLoaded', () => loadItems(1));
+// Adiciona evento para atualizar a lista de itens ao digitar na barra de pesquisa
+document.querySelector('.search-bar input').addEventListener('input', (event) => {
+    const searchTerm = event.target.value;
+    loadItems(1, searchTerm); // Recarrega a lista com o termo de pesquisa
+});
 
 document.getElementById('prev-page').onclick = () => {
     const currentPage = parseInt(document.querySelector('.page-number.active').textContent);
@@ -72,3 +89,6 @@ document.getElementById('next-page').onclick = () => {
     const totalPages = document.querySelectorAll('.page-number').length;
     if (currentPage < totalPages) loadItems(currentPage + 1);
 };
+
+// Carrega os itens ao iniciar a página
+document.addEventListener('DOMContentLoaded', () => loadItems(1));

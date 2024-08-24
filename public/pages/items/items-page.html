@@ -4,10 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Guide - Wiki - Grand Fantasia Database</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Animations Sheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+    <!-- Fonts Sheets -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Iceland&family=Inter:wght@100;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS Sheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* Adiciona ícones para diferentes qualidades */
         .item-quality.high::before {
@@ -30,6 +38,25 @@
             color: #CD5C5C; /* Cor cobre para baixa qualidade */
             margin-right: 8px;
         }
+
+        /* Estilo para o status verificado */
+        .item-status.verificado {
+            color: #28a745; /* Cor verde para itens verificados */
+        }
+
+        /* Estilo para o status pendente */
+        .item-status.pendente {
+            color: #ffc107; /* Cor amarela para itens pendentes */
+        }
+
+        /* Ícones para os status */
+        .item-status.verificado i {
+            content: '\f058'; /* Ícone de círculo com check */
+        }
+
+        .item-status.pendente i {
+            content: '\f071'; /* Ícone de triângulo com alerta */
+        }
     </style>
 </head>
 <body>
@@ -39,9 +66,10 @@
         <aside class="sidebar">
             <div class="logo">
                 <img src="/public/favicon.ico" alt="Logo">
+                <span class="logo-text">Grand Guide</span>
             </div>
             <ul>
-                <li><i class="fas fa-sword"></i> Armas</li>
+                <li><i class="fas fa-crosshairs"></i> Armas</li>
                 <li><i class="fas fa-shield-alt"></i> Armaduras</li>
                 <li><i class="fas fa-hat-wizard"></i> Fantasias</li>
                 <li><i class="fas fa-scroll"></i> Receitas</li>
@@ -58,7 +86,7 @@
             <div class="header">
                 <div class="breadcrumb">
                     <a href="https://grand-guide.github.io/" class="breadcrumb-link">INÍCIO</a> / 
-                    <span class="current">Lista de Itens</span>
+                    <span class="current">ITEMS</span>
                 </div>
                 <div class="user-info">
                     <span class="user-name">Nome Do Jogador</span>
@@ -72,7 +100,7 @@
                 <button class="filter-tool"><i class="fas fa-filter"></i> Filtrar Itens</button>
                 <button class="sort-tool"><i class="fas fa-sort"></i> Ordenar Itens</button>
                 <div class="search-bar">
-                    <input type="text" placeholder="Buscar itens">
+                    <input type="text" id="search-input" placeholder="Buscar itens">
                     <button type="submit"><i class="fas fa-search"></i></button>
                 </div>
             </div>
@@ -84,7 +112,7 @@
                 <span>ICON</span>
                 <span>DESCRIÇÃO</span>
                 <span>VALOR</span>
-                <span>DATA DE CRIAÇÃO</span>
+                <span>ATUALIZADO EM</span>
                 <span>STATUS</span>
                 <span>QUALIDADE</span>
             </div>
@@ -109,16 +137,17 @@
     </div>
 
     <script>
-        // Configurações de paginação
         const itemsPerPage = 12;
         let currentPage = 1;
-        let items = [];
+        let originalItems = [];
+        let filteredItems = [];
 
         // Função para carregar itens do arquivo JSON
         async function loadItems() {
             try {
                 const response = await fetch('items.json');
-                items = await response.json();
+                originalItems = await response.json();
+                filteredItems = [...originalItems];
                 displayItems();
                 setupPagination();
             } catch (error) {
@@ -127,61 +156,61 @@
         }
 
         // Função para exibir itens da página atual
-function displayItems() {
-    const itemList = document.getElementById('item-list');
-    itemList.innerHTML = '';
+        function displayItems() {
+            const itemList = document.getElementById('item-list');
+            itemList.innerHTML = '';
 
-    const start = (currentPage - 1) * itemsPerPage;
-    const end = Math.min(start + itemsPerPage, items.length);
+            const start = (currentPage - 1) * itemsPerPage;
+            const end = Math.min(start + itemsPerPage, filteredItems.length);
 
-    for (let i = start; i < end; i++) {
-        const item = items[i];
-        const itemElement = document.createElement('div');
-        itemElement.classList.add('item');
+            for (let i = start; i < end; i++) {
+                const item = filteredItems[i];
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
 
-        // Determine a classe de qualidade com base no item
-        const qualityClass = `item-quality ${getQualityClass(item.quality)}`;
+                // Determine a classe de qualidade com base no item
+                const qualityClass = `item-quality ${getQualityClass(item.quality)}`;
 
-        itemElement.innerHTML = `
-                        <span class="item-id">${item.id}</span>
-                        <span class="item-name">${item.name}</span>
-                        <img src="${item.cover}" alt="${item.name}" class="item-cover">
-                        <span class="item-description">${item.description}</span>
-                        <span class="item-price">${item.price}</span>
-                        <span class="item-update">${item.update}</span>
-                        <span class="item-status ${item.status === 'disponível' ? 'published' : ''}">
-                            <i class="fas fa-check-circle"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
-                        </span>
-                        <div class="item-quality ${getQualityClass(item.quality)}">
-                            ${item.quality}
-                        </div>
-                    `;
+                itemElement.innerHTML = `
+                    <span class="item-id">${item.id}</span>
+                    <span class="item-name">${item.name}</span>
+                    <img src="${item.cover}" alt="${item.name}" class="item-cover">
+                    <span class="item-description">${item.description}</span>
+                    <span class="item-price">${item.price}</span>
+                    <span class="item-update">${item.update}</span>
+                    <span class="item-status ${item.status === 'Verificado' ? 'verificado' : 'pendente'}">
+                        <i class="fas ${item.status === 'Verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+                    </span>
+                    <div class="item-quality ${getQualityClass(item.quality)}">
+                        ${item.quality}
+                    </div>
+                `;
 
-        itemList.appendChild(itemElement);
-    }
-}
+                itemList.appendChild(itemElement);
+            }
+        }
 
-// Função para determinar a classe de qualidade
-function getQualityClass(quality) {
-    switch (quality) {
-        case 'Lendário':
-        case 'Exótico':
-        case 'Sagrado':
-        case 'Comum':
-        case 'Raro':
-        case 'Incomum':
-            return quality; // Retorna a qualidade diretamente como classe
-        default:
-            return '';
-    }
-}
+        // Função para determinar a classe de qualidade
+        function getQualityClass(quality) {
+            switch (quality) {
+                case 'Lendário':
+                case 'Exótico':
+                case 'Sagrado':
+                case 'Comum':
+                case 'Raro':
+                case 'Incomum':
+                    return quality; // Retorna a qualidade diretamente como classe
+                default:
+                    return '';
+            }
+        }
 
         // Função para configurar a paginação
         function setupPagination() {
             const pageNumbers = document.getElementById('page-numbers');
             pageNumbers.innerHTML = '';
 
-            const totalPages = Math.ceil(items.length / itemsPerPage);
+            const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
 
             for (let i = 1; i <= totalPages; i++) {
                 const pageNumber = document.createElement('span');
@@ -202,7 +231,6 @@ function getQualityClass(quality) {
             document.getElementById('next-page').style.display = currentPage < totalPages ? 'inline' : 'none';
         }
 
-        // Adiciona eventos aos botões de navegação
         document.getElementById('prev-page').addEventListener('click', () => {
             if (currentPage > 1) {
                 currentPage--;
@@ -212,7 +240,7 @@ function getQualityClass(quality) {
         });
 
         document.getElementById('next-page').addEventListener('click', () => {
-            const totalPages = Math.ceil(items.length / itemsPerPage);
+            const totalPages = Math.ceil(filteredItems.length / itemsPerPage);
             if (currentPage < totalPages) {
                 currentPage++;
                 displayItems();
@@ -220,8 +248,25 @@ function getQualityClass(quality) {
             }
         });
 
-        // Carregar itens quando a página é carregada
-        document.addEventListener('DOMContentLoaded', loadItems);
+        // Função para filtrar itens com base no texto da pesquisa
+        function filterItems(query) {
+            return originalItems.filter(item => 
+                item.name.toLowerCase().includes(query.toLowerCase()) ||
+                item.description.toLowerCase().includes(query.toLowerCase())
+            );
+        }
+
+        // Adiciona o evento de pesquisa
+        document.getElementById('search-input').addEventListener('input', (event) => {
+            const query = event.target.value;
+            filteredItems = query ? filterItems(query) : [...originalItems];
+            currentPage = 1; // Voltar para a primeira página após a pesquisa
+            displayItems();
+            setupPagination();
+        });
+
+        // Carrega os itens ao iniciar a página
+        loadItems();
     </script>
 </body>
 </html>
