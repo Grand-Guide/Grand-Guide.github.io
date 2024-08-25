@@ -427,3 +427,44 @@ body {
     margin-left: 5px; /* Espaçamento entre o valor e o ícone */
     vertical-align: middle; /* Alinha verticalmente com o texto */
 }
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar ul {
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    border-top: 1px solid #ccc; /* Adiciona uma linha divisória acima do botão */
+    padding-top: 10px;
+}
+
+.sidebar-footer li {
+    padding: 10px;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.sidebar-footer li i {
+    margin-right: 10px;
+}
+
+.sidebar-footer li:hover {
+    background-color: #333; /* Mesma cor de fundo ao passar o mouse, como os outros itens */
+}

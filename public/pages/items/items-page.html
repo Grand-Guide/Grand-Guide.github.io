@@ -88,7 +88,17 @@
                 <li data-category="montaria"><i class="fas fa-horse-head"></i> Montarias</li>
                 <li data-category="trono"><i class="fas fa-chair"></i> Tronos</li>
             </ul>
+            <!-- Botão para Voltar à Página Inicial -->
+            <ul class="sidebar-footer">
+                <li id="back-home-btn"><i class="fas fa-home"></i> Página Inicial</li>
+            </ul>
         </aside>
+
+        <script>
+            document.getElementById('back-home-btn').addEventListener('click', function() {
+                window.location.href = '/web/GrandGuide.html'; // Substitua por sua URL
+            });
+        </script>
 
         <!-- Conteúdo Principal -->
         <main class="main-content">
