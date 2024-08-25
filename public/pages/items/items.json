@@ -10,164 +10,24 @@
         "quality": "Incomum"
     },
     {
-        "id": "34401",
+        "id": "002",
         "name": "Medo Espreitador do Abismo",
         "cover": "/public/pages/assets/34401.png",
         "description": "Um arco que dispara flechas estelares.",
-        "price": "27G",
+        "price": "27",
         "update": "24/08/2024",
         "status": "Pendente",
         "quality": "Sagrado"
     },
     {
         "id": "003",
-        "name": "armadura do caos",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Lendário"
-    },
-    {
-        "id": "004",
-        "name": "Fantasia do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Exótico"
-    },
-    {
-        "id": "005",
-        "name": "Receita do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Sagrado"
-    },
-    {
-        "id": "006",
-        "name": "Suprimento do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Comum"
-    },
-    {
-        "id": "007",
-        "name": "Pedra do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Raro"
-    },
-    {
-        "id": "008",
-        "name": "Núcleo do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Incomum"
-    },
-    {
-        "id": "009",
-        "name": "Montaria do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Lendário"
-    },
-    {
-        "id": "010",
-        "name": "Trono do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Exótico"
-    },
-    {
-        "id": "011",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Sagrado"
-    },
-    {
-        "id": "012",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Comum"
-    },
-    {
-        "id": "013",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Raro"
-    },
-    {
-        "id": "014",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Incomum"
-    },
-    {
-        "id": "015",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Lendário"
-    },
-    {
-        "id": "016",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Exótico",
-        "category": "suprimento"
-    },
-    {
-        "id": "017",
-        "name": "Arco do Destino",
-        "cover": "fire-bow.png",
-        "description": "Um arco que dispara flechas estelares.",
-        "price": "1000",
-        "update": "23/08/2024",
-        "status": "Verificado",
-        "quality": "Sagrado"
+        "name": "Montaria Espreitador do Abismo",
+      "cover": "/public/pages/assets/34401.png",
+      "description": "Um arco que dispara flechas estelares.",
+      "price": "2700",
+      "update": "24/08/2024",
+      "status": "Verificado",
+      "quality": "Sagrado",
+      "category": "montaria"
     }
 ]

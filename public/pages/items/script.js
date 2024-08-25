@@ -66,5 +66,10 @@ document.querySelectorAll('.sidebar li').forEach(categoryElement => {
     });
 });
 
+// Função para obter o ícone de status
+function getStatusIcon(status) {
+    return status === 'verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle';
+}
+
 // Carrega os itens iniciais ao carregar a página
 loadItems();

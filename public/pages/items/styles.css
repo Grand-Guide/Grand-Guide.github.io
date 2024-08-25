@@ -147,21 +147,6 @@ body {
     color: #FFFFFF;
 }
 
-.user-info {
-    display: flex;
-    align-items: center;
-    font-size: 12px;
-    color: #CCCCCC;
-}
-
-.user-info .storage {
-    margin-right: 15px;
-}
-
-.user-info .user-name {
-    margin-right: 10px;
-}
-
 .user-avatar {
     width: 30px;
     height: 30px;
@@ -434,4 +419,11 @@ body {
     font-family: 'Font Awesome 5 Free';
     color: #008000; /* Verde */
     margin-right: 8px;
+}
+
+.item-price::after {
+    content: url('/public/pages/items/icons/gold.png'); /* Caminho do ícone */
+    display: inline-block;
+    margin-left: 5px; /* Espaçamento entre o valor e o ícone */
+    vertical-align: middle; /* Alinha verticalmente com o texto */
 }
