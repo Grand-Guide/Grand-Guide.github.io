@@ -1,24 +1,24 @@
 [
 {
-    "id": "001",
-    "name": "Espada Sagrada Arcaica",
-    "cover": "/public/pages/assets/8474.png",
-    "description": "A espada sagrada de um antigo guerreiro em batalha, ah um nome cravado nela.",
-    "price": "1000",
-    "update": "23/08/2024",
-    "status": "Pendente",
-    "quality": "Incomum",
-    "category": "arma"
+    "id":          "34401",
+    "name":        "Machado do Efeito Mágico",
+    "cover":       "/public/pages/assets/armas/AM34498.png",
+    "description": "Destruidor / Cavaleiro Sagrado",
+    "price":       "23",
+    "update":      "23/08/2024",
+    "status":      "Pendente",
+    "quality":     "Epico",
+    "category":    "arma"
 },
 {
-    "id": "34401",
-    "name": "Medo Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
-    "status": "Pendente",
-    "quality": "Sagrado",
-    "category": "arma"
+    "id":          "34401",
+    "name":        "Medo Espreitador do Abismo",
+    "cover":       "/public/pages/assets/armas/AM34401.png",
+    "description": "Destruidor / Predador/ Shinobi",
+    "price":       "27",
+    "update":      "24/08/2024",
+    "status":      "Verificado",
+    "quality":     "Sagrado",
+    "category":    "arma"
 }
 ]

@@ -1,13 +1,13 @@
 [
 {
-    "id": "34401",
-    "name": "Receita Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
+    "id": "301",
+    "name": "Fórmula: Barro de Alquimia Mágica",
+    "cover": "/public/pages/assets/receitas/R301.png",
     "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
-    "status": "Pendente",
-    "quality": "Sagrado",
+    "price": "0",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Raro",
     "category": "receita"
 }
 ]

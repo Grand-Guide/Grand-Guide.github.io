@@ -1,13 +1,13 @@
 [
     {
-    "id": "34401",
-    "name": "Fantasia Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
+    "id": "F301",
+    "name": "Fantasia Donzela do Santuário",
+    "cover": "/public/pages/assets/fantasias/F301.png",
+    "description": "A veste clássica de uma donzela do santuário.",
+    "price": "2500",
+    "update": "26/08/2024",
     "status": "Pendente",
-    "quality": "Sagrado",
+    "quality": "Comum",
     "category": "fantasia"
 }
 ]

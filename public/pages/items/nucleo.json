@@ -1,13 +1,13 @@
 [
 {
-    "id": "34401",
-    "name": "Nucleo Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
+    "id": "248",
+    "name": "Mini-Núcleo de Agilidade Reluzente",
+    "cover": "/public/pages/assets/nucleos/N248.png",
+    "description": "AGI aumenta +10% durante 5 min.",
+    "price": "20",
+    "update": "26/08/2024",
     "status": "Pendente",
-    "quality": "Sagrado",
+    "quality": "Lendario",
     "category": "nucleo"
 }
 ]

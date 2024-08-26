@@ -1,33 +1,158 @@
 [
     {
-        "id": "001",
-        "name": "Espada Sagrada Arcaica",
-        "cover": "/public/pages/assets/8474.png",
-        "description": "A espada sagrada de um antigo guerreiro em batalha, ah um nome cravado nela.",
-        "price": "1000",
+        "id": "34401",
+        "name": "Machado do Efeito Mágico",
+        "cover": "/public/pages/assets/armas/AM34498.png",
+        "description": "Destruidor / Cavaleiro Sagrado",
+        "price": "23",
         "update": "23/08/2024",
         "status": "Pendente",
-        "quality": "Incomum"
+        "quality": "Epico"
     },
     {
-        "id": "002",
+        "id": "34401",
         "name": "Medo Espreitador do Abismo",
-        "cover": "/public/pages/assets/34401.png",
-        "description": "Um arco que dispara flechas estelares.",
+        "cover": "/public/pages/assets/armas/AM34401.png",
+        "description": "Destruidor / Predador/ Shinobi",
         "price": "27",
         "update": "24/08/2024",
         "status": "Pendente",
         "quality": "Sagrado"
     },
     {
-        "id": "003",
-        "name": "Montaria Espreitador do Abismo",
-      "cover": "/public/pages/assets/34401.png",
-      "description": "Um arco que dispara flechas estelares.",
-      "price": "2700",
-      "update": "24/08/2024",
-      "status": "Verificado",
-      "quality": "Sagrado",
-      "category": "montaria"
+        "id": "2525",
+        "name": "Chapéu Atirador do Vento",
+        "cover": "/public/pages/assets/armaduras/AD2525.png",
+        "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+        "price": "10",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "armadura"
+    },
+    
+    {
+        "id": "2526",
+        "name": "Armadura Atirador do Vento",
+        "cover": "/public/pages/assets/armaduras/AD2526.png",
+        "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+        "price": "10",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "armadura"
+    },
+    
+    {
+        "id": "2527",
+        "name": "Botas Atirador do Vento",
+        "cover": "/public/pages/assets/armaduras/AD2527.png",
+        "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+        "price": "10",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "armadura"
+    },
+    
+    {
+        "id": "2528",
+        "name": "Calças de Armadura Atirador do Vento",
+        "cover": "/public/pages/assets/armaduras/AD2528.png",
+        "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+        "price": "10",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "armadura"
+    },
+    
+    {
+        "id": "2529",
+        "name": "Suporte de Braço Atirador do Vento",
+        "cover": "/public/pages/assets/armaduras/AD2529.png",
+        "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+        "price": "10",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "armadura"
+    },
+    {
+        "id": "3442",
+        "name": "Assento do Esquilo das Folhas de Outono",
+        "cover": "/public/pages/assets/montarias/M3442.png",
+        "description": "Escalas / Alquimia Mágica / Loja de Itens / Leilão",
+        "price": "3000",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Exótico",
+        "category": "montaria"
+    },
+    {
+        "id": "F301",
+        "name": "Fantasia Donzela do Santuário",
+        "cover": "/public/pages/assets/fantasias/F301.png",
+        "description": "A veste clássica de uma donzela do santuário.",
+        "price": "2500",
+        "update": "26/08/2024",
+        "status": "Pendente",
+        "quality": "Comum",
+        "category": "fantasia"
+    },
+    {
+        "id": "248",
+        "name": "Mini-Núcleo de Agilidade Reluzente",
+        "cover": "/public/pages/assets/nucleos/N248.png",
+        "description": "AGI aumenta +10% durante 5 min.",
+        "price": "20",
+        "update": "26/08/2024",
+        "status": "Pendente",
+        "quality": "Lendário",
+        "category": "nucleo"
+    },
+    {
+        "id": "34",
+        "name": "Pedra Rúnica de Restrição de Herói",
+        "cover": "/public/pages/assets/pedras/P34.png",
+        "description": "Uma Pedra Rúnica de alta qualidade que herda poder heróico.",
+        "price": "110000",
+        "update": "26/08/2024",
+        "status": "Pendente",
+        "quality": "Exótico",
+        "category": "pedra"
+    },
+    {
+        "id": "301",
+        "name": "Fórmula: Barro de Alquimia Mágica",
+        "cover": "/public/pages/assets/receitas/R301.png",
+        "description": "Produto Final: Pacote de Argila de Alquimia Mágica.",
+        "price": "0",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Raro",
+        "category": "receita"
+    },
+    {
+        "id": "4",
+        "name": "Olho de Gato",
+        "cover": "/public/pages/assets/suprimentos/S4.png",
+        "description": "Uma gema curiosa, acredita-se que traz boa sorte.",
+        "price": "5",
+        "update": "26/08/2024",
+        "status": "Pendente",
+        "quality": "Incomum",
+        "category": "suprimento"
+    },
+    {
+        "id": "56",
+        "name": "Roda Gigante Sprite Suprema",
+        "cover": "/public/pages/assets/tronos/R56.png",
+        "description": "Uma das atrações mais populares do Parque de Diversão Sprite.",
+        "price": "3500",
+        "update": "26/08/2024",
+        "status": "Verificado",
+        "quality": "Incomum",
+        "category": "trono"
     }
 ]

@@ -1,13 +1,61 @@
 [
     {
-    "id": "34401",
-    "name": "Armadura Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
+    "id": "2525",
+    "name": "Chapéu Atirador do Vento",
+    "cover": "/public/pages/assets/armaduras/AD2525.png",
+    "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
     "price": "27G",
-    "update": "24/08/2024",
-    "status": "Pendente",
-    "quality": "Sagrado",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
+    "category": "armadura"
+},
+
+{
+    "id": "2526",
+    "name": "Armadura Atirador do Vento",
+    "cover": "/public/pages/assets/armaduras/AD2526.png",
+    "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+    "price": "27G",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
+    "category": "armadura"
+},
+
+{
+    "id": "2527",
+    "name": "Botas Atirador do Vento",
+    "cover": "/public/pages/assets/armaduras/AD2527.png",
+    "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+    "price": "27G",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
+    "category": "armadura"
+},
+
+{
+    "id": "2528",
+    "name": "Calças de Armadura Atirador do Vento",
+    "cover": "/public/pages/assets/armaduras/AD2528.png",
+    "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+    "price": "27G",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
+    "category": "armadura"
+},
+
+{
+    "id": "2529",
+    "name": "Suporte de Braço Atirador do Vento",
+    "cover": "/public/pages/assets/armaduras/AD2529.png",
+    "description": "Arqueiro / Ranger / Franco Atirador / Mercenário / Predador",
+    "price": "27G",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
     "category": "armadura"
 }
 ]

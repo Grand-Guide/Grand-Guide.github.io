@@ -37,26 +37,6 @@ function displayItems() {
     }
 }
 
-// Função para configurar a paginação
-function setupPagination() {
-    const pageNumbers = document.getElementById('page-numbers');
-    pageNumbers.innerHTML = '';
-    const totalPages = Math.ceil(items.length / itemsPerPage);
-
-    for (let i = 1; i <= totalPages; i++) {
-        const pageNumber = document.createElement('span');
-        pageNumber.textContent = i;
-        if (i === currentPage) {
-            pageNumber.classList.add('active');
-        }
-        pageNumber.addEventListener('click', () => {
-            currentPage = i;
-            displayItems();
-        });
-        pageNumbers.appendChild(pageNumber);
-    }
-}
-
 // Adiciona eventos de clique para cada categoria na barra lateral
 document.querySelectorAll('.sidebar li').forEach(categoryElement => {
     categoryElement.addEventListener('click', () => {

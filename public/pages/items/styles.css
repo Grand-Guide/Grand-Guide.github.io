@@ -13,6 +13,24 @@ body {
     font-family: 'Chakra Petch', sans-serif;
 }
 
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    background-color: #2C2C2C;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Sombra para a esquerda e para cima, sem desfoque */
+.item:hover {
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: 2px 1px 0px rgba(255, 238, 0, 1);
+}
+
+
 .logo img {
     font-family: 'Iceland', sans-serif;
 }
@@ -230,22 +248,6 @@ body {
     flex-direction: column;
 }
 
-.item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    background-color: #2C2C2C;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.item:hover {
-    transform: scale(1.02);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
 .item img {
     width: 35px;
     height: 35px;
@@ -378,10 +380,27 @@ body {
     color: #FFFFFF;
 }
 
+.item-quality.Sagrado::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
+    color: #FF0000; /* Vermelho */
+    margin-right: 8px;
+}
+
 /* Definindo classes de qualidade específicas */
+.item-quality.Epico::before {
+    content: '\f005'; /* Código do ícone de estrela cheia */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
+    color: #FC14EC; /* Amarelo */
+    margin-right: 8px;
+}
+
 .item-quality.Lendário::before {
     content: '\f005'; /* Código do ícone de estrela cheia */
     font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
     color: #FFFF00; /* Amarelo */
     margin-right: 8px;
 }
@@ -389,27 +408,15 @@ body {
 .item-quality.Exótico::before {
     content: '\f005';
     font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
     color: #FFA500; /* Laranja */
-    margin-right: 8px;
-}
-
-.item-quality.Sagrado::before {
-    content: '\f005';
-    font-family: 'Font Awesome 5 Free';
-    color: #FF0000; /* Vermelho */
-    margin-right: 8px;
-}
-
-.item-quality.Comum::before {
-    content: '\f005';
-    font-family: 'Font Awesome 5 Free';
-    color: #FFFFFF; /* Branco */
     margin-right: 8px;
 }
 
 .item-quality.Raro::before {
     content: '\f005';
     font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
     color: #0000FF; /* Azul */
     margin-right: 8px;
 }
@@ -417,7 +424,16 @@ body {
 .item-quality.Incomum::before {
     content: '\f005';
     font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
     color: #008000; /* Verde */
+    margin-right: 8px;
+}
+
+.item-quality.Comum::before {
+    content: '\f005';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900; /* Necessário para ícones sólidos */
+    color: #FFFFFF; /* Branco */
     margin-right: 8px;
 }
 
@@ -468,3 +484,9 @@ ul {
 .sidebar-footer li:hover {
     background-color: #333; /* Mesma cor de fundo ao passar o mouse, como os outros itens */
 }
+
+/* Estilos para os itens (links) */
+.item-list a.item {  /* Seletor mais específico para os links */
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Herda a cor do elemento pai */
+  }

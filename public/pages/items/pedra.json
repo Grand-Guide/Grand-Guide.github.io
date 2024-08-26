@@ -1,13 +1,13 @@
 [
 {
-    "id": "34401",
-    "name": "Pedra Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
+    "id": "34",
+    "name": "Pedra Rúnica de Restrição de Herói",
+    "cover": "/public/pages/assets/pedras/P34.png",
+    "description": "Uma Pedra Rúnica de alta qualidade que herda poder heróico.",
+    "price": "110000",
+    "update": "26/08/2024",
     "status": "Pendente",
-    "quality": "Sagrado",
+    "quality": "Exótico",
     "category": "pedra"
 }
 ]

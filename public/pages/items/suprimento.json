@@ -1,13 +1,13 @@
 [
     {
-    "id": "34401",
-    "name": "Suprimento Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
+    "id": "4",
+    "name": "Olho de Gato",
+    "cover": "/public/pages/assets/suprimentos/S4.png",
+    "description": "Uma gema curiosa, acredita-se que traz boa sorte.",
+    "price": "5",
+    "update": "26/08/2024",
     "status": "Pendente",
-    "quality": "Sagrado",
-    "category": "arma"
+    "quality": "Incomum",
+    "category": "suprimento"
 }
 ]

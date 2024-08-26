@@ -13,9 +13,6 @@
     <meta property="og:type" content="website" />
     <link rel="icon" href="https://raw.githubusercontent.com/Grand-Guide/Grand-Guide.github.io/main/public/favicon.ico" />
 
-    <!-- Animations Sheets -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
     <!-- Fonts Sheets -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Iceland&family=Inter:wght@100;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
@@ -25,28 +22,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Adiciona ícones para diferentes qualidades */
-        .item-quality.high::before {
-            content: '\f005'; /* Código do ícone de estrela cheia */
-            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
-            color: #FFD700; /* Cor dourada para alta qualidade */
-            margin-right: 8px;
-        }
-
-        .item-quality.medium::before {
-            content: '\f006'; /* Código do ícone de estrela meia cheia */
-            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
-            color: #C0C0C0; /* Cor prata para média qualidade */
-            margin-right: 8px;
-        }
-
-        .item-quality.low::before {
-            content: '\f005'; /* Código do ícone de estrela cheia */
-            font-family: 'Font Awesome 5 Free'; /* Biblioteca de ícones */
-            color: #CD5C5C; /* Cor cobre para baixa qualidade */
-            margin-right: 8px;
-        }
-
         /* Estilo para o status verificado */
         .item-status.verificado {
             color: #28a745; /* Cor verde para itens verificados */
@@ -104,14 +79,16 @@
         <main class="main-content">
             <div class="header">
                 <div class="breadcrumb">
-                    <a href="https://grand-guide.github.io/" class="breadcrumb-link">INÍCIO</a> / 
+                    <a href="/web/GrandGuide.html" class="breadcrumb-link">INÍCIO</a> / 
                     <span class="current">ITEMS</span>
                 </div>
             </div>
 
             <!-- Ferramentas -->
             <div class="tools">
-                <button class="add-btn"><i class="fas fa-plus"></i> Contribuir</button>
+                <button class="add-btn" onclick="window.location.href='../../../const.html';">
+                    <i class="fas fa-plus"></i> Contribuir
+                </button>                
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Buscar itens">
                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -171,6 +148,35 @@ async function loadItems(category = null) {
     }
 }
 
+function performSearch(query) {
+    const items = document.querySelectorAll('.item');
+    
+    items.forEach(item => {
+        const itemName = item.querySelector('.item-name').textContent.toLowerCase();
+        const itemID = item.querySelector('.item-id').textContent.toLowerCase();
+        
+        if (itemName.includes(query) || itemID.includes(query)) {
+            // Remover classe fade-out e adicionar fade-in
+            item.classList.remove('fade-out');
+            item.classList.add('fade-in');
+            item.style.display = 'flex'; // Ou outro display apropriado
+        } else {
+            // Adicionar classe fade-out e definir um timeout para esconder o item
+            item.classList.remove('fade-in');
+            item.classList.add('fade-out');
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 500); // Correspondente ao tempo de animação da classe fadeOut
+        }
+    });
+}
+
+document.querySelector('.search-bar input').addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase();
+    performSearch(query);
+});
+
+
 // Evento de clique nas categorias da barra lateral
 document.querySelectorAll('.sidebar ul li').forEach(item => {
     item.addEventListener('click', function() {
@@ -183,7 +189,6 @@ document.querySelectorAll('.sidebar ul li').forEach(item => {
 loadItems();
 
         // Função para exibir itens da página atual
-        
         function displayItems() {
     const itemList = document.getElementById('item-list');
     itemList.innerHTML = '';
@@ -193,7 +198,8 @@ loadItems();
 
     for (let i = start; i < end; i++) {
         const item = filteredItems[i];
-        const itemElement = document.createElement('div');
+        const itemElement = document.createElement('a'); // Cria um link
+        itemElement.href = `/public/pages/items/details.html?id=${item.id}`; // Define o link para a página de detalhes
         itemElement.classList.add('item', 'animate__animated', 'animate__fadeInUp');
 
         // Determine a classe de qualidade com base no item
@@ -215,14 +221,25 @@ loadItems();
         `;
 
         itemList.appendChild(itemElement);
-    }
+
+        // Adiciona a classe 'show' após um pequeno atraso para criar o efeito de animação
+        setTimeout(() => {
+            itemElement.classList.add('show');
+        }, i * 100); // Atraso de 100ms entre cada item
+
+        // Adiciona um ouvinte de eventos para lidar com o clique (opcional)
+    itemElement.addEventListener('click', (event) => {
+    });
+  }
 }
+
 
 
         // Função para determinar a classe de qualidade
         function getQualityClass(quality) {
             switch (quality) {
                 case 'Lendário':
+                case 'Epico':
                 case 'Exótico':
                 case 'Sagrado':
                 case 'Comum':

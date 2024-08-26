@@ -39,20 +39,10 @@
 
   </head>
   <body class="flex-column">
+    
     <main class="grand-guide mainSection">
       <!-- Main content area of the webpage -->
       <section class="searchSection">
-        <!-- Section for searching and discovering content -->
-        <div class="searchWrapper">
-          <input type="text" class="searchInput" placeholder="O que você quer pesquisar?" />
-          <button class="searchButton">
-            <img src="/web/assets/searchicon.svg" alt="Search Icon" />
-          </button>
-        </div>
-        
-        <input type="text" id="searchInput" placeholder="Pesquise itens..." onkeyup="searchItems()">
-        <div id="results"></div>
-
 
         <div class="formGroup">
           <!-- Group of form elements -->
@@ -77,12 +67,107 @@
             <!-- Label for contacting support -->
             CONTATE-NOS
           </a>
+          <img
+          class="sprite"
+          src="/src/assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png"
+          alt="alt text"
+        />
           <div class="groupSection">
-            <input
-              class="searchInput"
-              type="text"
-              placeholder="O que você quer pesquisar?"
-            />
+            <input class="searchInput" type="text" placeholder="O que você quer pesquisar?" />
+
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".searchInput");
+
+  // Função para carregar os itens do arquivo JSON
+  async function loadItems() {
+    try {
+      const response = await fetch('/public/pages/items/items.json'); // Carrega o arquivo JSON
+      const items = await response.json(); // Converte a resposta para JSON
+      return items;
+    } catch (error) {
+      console.error("Erro ao carregar os itens:", error);
+      return [];
+    }
+  }
+
+  // Função para filtrar e exibir os itens com base na pesquisa
+  function filterItems(items, searchText) {
+    searchText = searchText.toLowerCase(); // Converte a pesquisa para minúsculas
+
+    return items.filter(item => {
+      return item.name.toLowerCase().includes(searchText) || 
+             item.id.toLowerCase().includes(searchText);
+    });
+  }
+
+  // Função para exibir os itens filtrados com estilos embutidos
+  function displayResults(filteredItems) {
+    const resultsContainer = document.querySelector(".resultsContainer");
+    resultsContainer.innerHTML = ''; // Limpa os resultados anteriores
+
+    if (filteredItems.length > 0) {
+      filteredItems.forEach(item => {
+        const itemElement = document.createElement("a");
+        itemElement.className = "resultItem";
+        itemElement.href = `/public/pages/items/details.html?id=${item.id}`; // URL da página de detalhes
+        itemElement.textContent = `(${item.id}) ${item.name}`;
+
+        // Estilos embutidos
+        itemElement.style.backgroundColor = "#23272a";
+        itemElement.style.padding = "10px";
+        itemElement.style.borderRadius = "5px";
+        itemElement.style.transition = "transform 0.2s";
+        itemElement.style.color = "#fff";
+        itemElement.style.display = "block"; /* Garante que os itens sejam exibidos em bloco */
+
+        // Efeito hover
+        itemElement.addEventListener("mouseover", function() {
+          itemElement.style.transform = "scale(1.02)";
+          itemElement.style.backgroundColor = "#FFA500";
+          itemElement.style.cursor = "pointer";
+        });
+
+        itemElement.addEventListener("mouseout", function() {
+          itemElement.style.transform = "scale(1)";
+          itemElement.style.backgroundColor = "#23272a";
+        });
+
+        resultsContainer.appendChild(itemElement);
+      });
+    } else {
+      const noResultsElement = document.createElement("p");
+      noResultsElement.textContent = '';
+      
+      // Estilos embutidos para o texto "Nenhum item encontrado"
+      noResultsElement.style.color = "#b9bbbe";
+      noResultsElement.style.padding = "10px";
+      
+      resultsContainer.appendChild(noResultsElement);
+    }
+  }
+
+  // Carrega os itens quando a página é carregada
+  loadItems().then(items => {
+    searchInput.addEventListener("input", function () {
+      const searchText = searchInput.value;
+
+      // Se a barra de pesquisa estiver vazia, limpa os resultados
+      if (searchText.trim() === "") {
+        document.querySelector(".resultsContainer").innerHTML = "";
+        return;
+      }
+
+      const filteredItems = filterItems(items, searchText);
+      displayResults(filteredItems);
+    });
+  });
+});
+
+            </script>
+            
+            <div class="resultsContainer"></div>
+
             <!-- Image related to the search section. -->
           </div>
         </div>
@@ -111,12 +196,6 @@
             </span>
           </p>
         </div>
-        
-        <img
-          class="sprite"
-          src="/src/assets/c7da7bb03b7084dcbf2a06c1540ad2c2.png"
-          alt="alt text"
-        />
         <a href="/public/pages/items/items-page.html" class="link-wrapper">
           <img class="fanBaseImage2" src="/src/assets/27a08a2145e18e07cb83825f6eb270e5.png" alt="alt text" />
         </a>
@@ -271,5 +350,8 @@
         <div class="socialMediaMiniDescription6">Mini descrição 6</div>
       </section>
     </main>
+
+    <script type="module" src="./js/search.js"></script>
+    
   </body>
 </html>

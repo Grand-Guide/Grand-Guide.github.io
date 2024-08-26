@@ -1,13 +1,13 @@
 [
 {
-    "id": "34401",
-    "name": "Montaria Espreitador do Abismo",
-    "cover": "/public/pages/assets/34401.png",
-    "description": "Um arco que dispara flechas estelares.",
-    "price": "27G",
-    "update": "24/08/2024",
-    "status": "Pendente",
-    "quality": "Sagrado",
+    "id": "3442",
+    "name": "Assento do Esquilo das Folhas de Outono",
+    "cover": "/public/pages/assets/montarias/M3442.png",
+    "description": "Escalas / Alquimia Mágica / Loja de Itens / Leilão",
+    "price": "3000G",
+    "update": "26/08/2024",
+    "status": "Verificado",
+    "quality": "Exótico",
     "category": "montaria"
 }
 ]
