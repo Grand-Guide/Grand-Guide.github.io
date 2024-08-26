@@ -7,6 +7,7 @@
     box-sizing: border-box;
 }
 
+
 h1, h2, h3, h4, h5, h6, hr, p, figure {
     display: block;
     font-size: 1em;
@@ -15,6 +16,28 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
     border-width: 0;
     opacity: 1;
 }
+
+  /* Estilo para a barra de pesquisa */
+  .searchInput {
+    position: relative; /* Garante que o z-index funcione corretamente */
+    z-index: 1; /* Define um z-index maior para que fique acima do sprite */
+  }
+  
+  /* Estilo para a imagem do sprite */
+  .sprite {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    pointer-events: none; /* Garante que a imagem não bloqueie interações com outros elementos */
+    z-index: 0; /* Define um z-index menor para que fique atrás dos outros elementos */
+  }
+  
+  .resultItem {
+    text-decoration: none; /* Remove o sublinhado */
+  }
 
 .searchWrapper {
     display: flex;
@@ -121,6 +144,36 @@ h1, h2, h3, h4, h5, h6, hr, p, figure {
 .fanBaseImage9:hover {
   transform: translateY(-12px);
 }
+
+/* Estilos para a barra de pesquisa */
+#searchInput {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#results {
+    margin-top: 10px;
+}
+
+.result-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.result-item h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.result-item p {
+    margin: 5px 0;
+}
+
 
   @keyframes moveUpDown {
     0% {
