@@ -16,30 +16,104 @@
     <!-- Fonts Sheets -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600&family=Iceland&family=Inter:wght@100;400;600;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <!-- CSS Sheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Estilo para o status verificado */
-        .item-status.verificado {
-            color: #28a745; /* Cor verde para itens verificados */
-        }
+ .statistics {
+    display: flex;
+    gap: 10px; /* Reduz o espaçamento entre as estatísticas */
+    margin-bottom: 20px; /* Espaço entre as estatísticas e o botão Contribuir */
+    justify-content: flex-end; /* Alinha as estatísticas à direita */
+    flex-wrap: wrap; /* Permite que as estatísticas se movam para a linha seguinte em telas menores */
+}
 
-        /* Estilo para o status pendente */
-        .item-status.pendente {
-            color: #ffc107; /* Cor amarela para itens pendentes */
-        }
+.statistic {
+    background-color: #292929; /* Cor de fundo escura */
+    border-radius: 6px; /* Cantos arredondados */
+    padding: 10px 15px; /* Reduzido para um tamanho menor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    min-width: 120px; /* Define uma largura mínima menor para cada estatística */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
 
-        /* Ícones para os status */
-        .item-status.verificado i {
-            content: '\f058'; /* Ícone de círculo com check */
-        }
+.stat-title, .stat-value {
+    width: 100%; /* Garante que o título e o valor ocupem toda a largura disponível */
+    text-align: left; /* Alinha o texto à esquerda */
+}
 
-        .item-status.pendente i {
-            content: '\f071'; /* Ícone de triângulo com alerta */
-        }
+.stat-value {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400; /* Regular weight for a clean look */
+    font-size: 18px; /* Ajuste o tamanho conforme necessário */
+    color: #ffffff; /* Cor clara para contraste */
+}
+
+.stat-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 1200; /* Bold weight for a robust look */
+    font-size: 15px; /* Ajuste o tamanho conforme necessário */
+    color: #A3A3A3; /* Cor mais escura para destaque */
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão "Contribuir" */
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo para o status verificado */
+.item-status.verificado {
+    color: #28a745; /* Cor verde para itens verificados */
+}
+
+/* Estilo para o status pendente */
+.item-status.pendente {
+    color: #ffc107; /* Cor amarela para itens pendentes */
+}
+
+/* Ícones para os status */
+.item-status.verificado i {
+    content: '\f058'; /* Ícone de círculo com check */
+}
+
+.item-status.pendente i {
+    content: '\f071'; /* Ícone de triângulo com alerta */
+}
+
+.contributors-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Espaço entre ícones */
+}
+
+.contributor-icon {
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.contributor-icon:last-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
     </style>
 </head>
 <body>
@@ -52,7 +126,7 @@
                 <span class="logo-text">Grand Guide</span>
             </div>
             <ul>
-                <li id="all-items-btn"><i class="fas fa-list-ul"></i> Todos os Itens</li>
+                <li id="all-items-btn"><i class="fas fa-list-ul"></i> Todos os Items</li>
                 <li data-category="arma"><i class="fas fa-crosshairs"></i> Armas</li>
                 <li data-category="armadura"><i class="fas fa-shield-alt"></i> Armaduras</li>
                 <li data-category="fantasia"><i class="fas fa-hat-wizard"></i> Fantasias</li>
@@ -82,7 +156,92 @@
                     <a href="/web/GrandGuide.html" class="breadcrumb-link">INÍCIO</a> / 
                     <span class="current">ITEMS</span>
                 </div>
+                <div class="statistics">
+                    <div class="statistic">
+                        <span class="stat-title">Total de Itens</span>
+                        <span class="stat-value" id="total-items">0</span>
+                    </div>
+                    <div class="statistic">
+                        <span class="stat-title">Contribuidores</span>
+                        <div id="contributors-container" class="contributors-container"></div>
+                        <span class="stat-value" id="total-contributors" style="display:none;"></span>
+                    </div>
+                    <div class="statistic">
+                        <span class="stat-title">Total de Verificações</span>
+                        <span class="stat-value" id="total-checks">0</span>
+                    </div>
+                </div>
             </div>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+    // Função para carregar e atualizar as estatísticas
+    function updateStatistics() {
+        // Atualiza o total de itens
+        fetch('/public/pages/items/items.json')
+            .then(response => response.json())
+            .then(data => {
+                // Atualiza o total de itens
+                document.getElementById('total-items').textContent = data.length;
+
+                // Contadores adicionais
+                let totalChecks = 0;
+
+                // Contadores de verificações
+                data.forEach(item => {
+                    if (item.status === 'Verificado') {
+                        totalChecks++;
+                    }
+                });
+
+                // Atualiza os valores
+                document.getElementById('total-checks').textContent = totalChecks;
+            })
+            .catch(error => console.error('Erro ao carregar o arquivo JSON de itens:', error));
+
+        // Atualiza o total de contribuintes e exibe os ícones
+        fetch('/public/pages/users/contributors.json')
+            .then(response => response.json())
+            .then(data => {
+                const contributorsContainer = document.getElementById('contributors-container');
+                const maxIconsToShow = 5; // Limite de ícones a serem exibidos
+                const remainingCount = data.length - maxIconsToShow;
+
+                // Limpa o container para evitar duplicação
+                contributorsContainer.innerHTML = '';
+
+                // Exibe os ícones dos contribuidores
+                for (let i = 0; i < Math.min(data.length, maxIconsToShow); i++) {
+                    const contributor = data[i];
+                    
+                    const contributorDiv = document.createElement('div');
+                    contributorDiv.className = 'contributor-icon';
+                    contributorDiv.style.backgroundImage = `url('/public/pages/users/icons/${contributor.icon}')`;
+
+                    contributorsContainer.appendChild(contributorDiv);
+                }
+
+                // Se houver mais contribuidores, exibe o ícone de contagem restante
+                if (remainingCount > 0) {
+                    const remainingDiv = document.createElement('div');
+                    remainingDiv.className = 'contributor-icon';
+                    remainingDiv.style.backgroundColor = 'black';
+                    remainingDiv.innerText = `+${remainingCount}`;
+                    contributorsContainer.appendChild(remainingDiv);
+                }
+
+                // Atualiza o total de contribuintes (opcional, dependendo do design)
+                document.getElementById('total-contributors').textContent = data.length;
+            })
+            .catch(error => console.error('Erro ao carregar o arquivo JSON de contribuintes:', error));
+    }
+
+    // Chama a função para atualizar as estatísticas
+    updateStatistics();
+});
+
+
+            </script>            
 
             <!-- Ferramentas -->
             <div class="tools">

@@ -15,6 +15,59 @@ async function loadItems(category) {
     }
 }
 
+fetch('items.json')
+  .then(response => response.json())
+  .then(data => {
+    // Exemplo: Acessar o primeiro item da lista
+    const firstItem = data.items[0]; 
+
+    // Exibir as informações na página
+    document.getElementById('item-name').textContent = firstItem.itemName;
+    document.getElementById('item-icon').src = firstItem.itemIcon;
+
+    // Informações
+    document.getElementById('info-name').textContent = firstItem.itemName;
+    document.getElementById('info-type').textContent = firstItem.itemType; 
+    document.getElementById('info-rarity').textContent = firstItem.itemRarity; 
+
+    // Recompensa de
+    displayList('rewards-list', firstItem.recompensaDe);
+
+    // Usado para criar
+    displayList('used-to-craft-list', firstItem.usadoParaCriar);
+
+    // Receitas
+    displayList('recipes-list', firstItem.receitas);
+
+    // Caçando
+    displayList('hunting-list', firstItem.cacando);
+
+    // Loja
+    document.getElementById('shop-npc').textContent = firstItem.loja.npc || 'Não disponível';
+    document.getElementById('shop-price').textContent = firstItem.loja.preco || 'Não disponível';
+
+    // Descrição
+    document.getElementById('item-desc').textContent = firstItem.descricao;
+
+    // Preço
+    document.getElementById('price-value').textContent = firstItem.preco;
+  })
+  .catch(error => console.error('Erro ao carregar os dados:', error));
+
+// Função auxiliar para exibir listas
+function displayList(listId, items) {
+    const list = document.getElementById(listId);
+    if (items && items.length > 0) {
+        items.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = item;
+            list.appendChild(listItem);
+        });
+    } else {
+        list.innerHTML = '<li>Nenhuma informação encontrada.</li>'; 
+    }
+}
+
 // Função para exibir os itens na página
 function displayItems() {
     const itemList = document.getElementById('item-list');

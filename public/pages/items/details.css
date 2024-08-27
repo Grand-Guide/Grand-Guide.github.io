@@ -1,0 +1,51 @@
+body {
+    background-color: #0d0d0d;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Evita rolagem */
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background-color: #242424;
+    color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.212);
+    transition: transform 0.3s ease;
+    position: absolute; /* Permite o posicionamento absoluto dos cards */
+    box-sizing: border-box; /* Garante que o padding não afete a largura e altura */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilos específicos para cada card com posicionamento */
+.card.card-1 { width: 800px; height: 280px; top: 300px; left: 190px; }
+.card.card-2 { width: 590px; height: 280px; top: 600px; left: 400px; }
+.card.card-3 { width: 200px; height: 70px; top: 650px; left: 190px; }
+.card.card-4 { width: 200px; height: 70px; top: 730px; left: 190px; }
+.card.card-5 { width: 200px; height: 70px; top: 810px; left: 190px; }
+.card.card-6 { width: 500px; height: 100px; top: 780px; left: 1150px; }
+.card.card-7 { width: 500px; height: 220px; top: 550px; left: 1150px; }
+.card.card-8 { width: 500px; height: 100px; top: 440px; left: 1150px; }
+.card.card-9 { width: 245px; height: 50px; top: 380px; left: 1150px; }
+.card.card-10 { width: 245px; height: 50px; top: 380px; left: 1405px; }
+.card.card-11 { width: 500px; height: 75px; top: 295px; left: 1150px; }
+.card.card-12 { width: 170px; height: 45px; top: 35px; left: 670px; }
+.card.card-13 { width: 170px; height: 45px; top: 35px; left: 855px; }
+.card.card-14 { width: 170px; height: 45px; top: 35px; left: 1040px; }
+.card.card-15 { width: 170px; height: 45px; top: 35px; left: 1225px; }
+.card.card-16 { width: 220px; height: 45px; top: 35px; left: 1410px; }
+.card.card-17 { width: 80; height: 85px; top: 200px; left: 190px; }

@@ -1,171 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-
-    <title>Item Details</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Poppins:wght@300;400;600&display=swap">   
-
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #1e1e1e;
-      color: #f5f5f5;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #1e1e1e;
-    color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-.container {
-    max-width: 900px; /* Largura ajustada para telas menores */
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    background-color: #2a2a2a;
-    color: #fff;
-    border-radius: 8px 8px 0 0; /* Borda arredondada apenas no topo */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 1.8rem; /* Tamanho da fonte ajustado */
-    font-weight: 600;
-}
-
-.back-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #ffa500; /* Cor laranja */
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-}
-
-.back-button i {
-    margin-right: 5px;
-}
-
-.main-content {
-    background: #2a2a2a;
-    padding: 20px;
-    border-radius: 0 0 8px 8px; /* Borda arredondada apenas na parte inferior */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.item-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.item-detail img {
-    max-width: 300px; /* Largura máxima da imagem */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.item-detail img:hover {
-    transform: scale(1.05);
-}
-
-.item-detail h2 {
-    font-size: 1.6rem; /* Tamanho da fonte ajustado */
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: #ffa500;
-}
-
-.item-detail p {
-    font-size: 1.1rem; /* Tamanho da fonte ajustado */
-    margin: 8px 0; /* Margem ajustada */
-    line-height: 1.6; /* Espaçamento entre linhas ajustado */
-}
-
-.item-detail .price {
-    font-size: 1.3rem; /* Tamanho da fonte ajustado */
-    color: #ff6f61;
-    font-weight: 600;
-    margin-top: 15px; /* Adicionada margem superior */
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="details.css">
+    <title>Cards Personalizáveis</title>
 </head>
 <body>
-
-  <div class="container">
-        <header class="header">
-            <button class="back-button" onclick="window.history.back()">
-                <i class="arrow-back"></i> Voltar à pesquisa
-            </button>
-            <h1 id="itemName">Detalhes do item</h1> 
-        </header>
-
-        <main class="main-content">
-            <div class="item-detail" id="itemDetail">
-                </div>
-        </main>
+    <div class="container">
+        <!-- Cards com classes específicas -->
+        <div class="card card-1">Informações 1</div>
+        <div class="card card-2">Videos 2</div>
+        <div class="card card-3">Contribuidores 3</div>
+        <div class="card card-4">Verificações 4</div>
+        <div class="card card-5">Total de Items 5</div>
+        <div class="card card-6">Loja 6</div>
+        <div class="card card-7">Caçando 7</div>
+        <div class="card card-8">Receita 8</div>
+        <div class="card card-9">Valor 9</div>
+        <div class="card card-10">Classe 10</div>
+        <div class="card card-11">Descrição 11</div>
+        <div class="card card-12">Botao 12</div>
+        <div class="card card-13">Botao 13</div>
+        <div class="card card-14">Botao 14</div>
+        <div class="card card-15">Botao 15</div>
+        <div class="card card-16">Botao 16</div>
+        <div class="card card-17">Icone 17</div>
     </div>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const urlParams = new URLSearchParams(window.location.search);
-      const itemId = urlParams.get('id');
-
-      async function fetchItemDetails(id) {
-        try {
-          const response = await fetch('items.json');
-          const items = await response.json();
-          return items.find(item => item.id === id);
-        } catch (error) {
-          console.error("Error fetching item details:", error);
-          return null;
-        }
-      }
-
-      async function displayItemDetails() {
-    const item = await fetchItemDetails(itemId);
-    if (item) {
-        const itemDetailDiv = document.getElementById('itemDetail');
-        itemDetailDiv.innerHTML = `
-            <img src="${item.cover || 'default-image.jpg'}" alt="${item.name}">
-            <h2>${item.name}</h2>
-            <p>${item.description}</p>
-            <p class="price">${item.price}<span class="gold-icon"></span>G</p> 
-            <p>Atualizado Em: ${item.update}</p>
-        `;
-    } else {
-        document.getElementById('itemDetail').innerHTML = "<p>Item não encontrado.</p>";
-    }
-}
-
-      displayItemDetails();
-    });
-  </script>
 </body>
 </html>

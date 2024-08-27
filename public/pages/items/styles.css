@@ -13,6 +13,19 @@ body {
     font-family: 'Chakra Petch', sans-serif;
 }
 
+.breadcrumb-link {
+    color: #007bff; /* Cor do link */
+    text-decoration: none;
+}
+
+.breadcrumb-link:hover {
+    text-decoration: underline;
+}
+
+.header {
+    margin-bottom: 20px; /* Espaçamento entre o header e o conteúdo principal */
+}
+
 .item {
     display: flex;
     justify-content: space-between;
