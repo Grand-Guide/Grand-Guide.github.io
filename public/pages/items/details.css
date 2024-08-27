@@ -16,6 +16,18 @@ body {
     justify-content: center;
 }
 
+.card-18 {
+    background-color: #2a2a2a;
+    color: #FFFFFF;
+    border-radius: 1px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    position: absolute; /* Permite o posicionamento absoluto dos cards */
+    box-sizing: border-box; /* Garante que o padding não afete a largura e altura */
+}
+
+.card-18 { width: 1950px; height: 1px; top: 0px; left: 0px; }
+
 .card {
     background-color: #242424;
     color: #FFFFFF;
@@ -43,9 +55,9 @@ body {
 .card.card-9 { width: 245px; height: 50px; top: 380px; left: 1150px; }
 .card.card-10 { width: 245px; height: 50px; top: 380px; left: 1405px; }
 .card.card-11 { width: 500px; height: 75px; top: 295px; left: 1150px; }
-.card.card-12 { width: 170px; height: 45px; top: 35px; left: 670px; }
-.card.card-13 { width: 170px; height: 45px; top: 35px; left: 855px; }
-.card.card-14 { width: 170px; height: 45px; top: 35px; left: 1040px; }
-.card.card-15 { width: 170px; height: 45px; top: 35px; left: 1225px; }
-.card.card-16 { width: 220px; height: 45px; top: 35px; left: 1410px; }
+.card.card-12 { width: 170px; height: 45px; top: 60px; left: 930px; }
+.card.card-13 { width: 170px; height: 45px; top: 60px; left: 1115px; }
+.card.card-14 { width: 170px; height: 45px; top: 60px; left: 1300px; }
+.card.card-15 { width: 170px; height: 45px; top: 60px; left: 1485px; }
+.card.card-16 { width: 220px; height: 45px; top: 60px; left: 1670px; }
 .card.card-17 { width: 80; height: 85px; top: 200px; left: 190px; }
