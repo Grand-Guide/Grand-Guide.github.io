@@ -250,7 +250,7 @@
                 </button>                
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Buscar itens">
-                    <button type="submit"><i class="fas fa-search"></i></button>
+                    
                 </div>
             </div>
 
@@ -372,7 +372,7 @@ loadItems();
             <span class="item-price">${item.price}</span>
             <span class="item-update">${item.update}</span>
             <span class="item-status ${item.status === 'Verificado' ? 'verificado' : 'pendente'}">
-                <i class="fas ${item.status === 'Verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
+            <i class="fas ${item.status === 'Verificado' ? 'fa-check-circle' : 'fa-exclamation-triangle'}"></i> ${item.status.charAt(0).toUpperCase() + item.status.slice(1)}
             </span>
             <div class="item-quality ${getQualityClass(item.quality)}">
                 ${item.quality}

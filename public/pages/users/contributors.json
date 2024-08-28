@@ -1,3 +1,4 @@
 [
-    { "id": "1", "name": "Linwaru", "icon": "linwaru.png" }
+    { "id": "1", "name": "Linwaru", "icon": "linwaru.png" },
+    { "id": "2", "name": "KasynBR", "icon": "kasynbr.png" }
 ]

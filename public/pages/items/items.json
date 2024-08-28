@@ -7,7 +7,11 @@
         "price": "23",
         "update": "23/08/2024",
         "status": "Pendente",
-        "quality": "Epico"
+        "quality": "Epico",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "34401",
@@ -17,7 +21,11 @@
         "price": "27",
         "update": "24/08/2024",
         "status": "Pendente",
-        "quality": "Sagrado"
+        "quality": "Sagrado",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "2525",
@@ -28,7 +36,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "armadura"
+        "category": "armadura",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     
     {
@@ -40,7 +52,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "armadura"
+        "category": "armadura",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     
     {
@@ -52,7 +68,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "armadura"
+        "category": "armadura",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     
     {
@@ -64,7 +84,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "armadura"
+        "category": "armadura",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     
     {
@@ -76,7 +100,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "armadura"
+        "category": "armadura",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "3442",
@@ -87,7 +115,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Exótico",
-        "category": "montaria"
+        "category": "montaria",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "45160",
@@ -98,7 +130,11 @@
         "update": "26/08/2024",
         "status": "Pendente",
         "quality": "Comum",
-        "category": "fantasia"
+        "category": "fantasia",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "248",
@@ -109,7 +145,11 @@
         "update": "26/08/2024",
         "status": "Pendente",
         "quality": "Lendário",
-        "category": "nucleo"
+        "category": "nucleo",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "34",
@@ -120,7 +160,11 @@
         "update": "26/08/2024",
         "status": "Pendente",
         "quality": "Exótico",
-        "category": "pedra"
+        "category": "pedra",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "301",
@@ -131,7 +175,11 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Raro",
-        "category": "receita"
+        "category": "receita",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "4",
@@ -142,7 +190,11 @@
         "update": "26/08/2024",
         "status": "Pendente",
         "quality": "Incomum",
-        "category": "suprimento"
+        "category": "suprimento",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     },
     {
         "id": "56",
@@ -153,6 +205,10 @@
         "update": "26/08/2024",
         "status": "Verificado",
         "quality": "Incomum",
-        "category": "trono"
+        "category": "trono",
+        "shop": "unknown",
+        "hunting": "unknown",
+        "recipe": "unknown",
+        "videos": ""
     }
 ]

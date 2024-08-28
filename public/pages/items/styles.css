@@ -208,8 +208,23 @@ body {
     margin-right: 8px;
 }
 
+/* Efeito de hover com animação na sombra */
 .tools button:hover {
-    background-color: #ba8800;
+    background-color: #d89b11;
+    box-shadow: 4px 4px 0px rgb(255, 255, 255); /* Sombra sólida que será animada */
+    animation: rainbow-shadow 2s linear infinite; /* Animação infinita com cores do arco-íris */
+}
+
+/* Animação de troca de cores no box-shadow */
+@keyframes rainbow-shadow {
+    0% { box-shadow: 2px 2px 1px red; }
+    14% { box-shadow: 2px 2px 1px orange; }
+    28% { box-shadow: 2px 2px 1px yellow; }
+    42% { box-shadow: 2px 2px 1px green; }
+    57% { box-shadow: 2px 2px 1px blue; }
+    71% { box-shadow: 2px 2px 1px indigo; }
+    85% { box-shadow: 2px 2px 1px violet; }
+    100% { box-shadow: 2px 2px 1px red; } /* Volta à cor inicial */
 }
 
 .search-bar {

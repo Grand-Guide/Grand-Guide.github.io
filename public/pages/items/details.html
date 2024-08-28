@@ -4,29 +4,169 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
     <title>Cards Personalizáveis</title>
 </head>
 <body>
     <div class="container">
         <!-- Cards com classes específicas -->
         <div class="card card-1">Informações 1</div>
+        <div class="card card-1">
+            <div class="card-title">INFORMAÇÕES</div>
+            <div class="item-name" id="info"></div>
+        </div>
+
         <div class="card card-2">Videos 2</div>
-        <div class="card card-3">Contribuidores 3</div>
+        <div class="card card-2">
+            <div class="card-title">PREVIEW</div>
+            <div class="item-name" id="videos"></div>
+        </div>
+
+        <div class="card card-3">
+            <div class="card-title" style="font-size: 12px;">CONTRIBUIDORES</div> <!-- Reduzi o tamanho da fonte -->
+            <div class="item-name" id="total-contributors" style="display:none;"></div>
+            <div id="contributors-container"></div> <!-- Contêiner para ícones dos contribuidores -->
+        </div>
+
         <div class="card card-4">Verificações 4</div>
+        <div class="card card-4">
+            <div class="card-title">VERIFICAÇÕES</div>
+            <div class="item-name" id="total-checks"></div>
+        </div>
+        
         <div class="card card-5">Total de Items 5</div>
+        <div class="card card-5">
+            <div class="card-title">TOTAL DE ITEMS</div>
+            <div class="item-name" id="total-items"></div>
+        </div>
+
         <div class="card card-6">Loja 6</div>
+        <div class="card card-6">
+            <div class="card-title">LOJAS</div>
+            <div class="item-name" id="shop"></div>
+        </div>
+
         <div class="card card-7">Caçando 7</div>
+        <div class="card card-7">
+            <div class="card-title">CAÇANDO</div>
+            <div class="item-name" id="hunting"></div>
+        </div>
+
         <div class="card card-8">Receita 8</div>
-        <div class="card card-9">Valor 9</div>
-        <div class="card card-10">Classe 10</div>
-        <div class="card card-11">Descrição 11</div>
-        <div class="card card-12">Botao 12</div>
-        <div class="card card-13">Botao 13</div>
-        <div class="card card-14">Botao 14</div>
-        <div class="card card-15">Botao 15</div>
-        <div class="card card-16">Botao 16</div>
-        <div class="card card-17">Icone 17</div>
-        <div class="card-18"></div>
+        <div class="card card-8">
+            <div class="card-title">RECEITA</div>
+            <div class="item-name" id="recipe"></div>
+        </div>
+
+        <div class="card card-9" id="price">Valor 9</div>
+        <div class="card card-10" id="description"></div>
+
+        <div class="card card-11">Nome 11</div>
+        <div class="card card-11">
+            <div class="card-title">NOME DO ITEM</div>
+            <div class="item-name" id="name"></div>
+        </div>
+
+        <a href="/public/pages/items/items-page.html" class="card card-12">Retornar</a>
+        <a href="/const.html" class="card card-13">Denunciar</a>
+        <a href="/const.html" class="card card-14">Botão 14</a>
+        <a href="/const.html" class="card card-15">Botão 15</a>
+        <a href="/const.html" class="button-card card-16">Contribuir</a>
+
+        <div class="card card-17" id="cover"></div>
+        <div class="card-18"> </div>
     </div>
+    
+    <!-- Carrega as estatísticas -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            function updateStatistics() {
+                fetch('/public/pages/items/items.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        document.getElementById('total-items').textContent = data.length;
+
+                        let totalChecks = 0;
+                        data.forEach(item => {
+                            if (item.status === 'Verificado') {
+                                totalChecks++;
+                            }
+                        });
+                        document.getElementById('total-checks').textContent = totalChecks;
+                    })
+                    .catch(error => console.error('Erro ao carregar o arquivo JSON de itens:', error));
+
+                fetch('/public/pages/users/contributors.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const contributorsContainer = document.getElementById('contributors-container');
+                        const maxIconsToShow = 5;
+                        const remainingCount = data.length - maxIconsToShow;
+
+                        contributorsContainer.innerHTML = '';
+
+                        for (let i = 0; i < Math.min(data.length, maxIconsToShow); i++) {
+                            const contributor = data[i];
+                            const contributorDiv = document.createElement('div');
+                            contributorDiv.className = 'contributor-icon';
+                            contributorDiv.style.backgroundImage = `url('/public/pages/users/icons/${contributor.icon}')`;
+                            contributorsContainer.appendChild(contributorDiv);
+                        }
+
+                        if (remainingCount > 0) {
+                            const remainingDiv = document.createElement('div');
+                            remainingDiv.className = 'contributor-icon';
+                            remainingDiv.style.backgroundColor = 'black';
+                            remainingDiv.innerText = `+${remainingCount}`;
+                            contributorsContainer.appendChild(remainingDiv);
+                        }
+
+                        document.getElementById('total-contributors').textContent = data.length;
+                    })
+                    .catch(error => console.error('Erro ao carregar o arquivo JSON de contribuintes:', error));
+            }
+
+            updateStatistics();
+        });
+    </script>            
+
+    <!-- Carrega os itens.json -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const itemId = urlParams.get('id');
+
+            async function fetchItemDetails(id) {
+                try {
+                    const response = await fetch('items.json');
+                    const items = await response.json();
+                    return items.find(item => item.id === id);
+                } catch (error) {
+                    console.error("Error fetching item details:", error);
+                    return null;
+                }
+            }
+
+            async function displayItemDetails() {
+                const item = await fetchItemDetails(itemId);
+                if (item) {
+                    document.getElementById('description').innerText = item.description;
+                    document.getElementById('price').innerHTML = `${item.price}<a href="/public/pages/items/icons/gold.ico" target="_blank"><img src="/public/pages/items/icons/gold.ico" alt="Gold Icon" class="gold-icon"></a>`;
+                    document.getElementById('name').innerText = item.name;
+                    document.getElementById('shop').innerText = item.shop;
+                    document.getElementById('recipe').innerText = item.recipe;
+                    document.getElementById('hunting').innerText = item.hunting;
+                    document.getElementById('videos').innerText = item.videos;
+                    document.getElementById('cover').innerHTML =`<img src="${item.cover || 'default-image.jpg'}" alt="${item.name}" class="item-cover">`;
+                } else {
+                    document.getElementById('description').innerText = "Item não encontrado.";
+                }
+            }
+
+            displayItemDetails();
+        });
+    </script>
 </body>
 </html>

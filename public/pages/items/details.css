@@ -1,5 +1,6 @@
 body {
     background-color: #0d0d0d;
+    font-family: 'Chakra Petch', sans-serif;
     margin: 0;
     padding: 0;
     height: 100vh;
@@ -16,7 +17,43 @@ body {
     justify-content: center;
 }
 
+/* Container dos ícones dos contribuidores */
+#contributors-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+
+/* Estilo para o ícone dos contribuidores */
+.contributor-icon {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+    position: relative;
+    top: 8px;
+    margin-left: -4px;
+}
+
+
+/* Estilo para o ícone dos contribuidores restantes */
+.contributor-icon.remaining {
+    background-color: #000; /* Preto */
+    color: #fff; /* Branco para o texto */
+    font-size: 14px; /* Ajuste conforme necessário */
+    font-weight: bold;
+}
+
 .card-18 {
+    font-family: 'Chakra Petch', sans-serif;
     background-color: #2a2a2a;
     color: #FFFFFF;
     border-radius: 1px;
@@ -28,19 +65,33 @@ body {
 
 .card-18 { width: 1950px; height: 1px; top: 0px; left: 0px; }
 
+/* Estilo base dos cards */
 .card {
+    font-family: 'Chakra Petch', sans-serif;
     background-color: #242424;
     color: #FFFFFF;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.212);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transições suaves para transformações e sombras */
     position: absolute; /* Permite o posicionamento absoluto dos cards */
     box-sizing: border-box; /* Garante que o padding não afete a largura e altura */
+    display: inline-block; /* Faz com que o link se comporte como um bloco inline */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
 }
 
+/* Estilo para quando o link é clicado ou focado */
+.card:active,
+.card:focus {
+    outline: none; /* Remove o contorno padrão */
+    box-shadow: 0 0 0 2px #FFFFFF; /* Adiciona um contorno visual quando o botão é focado */
+    transform: scale(0.98); /* Leve efeito de clique */
+}
+
+/* Estilo para o estado hover */
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: 2px 2px 1px rgb(255, 251, 0); /* Adiciona a sombra quando o mouse está sobre o card */
 }
 
 /* Estilos específicos para cada card com posicionamento */
@@ -60,4 +111,147 @@ body {
 .card.card-14 { width: 170px; height: 45px; top: 60px; left: 1300px; }
 .card.card-15 { width: 170px; height: 45px; top: 60px; left: 1485px; }
 .card.card-16 { width: 220px; height: 45px; top: 60px; left: 1670px; }
-.card.card-17 { width: 80; height: 85px; top: 200px; left: 190px; }
+.card.card-17 { width: 50px; height: 50px; top: 230px; left: 190px; }
+
+.card.card-10 { 
+    font-size: 13px;
+    overflow: hidden;       /* Oculta o texto que excede a caixa */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto */
+    white-space: nowrap;    /* Impede que o texto quebre em múltiplas linhas */
+    padding-top: 16px;
+}
+
+.card.card-9 { 
+    font-size: 16px;
+    overflow: hidden;       /* Oculta o texto que excede a caixa */
+    text-overflow: ellipsis; /* Adiciona "..." no final do texto */
+    white-space: nowrap;    /* Impede que o texto quebre em múltiplas linhas */
+    padding-top: 16px;
+}
+
+.card.card-17 {
+    display: flex;         /* Usar flexbox */
+    align-items: center;   /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+}
+
+.card-title {
+    font-size: 16px; /* Tamanho do título */
+    color: #b0b0b09d;
+   
+    position: absolute; /* Permite o posicionamento absoluto dentro do card */
+    top: 10px; /* Ajusta a distância do topo do card */
+    left: 20px; /* Ajusta a distância da esquerda do card */
+    /* Outros estilos, se necessário */
+}
+
+/* Adiciona estilo ao nome do item */
+.item-name {
+    font-size: 14px; /* Tamanho do nome do item */
+    color: #ffffff;
+    position: absolute; /* Permite o posicionamento absoluto dentro do card */
+    top: 40px; /* Ajusta a distância do topo do card, abaixo do título */
+    left: 20px; /* Ajusta a distância da esquerda do card */
+    /* Outros estilos, se necessário */
+}
+
+.item-cover {
+    width: auto;  /* Ajusta a largura conforme necessário */
+    height: auto; /* Ajusta a altura da imagem para preencher o card */
+}
+
+
+.gold-icon {
+    width: auto;
+    height: auto;
+    margin-left: 3px;
+    vertical-align: 1px
+}
+
+/* Centralizar e ajustar a posição do texto no botão card-12 */
+.card.card-12 {
+    padding-top: 10px; /* Ajusta a posição vertical do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 25px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+}
+
+/* Centralizar e ajustar a posição do texto no botão card-13 */
+.card.card-13 {
+    padding-top: 10px; /* Ajusta a posição vertical do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 25px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+}
+
+/* Centralizar e ajustar a posição do texto no botão card-14 */
+.card.card-14 {
+    padding-top: 10px; /* Ajusta a posição vertical do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 25px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+}
+
+/* Centralizar e ajustar a posição do texto no botão card-15 */
+.card.card-15 {
+    padding-top: 10px; /* Ajusta a posição vertical do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 25px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+}
+
+/* Centralizar e ajustar a posição do texto no botão card-16 */
+.card.card-16 {
+    color: #ffc400; 
+    padding-top: 10px; /* Ajusta a posição vertical do texto */
+    text-align: center; /* Centraliza o texto horizontalmente */
+    line-height: 25px; /* Ajusta a altura da linha para centralizar o texto verticalmente */
+}
+
+/* Adiciona estilo ao texto dos botões */
+.card a {
+    color: #ffc400; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado */
+}
+
+/* Estilo base para os links que se comportam como botões */
+.button-card {
+    font-family: 'Poppins', sans-serif;
+    display: flex; /* Flexbox para centralizar o texto */
+    align-items: center; /* Alinhamento vertical */
+    justify-content: center; /* Alinhamento horizontal */
+    background-color: #e7ae11; /* Cor de fundo dos botões */
+    color: #000000; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 15px; /* Tamanho da fonte */
+    cursor: pointer; /* Cursor de mão ao passar sobre o botão */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transições suaves */
+    text-decoration: none; /* Remove sublinhado dos links */
+}
+
+/* Efeito de hover com animação na sombra */
+.button-card:hover {
+    background-color: #d89b11;
+    box-shadow: 4px 4px 0px rgb(255, 255, 255); /* Sombra sólida que será animada */
+    animation: rainbow-shadow 2s linear infinite; /* Animação infinita com cores do arco-íris */
+}
+
+/* Animação de troca de cores no box-shadow */
+@keyframes rainbow-shadow {
+    0% { box-shadow: 2px 2px 1px red; }
+    14% { box-shadow: 2px 2px 1px orange; }
+    28% { box-shadow: 2px 2px 1px yellow; }
+    42% { box-shadow: 2px 2px 1px green; }
+    57% { box-shadow: 2px 2px 1px blue; }
+    71% { box-shadow: 2px 2px 1px indigo; }
+    85% { box-shadow: 2px 2px 1px violet; }
+    100% { box-shadow: 2px 2px 1px red; } /* Volta à cor inicial */
+}
+
+/* Manter as dimensões e a posição dos botões */
+.button-card.card-16 {
+    width: 90px; /* Largura do botão */
+    height: 25px; /* Altura do botão */
+    position: absolute; /* Permite posicionamento absoluto */
+}
+
+/* Posições específicas para cada botão */
+.button-card.card-16 { top: 60px; left: 1670px; }
