@@ -277,9 +277,9 @@ body {
 }
 
 .item img {
-    width: 35px;
-    height: 35px;
-    border-radius: 5px;
+    width: auto;
+    height: auto;
+    border-radius: auto;
 }
 
 .item-id, .item-name, .item-description, .item-price, .item-update, .item-status, .item-operations {
@@ -518,3 +518,72 @@ ul {
     text-decoration: none; /* Remove o sublinhado do link */
     color: inherit; /* Herda a cor do elemento pai */
   }
+
+  .statistics {
+    display: flex;
+    gap: 10px; /* Reduz o espaçamento entre as estatísticas */
+    margin-bottom: 20px; /* Espaço entre as estatísticas e o botão Contribuir */
+    justify-content: flex-end; /* Alinha as estatísticas à direita */
+    flex-wrap: wrap; /* Permite que as estatísticas se movam para a linha seguinte em telas menores */
+}
+
+.statistic {
+    background-color: #292929; /* Cor de fundo escura */
+    border-radius: 6px; /* Cantos arredondados */
+    padding: 10px 15px; /* Reduzido para um tamanho menor */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    min-width: 120px; /* Define uma largura mínima menor para cada estatística */
+    display: flex;
+    flex-direction: column; /* Organiza o conteúdo em coluna */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+.stat-title, .stat-value {
+    width: 100%; /* Garante que o título e o valor ocupem toda a largura disponível */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.stat-value {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400; /* Regular weight for a clean look */
+    font-size: 18px; /* Ajuste o tamanho conforme necessário */
+    color: #ffffff; /* Cor clara para contraste */
+}
+
+.stat-title {
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 1200; /* Bold weight for a robust look */
+    font-size: 15px; /* Ajuste o tamanho conforme necessário */
+    color: #A3A3A3; /* Cor mais escura para destaque */
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão "Contribuir" */
+.add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Estilo para o status verificado */
+.item-status.verificado {
+    color: #28a745; /* Cor verde para itens verificados */
+}
+
+/* Estilo para o status pendente */
+.item-status.pendente {
+    color: #ffc107; /* Cor amarela para itens pendentes */
+}
+
+/* Ícones para os status */
+.item-status.verificado i {
+    content: '\f058'; /* Ícone de círculo com check */
+}
+
+.item-status.pendente i {
+    content: '\f071'; /* Ícone de triângulo com alerta */
+}
